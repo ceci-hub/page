@@ -1,0 +1,569 @@
+[
+  {
+    "objectID": "Vizualizacion/index.html",
+    "href": "Vizualizacion/index.html",
+    "title": "Universidad de Montevideo: Visualización y Narrativa de datos",
+    "section": "",
+    "text": "Este curso forma parte de la Maestría / Posgrado en Ciencia de Datos de la Universidad de Montevideo.\nSu objetivo es brindar los fundamentos conceptuales y prácticos de la Visualización y Narrativa de Datos (NVD), desarrollando la capacidad de explorar, comunicar e interpretar información de manera clara, efectiva y rigurosa.\nEl curso pone énfasis en el uso de la visualización como herramienta clave para el análisis de datos, la toma de decisiones y la comunicación de resultados en contextos de Data Science y Machine Learning.\n\n\n\nCada clase cuenta con: - una página con descripción y objetivos - slides en formato HTML\nUse el menú lateral para navegar por las clases.\n\n\n\n👉 Ver slides – Bienvenida 👉 Ver slides – Intro 👉 Ver slides – Datos 👉 Ver slides – Menu 👉 Ver slides – Manejo de datos 👉 Ver slides – Univariado 1 👉 Ver slides – Univariado 2 👉 Ver slides – Multivariado 1 👉 Ver slides – Multivariado 2 👉 Ver slides – Multivariado 3\nEl libro se encuentra en pdf. Si lo quiere enviar un mail a los autores para enviarlo."
+  },
+  {
+    "objectID": "Vizualizacion/index.html#material-del-curso",
+    "href": "Vizualizacion/index.html#material-del-curso",
+    "title": "Universidad de Montevideo: Visualización y Narrativa de datos",
+    "section": "",
+    "text": "Cada clase cuenta con: - una página con descripción y objetivos - slides en formato HTML\nUse el menú lateral para navegar por las clases."
+  },
+  {
+    "objectID": "Vizualizacion/index.html#slides-de-la-clase",
+    "href": "Vizualizacion/index.html#slides-de-la-clase",
+    "title": "Universidad de Montevideo: Visualización y Narrativa de datos",
+    "section": "",
+    "text": "👉 Ver slides – Bienvenida 👉 Ver slides – Intro 👉 Ver slides – Datos 👉 Ver slides – Menu 👉 Ver slides – Manejo de datos 👉 Ver slides – Univariado 1 👉 Ver slides – Univariado 2 👉 Ver slides – Multivariado 1 👉 Ver slides – Multivariado 2 👉 Ver slides – Multivariado 3\nEl libro se encuentra en pdf. Si lo quiere enviar un mail a los autores para enviarlo."
+  },
+  {
+    "objectID": "Vizualizacion/07B-Multivariado.html",
+    "href": "Vizualizacion/07B-Multivariado.html",
+    "title": "Multivariado 2",
+    "section": "",
+    "text": "Al finalizar esta clase, el estudiante será capaz de:\n\nIdentificar relaciones entre variables continuas mediante visualizaciones\nElegir transformaciones y escalas adecuadas para mejorar la interpretación\nEvaluar supuestos de linealidad de forma visual\nReconocer los límites de los gráficos de dispersión con grandes volúmenes de datos\nAplicar técnicas alternativas para visualizar alta densidad de observaciones\nAnalizar múltiples relaciones mediante matrices de correlación\nConstruir visualizaciones multivariadas claras y honestas"
+  },
+  {
+    "objectID": "Vizualizacion/07B-Multivariado.html#contenidos-y-objetivos-de-aprendizaje",
+    "href": "Vizualizacion/07B-Multivariado.html#contenidos-y-objetivos-de-aprendizaje",
+    "title": "Multivariado 2",
+    "section": "",
+    "text": "Al finalizar esta clase, el estudiante será capaz de:\n\nIdentificar relaciones entre variables continuas mediante visualizaciones\nElegir transformaciones y escalas adecuadas para mejorar la interpretación\nEvaluar supuestos de linealidad de forma visual\nReconocer los límites de los gráficos de dispersión con grandes volúmenes de datos\nAplicar técnicas alternativas para visualizar alta densidad de observaciones\nAnalizar múltiples relaciones mediante matrices de correlación\nConstruir visualizaciones multivariadas claras y honestas"
+  },
+  {
+    "objectID": "Vizualizacion/07B-Multivariado.html#slides-de-la-clase",
+    "href": "Vizualizacion/07B-Multivariado.html#slides-de-la-clase",
+    "title": "Multivariado 2",
+    "section": "Slides de la clase",
+    "text": "Slides de la clase\n👉 Ver slides – Multivariado 2"
+  },
+  {
+    "objectID": "Vizualizacion/06B-Univariado.html",
+    "href": "Vizualizacion/06B-Univariado.html",
+    "title": "Univariado 2",
+    "section": "",
+    "text": "Al finalizar esta clase, el estudiante será capaz de:\n\nIdentificar los elementos clave que componen una visualización univariada efectiva\nUtilizar títulos, etiquetas y anotaciones para mejorar la comunicación del gráfico\nAjustar escalas según el tipo de variable representada\nReconocer problemas comunes de interpretación en gráficos univariados\nConstruir visualizaciones autosuficientes que puedan interpretarse sin contexto adicional\nAplicar estos criterios utilizando la gramática de gráficos en ggplot2 (R & Python)"
+  },
+  {
+    "objectID": "Vizualizacion/06B-Univariado.html#contenidos-y-objetivos-de-aprendizaje",
+    "href": "Vizualizacion/06B-Univariado.html#contenidos-y-objetivos-de-aprendizaje",
+    "title": "Univariado 2",
+    "section": "",
+    "text": "Al finalizar esta clase, el estudiante será capaz de:\n\nIdentificar los elementos clave que componen una visualización univariada efectiva\nUtilizar títulos, etiquetas y anotaciones para mejorar la comunicación del gráfico\nAjustar escalas según el tipo de variable representada\nReconocer problemas comunes de interpretación en gráficos univariados\nConstruir visualizaciones autosuficientes que puedan interpretarse sin contexto adicional\nAplicar estos criterios utilizando la gramática de gráficos en ggplot2 (R & Python)"
+  },
+  {
+    "objectID": "Vizualizacion/06B-Univariado.html#slides-de-la-clase",
+    "href": "Vizualizacion/06B-Univariado.html#slides-de-la-clase",
+    "title": "Univariado 2",
+    "section": "Slides de la clase",
+    "text": "Slides de la clase\n👉 Ver slides – Univariado 2"
+  },
+  {
+    "objectID": "Vizualizacion/05-Manejo-datos.html",
+    "href": "Vizualizacion/05-Manejo-datos.html",
+    "title": "Manejo de datos",
+    "section": "",
+    "text": "En esta clase abordamos las herramientas fundamentales de manejo y preparación de datos necesarias para realizar visualizaciones correctas y análisis reproducibles en contextos reales de Data Science.\nEl foco está en entender que la calidad de una visualización depende directamente de la estructura, limpieza y transformación de los datos, y que estos pasos constituyen una parte central del proceso analítico.\nEn particular, trabajaremos sobre:\n\nEl concepto de datos ordenados (tidy data)\nSelección y filtrado de observaciones y variables\nTransformación y creación de nuevas variables\nCálculo de estadísticos de resumen\nOperaciones por grupos\nReorganización de datos entre formatos largo y ancho (pivot)\nUnión de múltiples fuentes de datos (joins)\nManejo de datos tanto en R (tidyverse) como en Python (pandas)"
+  },
+  {
+    "objectID": "Vizualizacion/05-Manejo-datos.html#contenidos-de-la-clase",
+    "href": "Vizualizacion/05-Manejo-datos.html#contenidos-de-la-clase",
+    "title": "Manejo de datos",
+    "section": "",
+    "text": "En esta clase abordamos las herramientas fundamentales de manejo y preparación de datos necesarias para realizar visualizaciones correctas y análisis reproducibles en contextos reales de Data Science.\nEl foco está en entender que la calidad de una visualización depende directamente de la estructura, limpieza y transformación de los datos, y que estos pasos constituyen una parte central del proceso analítico.\nEn particular, trabajaremos sobre:\n\nEl concepto de datos ordenados (tidy data)\nSelección y filtrado de observaciones y variables\nTransformación y creación de nuevas variables\nCálculo de estadísticos de resumen\nOperaciones por grupos\nReorganización de datos entre formatos largo y ancho (pivot)\nUnión de múltiples fuentes de datos (joins)\nManejo de datos tanto en R (tidyverse) como en Python (pandas)"
+  },
+  {
+    "objectID": "Vizualizacion/05-Manejo-datos.html#slides-de-la-clase",
+    "href": "Vizualizacion/05-Manejo-datos.html#slides-de-la-clase",
+    "title": "Manejo de datos",
+    "section": "Slides de la clase",
+    "text": "Slides de la clase\n👉 Ver slides – Manejo de datos"
+  },
+  {
+    "objectID": "Vizualizacion/03-Cazando-datos.html",
+    "href": "Vizualizacion/03-Cazando-datos.html",
+    "title": "Cazando Datos",
+    "section": "",
+    "text": "En esta clase analizamos el rol de los datos dentro del proceso de Data Science, desde su origen hasta su uso en el análisis y la comunicación de resultados.\nNos enfocaremos en comprender cómo se obtienen los datos, qué implicancias tiene cada forma de recolección y por qué es fundamental comunicar estos aspectos al momento de visualizar y narrar resultados.\nEn particular, trabajaremos sobre:\n\nEl pipeline de trabajo en Data Science y el rol de la visualización\nLa relación entre hipótesis, datos, análisis y comunicación\nDiferentes formas de obtener datos: medir, recolectar, cazar\nDiseños de investigación y su impacto en la inferencia\nImportancia de documentar el origen, período y calidad de los datos\nErrores comunes en la obtención y comunicación de datos\nCómo la visualización puede inducir interpretaciones correctas o erróneas"
+  },
+  {
+    "objectID": "Vizualizacion/03-Cazando-datos.html#contenidos-de-la-clase",
+    "href": "Vizualizacion/03-Cazando-datos.html#contenidos-de-la-clase",
+    "title": "Cazando Datos",
+    "section": "",
+    "text": "En esta clase analizamos el rol de los datos dentro del proceso de Data Science, desde su origen hasta su uso en el análisis y la comunicación de resultados.\nNos enfocaremos en comprender cómo se obtienen los datos, qué implicancias tiene cada forma de recolección y por qué es fundamental comunicar estos aspectos al momento de visualizar y narrar resultados.\nEn particular, trabajaremos sobre:\n\nEl pipeline de trabajo en Data Science y el rol de la visualización\nLa relación entre hipótesis, datos, análisis y comunicación\nDiferentes formas de obtener datos: medir, recolectar, cazar\nDiseños de investigación y su impacto en la inferencia\nImportancia de documentar el origen, período y calidad de los datos\nErrores comunes en la obtención y comunicación de datos\nCómo la visualización puede inducir interpretaciones correctas o erróneas"
+  },
+  {
+    "objectID": "Vizualizacion/03-Cazando-datos.html#slides-de-la-clase",
+    "href": "Vizualizacion/03-Cazando-datos.html#slides-de-la-clase",
+    "title": "Cazando Datos",
+    "section": "Slides de la clase",
+    "text": "Slides de la clase\n👉 Ver slides – Datos"
+  },
+  {
+    "objectID": "Vizualizacion/01-Bienvenida.html",
+    "href": "Vizualizacion/01-Bienvenida.html",
+    "title": "Bienvenida",
+    "section": "",
+    "text": "En esta clase presentamos:\n\nobjetivos generales del curso\nenfoque en visualización y narrativa\nmetodología y evaluación"
+  },
+  {
+    "objectID": "Vizualizacion/01-Bienvenida.html#objetivos-de-la-clase",
+    "href": "Vizualizacion/01-Bienvenida.html#objetivos-de-la-clase",
+    "title": "Bienvenida",
+    "section": "",
+    "text": "En esta clase presentamos:\n\nobjetivos generales del curso\nenfoque en visualización y narrativa\nmetodología y evaluación"
+  },
+  {
+    "objectID": "Vizualizacion/01-Bienvenida.html#slides-de-la-clase",
+    "href": "Vizualizacion/01-Bienvenida.html#slides-de-la-clase",
+    "title": "Bienvenida",
+    "section": "Slides de la clase",
+    "text": "Slides de la clase\n👉 Ver slides – Bienvenida"
+  },
+  {
+    "objectID": "teaching.html",
+    "href": "teaching.html",
+    "title": "Teaching",
+    "section": "",
+    "text": "Universidad de Montevideo"
+  },
+  {
+    "objectID": "teaching.html#statistics-master-in-data-science",
+    "href": "teaching.html#statistics-master-in-data-science",
+    "title": "Teaching",
+    "section": "",
+    "text": "Universidad de Montevideo"
+  },
+  {
+    "objectID": "teaching.html#other-courses",
+    "href": "teaching.html#other-courses",
+    "title": "Teaching",
+    "section": "Other courses",
+    "text": "Other courses\nApplied Data Analysis & Visualization\nPricing & Market Analysis"
+  },
+  {
+    "objectID": "STAT/08-viernes13.html",
+    "href": "STAT/08-viernes13.html",
+    "title": "Viernes 13",
+    "section": "",
+    "text": "Caso aplicado para integrar los conceptos del curso.\n\nformulación del problema\nanálisis estadístico\ninterpretación de resultados"
+  },
+  {
+    "objectID": "STAT/08-viernes13.html#contenidos",
+    "href": "STAT/08-viernes13.html#contenidos",
+    "title": "Viernes 13",
+    "section": "",
+    "text": "Caso aplicado para integrar los conceptos del curso.\n\nformulación del problema\nanálisis estadístico\ninterpretación de resultados"
+  },
+  {
+    "objectID": "STAT/08-viernes13.html#slides-de-la-clase",
+    "href": "STAT/08-viernes13.html#slides-de-la-clase",
+    "title": "Viernes 13",
+    "section": "Slides de la clase",
+    "text": "Slides de la clase\n👉 Ver slides – Viernes13"
+  },
+  {
+    "objectID": "STAT/06-inferencia.html",
+    "href": "STAT/06-inferencia.html",
+    "title": "Inferencia e Intervalos de confianza",
+    "section": "",
+    "text": "estimación puntual\nintervalos de confianza\nintuición estadística\ninterpretación de resultados"
+  },
+  {
+    "objectID": "STAT/06-inferencia.html#contenidos",
+    "href": "STAT/06-inferencia.html#contenidos",
+    "title": "Inferencia e Intervalos de confianza",
+    "section": "",
+    "text": "estimación puntual\nintervalos de confianza\nintuición estadística\ninterpretación de resultados"
+  },
+  {
+    "objectID": "STAT/06-inferencia.html#slides-de-la-clase",
+    "href": "STAT/06-inferencia.html#slides-de-la-clase",
+    "title": "Inferencia e Intervalos de confianza",
+    "section": "Slides de la clase",
+    "text": "Slides de la clase\n👉 Ver slides – Inferencia"
+  },
+  {
+    "objectID": "STAT/04-probabilidad.html",
+    "href": "STAT/04-probabilidad.html",
+    "title": "Probabilidad",
+    "section": "",
+    "text": "noción de probabilidad\neventos y espacio muestral\nprobabilidad condicional\nejemplos prácticos"
+  },
+  {
+    "objectID": "STAT/04-probabilidad.html#contenidos",
+    "href": "STAT/04-probabilidad.html#contenidos",
+    "title": "Probabilidad",
+    "section": "",
+    "text": "noción de probabilidad\neventos y espacio muestral\nprobabilidad condicional\nejemplos prácticos"
+  },
+  {
+    "objectID": "STAT/04-probabilidad.html#slides-de-la-clase",
+    "href": "STAT/04-probabilidad.html#slides-de-la-clase",
+    "title": "Probabilidad",
+    "section": "Slides de la clase",
+    "text": "Slides de la clase\n👉 Ver slides – Probabilidad"
+  },
+  {
+    "objectID": "STAT/02-datos-experimentos.html",
+    "href": "STAT/02-datos-experimentos.html",
+    "title": "Datos y Experimentos",
+    "section": "",
+    "text": "tipos de datos\ndatos categóricos y numéricos\ndiseño de experimentos\nejemplos aplicados"
+  },
+  {
+    "objectID": "STAT/02-datos-experimentos.html#contenidos",
+    "href": "STAT/02-datos-experimentos.html#contenidos",
+    "title": "Datos y Experimentos",
+    "section": "",
+    "text": "tipos de datos\ndatos categóricos y numéricos\ndiseño de experimentos\nejemplos aplicados"
+  },
+  {
+    "objectID": "STAT/02-datos-experimentos.html#slides-de-la-clase",
+    "href": "STAT/02-datos-experimentos.html#slides-de-la-clase",
+    "title": "Datos y Experimentos",
+    "section": "Slides de la clase",
+    "text": "Slides de la clase\n👉 Ver slides – Experimentos"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "Pricing Strategies of Supermarkets in Uruguay\n\nMaster in Economics – Universidad de la República\nDataset &gt; 700,000 price observations\nMethods: descriptive analysis, price duration, applied ML"
+  },
+  {
+    "objectID": "research.html#master-thesis",
+    "href": "research.html#master-thesis",
+    "title": "Research",
+    "section": "",
+    "text": "Pricing Strategies of Supermarkets in Uruguay\n\nMaster in Economics – Universidad de la República\nDataset &gt; 700,000 price observations\nMethods: descriptive analysis, price duration, applied ML"
+  },
+  {
+    "objectID": "research.html#thesis-supervision-bcu-jornadas-de-economía",
+    "href": "research.html#thesis-supervision-bcu-jornadas-de-economía",
+    "title": "Research",
+    "section": "Thesis supervision (BCU – Jornadas de Economía)",
+    "text": "Thesis supervision (BCU – Jornadas de Economía)\n🔹 Hermes Javier López Sosa\nCaracterización del Sistema Financiero Regulado de Uruguay (2013–2023)\n🔹 Martín Rey & Paolo Pinotti\nMachine Learning aplicado a duración de precios\nPresented at: https://www.bcu.gub.uy/Comunicaciones/Paginas/JAE.aspx"
+  },
+  {
+    "objectID": "awards.html",
+    "href": "awards.html",
+    "title": "Awards & Honors",
+    "section": "",
+    "text": "🏆 Iowa State University\nAwarded for innovative and creative contributions in recruitment analytics,\nrecognizing the development of data-driven models to support undergraduate,\ngraduate, and professional student recruitment strategies."
+  },
+  {
+    "objectID": "awards.html#recruitment-innovation-award-2024",
+    "href": "awards.html#recruitment-innovation-award-2024",
+    "title": "Awards & Honors",
+    "section": "",
+    "text": "🏆 Iowa State University\nAwarded for innovative and creative contributions in recruitment analytics,\nrecognizing the development of data-driven models to support undergraduate,\ngraduate, and professional student recruitment strategies."
+  },
+  {
+    "objectID": "awards.html#presidents-list",
+    "href": "awards.html#presidents-list",
+    "title": "Awards & Honors",
+    "section": "President’s List",
+    "text": "President’s List\n🎓 Des Moines Area Community College (DMACC)\nRecognized for outstanding academic performance, earning placement on the\nPresident’s List during the Data Science / Analytics program."
+  },
+  {
+    "objectID": "awards.html#phi-theta-kappa-honor-society",
+    "href": "awards.html#phi-theta-kappa-honor-society",
+    "title": "Awards & Honors",
+    "section": "Phi Theta Kappa Honor Society",
+    "text": "Phi Theta Kappa Honor Society\n⭐ Member – Phi Theta Kappa\nInternational honor society recognizing academic excellence, leadership,\nand commitment to service among high‑achieving students in higher education.\n\nThese distinctions reflect sustained academic excellence, innovation in data-driven decision making, and active engagement in the academic community."
+  },
+  {
+    "objectID": "applied-project.html",
+    "href": "applied-project.html",
+    "title": "5 minutes Applied Data Projects",
+    "section": "",
+    "text": "This page presents applied data science and visualization projects developed using publicly available datasets, with a strong focus on education, public policy, and institutional analytics.\nThe projects are designed both for teaching purposes and for demonstrating real‑world applications of data science methods.\n\n\n\nHigh School to Higher Education Enrollment\nInteractive dashboard developed as part of my role at Iowa State University to demonstrate applied data analysis and visualization for enrollment research. The project analyzes student migration patterns across the United States, with a focus on where high school graduates enroll in higher education institutions.\n\n\n\nData: National Center for Education Statistics (NCES)\nTools: R · Shiny · Geospatial visualization\n🚀 Open Live Dashboard\n\n\n\n\nInteractive income map based on public census data\nThis project presents an interactive map of household income across the United States, built through data cleaning, transformation, and visualization of American Community Survey (ACS) data from the U.S. Census Bureau.\n\nData source: U.S. Census Bureau – ACS\nFocus: household income distribution\nSkills: data manipulation, geospatial visualization, explanatory graphics\n\n👉 Interactive map:\n📍 Open Interactive Map\n\nThese examples illustrate how open data can be transformed into actionable insights for decision‑making, communication, and teaching in Data Science and Analytics."
+  },
+  {
+    "objectID": "applied-project.html#overview",
+    "href": "applied-project.html#overview",
+    "title": "5 minutes Applied Data Projects",
+    "section": "",
+    "text": "This page presents applied data science and visualization projects developed using publicly available datasets, with a strong focus on education, public policy, and institutional analytics.\nThe projects are designed both for teaching purposes and for demonstrating real‑world applications of data science methods.\n\n\n\nHigh School to Higher Education Enrollment\nInteractive dashboard developed as part of my role at Iowa State University to demonstrate applied data analysis and visualization for enrollment research. The project analyzes student migration patterns across the United States, with a focus on where high school graduates enroll in higher education institutions.\n\n\n\nData: National Center for Education Statistics (NCES)\nTools: R · Shiny · Geospatial visualization\n🚀 Open Live Dashboard\n\n\n\n\nInteractive income map based on public census data\nThis project presents an interactive map of household income across the United States, built through data cleaning, transformation, and visualization of American Community Survey (ACS) data from the U.S. Census Bureau.\n\nData source: U.S. Census Bureau – ACS\nFocus: household income distribution\nSkills: data manipulation, geospatial visualization, explanatory graphics\n\n👉 Interactive map:\n📍 Open Interactive Map\n\nThese examples illustrate how open data can be transformed into actionable insights for decision‑making, communication, and teaching in Data Science and Analytics."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Cecilia Regueira",
+    "section": "",
+    "text": "Economist and Data Scientist with extensive experience in data analysis, applied statistics, machine learning, and data visualization.\nI currently teach Statistics in the Master in Data Science at Universidad de Montevideo and work as a Senior Data Analyst in higher education analytics.\nMy work bridges academic research and applied data science, with a strong focus on pricing, public expenditure, and decision‑making under uncertainty."
+  },
+  {
+    "objectID": "index.html#profile",
+    "href": "index.html#profile",
+    "title": "Cecilia Regueira",
+    "section": "",
+    "text": "Economist and Data Scientist with extensive experience in data analysis, applied statistics, machine learning, and data visualization.\nI currently teach Statistics in the Master in Data Science at Universidad de Montevideo and work as a Senior Data Analyst in higher education analytics.\nMy work bridges academic research and applied data science, with a strong focus on pricing, public expenditure, and decision‑making under uncertainty."
+  },
+  {
+    "objectID": "index.html#current-positions",
+    "href": "index.html#current-positions",
+    "title": "Cecilia Regueira",
+    "section": "Current Positions",
+    "text": "Current Positions\nSenior Data Analyst\nEnrollment Research & Analytics – Iowa State University\n2022 – Present\n\nData modeling and analytics for recruitment and enrollment strategy\n\nDevelopment of innovative models for undergraduate and graduate recruitment\n\nAwarded for innovation in analytics and modeling\n\nInstructor – Statistics for Data Science\nMaster in Data Science – Universidad de Montevideo\n2024 – Present\n\nApplied statistics for data science\n\nProbability, inference, experimentation, and interpretation for ML contexts"
+  },
+  {
+    "objectID": "index.html#research-interests",
+    "href": "index.html#research-interests",
+    "title": "Cecilia Regueira",
+    "section": "Research Interests",
+    "text": "Research Interests\n\nPrice dynamics and pricing strategies\n\nApplied econometrics\n\nMachine learning for economic data\n\nPublic and financial data analysis\n\nData visualization for decision‑making"
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Cecilia Regueira",
+    "section": "Education",
+    "text": "Education\nMaster in Economics\nUniversidad de la República (Uruguay)\n2017 – 2020\nThesis: Pricing Strategies of Supermarkets in Uruguay\nSelected for publication in the department’s academic series\nPostgraduate Degree in Big Data Analysis\nUniversidad ORT (Uruguay)\nCertificate in Data Science & Analytics\nDes Moines Area Community College (DMACC – USA)\n- President’s List - Member of Phi Theta Kappa Honor Society\nBachelor of Science in Economics\nUniversidad de la República (Uruguay)"
+  },
+  {
+    "objectID": "index.html#selected-experience",
+    "href": "index.html#selected-experience",
+    "title": "Cecilia Regueira",
+    "section": "Selected Experience",
+    "text": "Selected Experience\n\nSenior Data Analyst – Iowa State University\n\nData Analyst – Corteva Agriscience\n\nAnalyst & Data Scientist – Consulting (Uruguay & USA)\n\nExternal Consultant – Inter‑American Development Bank\n\nData Analyst – Ministry of Public Health (Uruguay)\n\nExperience spans academic research, government, consulting, and private sector, working with large‑scale datasets, ETL pipelines, and applied ML models."
+  },
+  {
+    "objectID": "index.html#teaching-thesis-supervision-academic-activity",
+    "href": "index.html#teaching-thesis-supervision-academic-activity",
+    "title": "Cecilia Regueira",
+    "section": "Teaching, Thesis Supervision & Academic Activity",
+    "text": "Teaching, Thesis Supervision & Academic Activity\n\nStatistics – Master in Data Science, Universidad de Montevideo\n\nSupervisor of Master theses presented at the Central Bank of Uruguay (BCU):\n\nCharacterization of the Regulated Financial System of Uruguay (2013–2023)\nMachine Learning Applied to Price Duration\n\n\n\n\n\n\n\n\n## Applied Projects & Teaching Resources\n\n\nThis section highlights applied data science and visualization projects developed using publicly available U.S. datasets, designed both for teaching purposes and institutional analytics.\n\n\n\n\nStudent Migration Dashboard (USA, 2024)\nHigh School to Higher Education Enrollment\nInteractive dashboard developed as part of my role at Iowa State University to demonstrate applied data analysis and visualization for enrollment research. The project analyzes student migration patterns across the United States, with a focus on where high school graduates enroll in higher education institutions.\n\n\n🎓 Student Migration Dashboard (USA, 2024)\nData: National Center for Education Statistics (NCES)\nTools: R · Shiny · Geospatial visualization\n🚀 Open Live Dashboard\n\n\n\nHousehold Income Mapping – United States\nInteractive income map based on public census data\nThis project presents an interactive map of household income across the United States, built through data cleaning, transformation, and visualization of American Community Survey (ACS) data from the U.S. Census Bureau.\n\nData source: U.S. Census Bureau – ACS\nFocus: household income distribution\nSkills: data manipulation, geospatial visualization, explanatory graphics\n\n👉 Interactive map:\n📍 Open Interactive Map\n\nThese examples illustrate how open data can be transformed into actionable insights for decision‑making, communication, and teaching in Data Science and Analytics."
+  },
+  {
+    "objectID": "index.html#honors-awards",
+    "href": "index.html#honors-awards",
+    "title": "Cecilia Regueira",
+    "section": "Honors & Awards",
+    "text": "Honors & Awards\n\nRecruitment Innovation Award – Iowa State University (2024)\n\nPresident’s List – DMACC\n\nPhi Theta Kappa International Honor Society"
+  },
+  {
+    "objectID": "index.html#technical-skills",
+    "href": "index.html#technical-skills",
+    "title": "Cecilia Regueira",
+    "section": "Technical Skills",
+    "text": "Technical Skills\nProgramming & Tools\nR · Python · SQL · Stata · Power BI · Tableau · QlikView · Shiny\nMethods\nRegression · Machine Learning · XGBoost · Random Forest · Experimental Design · Data Visualization\nLanguages\nSpanish · English · Portuguese\n\n📧 Contact\nceciliaregueira.m@gmail.com\nLinkedIn · GitHub"
+  },
+  {
+    "objectID": "STAT/01-bienvenida.html",
+    "href": "STAT/01-bienvenida.html",
+    "title": "Bienvenida",
+    "section": "",
+    "text": "En esta clase presentamos:\n\nel objetivo general del curso\nla metodología\nla forma de evaluación"
+  },
+  {
+    "objectID": "STAT/01-bienvenida.html#objetivos-de-la-clase",
+    "href": "STAT/01-bienvenida.html#objetivos-de-la-clase",
+    "title": "Bienvenida",
+    "section": "",
+    "text": "En esta clase presentamos:\n\nel objetivo general del curso\nla metodología\nla forma de evaluación"
+  },
+  {
+    "objectID": "STAT/01-bienvenida.html#slides-de-la-clase",
+    "href": "STAT/01-bienvenida.html#slides-de-la-clase",
+    "title": "Bienvenida",
+    "section": "Slides de la clase",
+    "text": "Slides de la clase\n👉 Ver slides – Bienvenida"
+  },
+  {
+    "objectID": "STAT/03-datos-estadisticos.html",
+    "href": "STAT/03-datos-estadisticos.html",
+    "title": "Datos Estadisticos",
+    "section": "",
+    "text": "estadística descriptiva\nmedidas de tendencia central\nmedidas de dispersión\ninterpretación de datos"
+  },
+  {
+    "objectID": "STAT/03-datos-estadisticos.html#contenidos",
+    "href": "STAT/03-datos-estadisticos.html#contenidos",
+    "title": "Datos Estadisticos",
+    "section": "",
+    "text": "estadística descriptiva\nmedidas de tendencia central\nmedidas de dispersión\ninterpretación de datos"
+  },
+  {
+    "objectID": "STAT/03-datos-estadisticos.html#slides-de-la-clase",
+    "href": "STAT/03-datos-estadisticos.html#slides-de-la-clase",
+    "title": "Datos Estadisticos",
+    "section": "Slides de la clase",
+    "text": "Slides de la clase\n👉 Ver slides – Datos"
+  },
+  {
+    "objectID": "STAT/05-variables-aleatorias.html",
+    "href": "STAT/05-variables-aleatorias.html",
+    "title": "Variables Aleatorias",
+    "section": "",
+    "text": "variables aleatorias discretas\nvariables continuas\ndistribuciones comunes\nesperanza y varianza"
+  },
+  {
+    "objectID": "STAT/05-variables-aleatorias.html#contenidos",
+    "href": "STAT/05-variables-aleatorias.html#contenidos",
+    "title": "Variables Aleatorias",
+    "section": "",
+    "text": "variables aleatorias discretas\nvariables continuas\ndistribuciones comunes\nesperanza y varianza"
+  },
+  {
+    "objectID": "STAT/05-variables-aleatorias.html#slides-de-la-clase",
+    "href": "STAT/05-variables-aleatorias.html#slides-de-la-clase",
+    "title": "Variables Aleatorias",
+    "section": "Slides de la clase",
+    "text": "Slides de la clase\n👉 Ver slides – Variables Aleatorias"
+  },
+  {
+    "objectID": "STAT/07-prueba-hipotesis.html",
+    "href": "STAT/07-prueba-hipotesis.html",
+    "title": "Prueba de Hipotesis",
+    "section": "",
+    "text": "hipótesis nula y alternativa\nerrores tipo I y II\np-value\nejemplos aplicados"
+  },
+  {
+    "objectID": "STAT/07-prueba-hipotesis.html#contenidos",
+    "href": "STAT/07-prueba-hipotesis.html#contenidos",
+    "title": "Prueba de Hipotesis",
+    "section": "",
+    "text": "hipótesis nula y alternativa\nerrores tipo I y II\np-value\nejemplos aplicados"
+  },
+  {
+    "objectID": "STAT/07-prueba-hipotesis.html#slides-de-la-clase",
+    "href": "STAT/07-prueba-hipotesis.html#slides-de-la-clase",
+    "title": "Prueba de Hipotesis",
+    "section": "Slides de la clase",
+    "text": "Slides de la clase\n👉 Ver slides – Prueba de Hipotesis"
+  },
+  {
+    "objectID": "STAT/index.html",
+    "href": "STAT/index.html",
+    "title": "Universidad de Montevideo: Introducción a la Estadística (STATS)",
+    "section": "",
+    "text": "Este curso forma parte de la Maestría / Posgrado en Ciencia de Datos de la Universidad de Montevideo.\nSu objetivo es brindar las bases estadísticas necesarias para la práctica moderna de Data Science y Machine Learning."
+  },
+  {
+    "objectID": "STAT/index.html#slides-de-la-clase",
+    "href": "STAT/index.html#slides-de-la-clase",
+    "title": "Universidad de Montevideo: Introducción a la Estadística (STATS)",
+    "section": "Slides de la clase",
+    "text": "Slides de la clase\n👉 Ver slides – Curso\nEl libro se encuentra en pdf. Si lo quiere enviar un mail a los autores para enviarlo."
+  },
+  {
+    "objectID": "Tiendas.html",
+    "href": "Tiendas.html",
+    "title": "Cecilia Regueira",
+    "section": "",
+    "text": "import seaborn as sns\nimport matplotlib\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport pandas as pd\nimport plotly.express as px\ndf = pd.read_csv('Tiendas.csv')\n\n\ndf\n\n\n\n\n\n\n\n\nArea\nNuestra tienda\nCompetencia\n\n\n\n\n0\nLa tienda esta bien organizada\n0.40\n0.38\n\n\n1\nEl proceso de pago y check out fue sencillo?\n0.33\n0.34\n\n\n2\nLos empleados fueron amigables\n0.45\n0.50\n\n\n3\nEncontre buenas promociones\n0.45\n0.65\n\n\n4\nEncontre lo que buscaba facilmente\n0.46\n0.55\n\n\n5\nEncontre los productos que necesitaba?\n0.39\n0.49\n\n\n6\nLa atmosfera de la tienda me parecio agradable.\n0.80\n0.70\n\n\n7\nLa pagina web me resulto util\n0.35\n0.34\n\n\n8\nLa tienda tenia buenos precios.\n0.40\n0.60\n\n\n9\nLa tienda tenia una amplia variedad\n0.49\n0.47\n\n\n10\nEncontre productos que no encontre en otras ti...\n0.74\n0.54\n\n\n11\nEncontre productos a la moda\n0.65\n0.55\n\n\n\n\n\n\n\n\ndf.columns = ['Area', 'N_tienda', 'Comp'] \n\n\ndf['dif']=df['N_tienda']-df['Comp']\n\n\ndf\n\n\n\n\n\n\n\n\nArea\nN_tienda\nComp\ndif\n\n\n\n\n0\nLa tienda esta bien organizada\n0.40\n0.38\n0.02\n\n\n1\nEl proceso de pago y check out fue sencillo?\n0.33\n0.34\n-0.01\n\n\n2\nLos empleados fueron amigables\n0.45\n0.50\n-0.05\n\n\n3\nEncontre buenas promociones\n0.45\n0.65\n-0.20\n\n\n4\nEncontre lo que buscaba facilmente\n0.46\n0.55\n-0.09\n\n\n5\nEncontre los productos que necesitaba?\n0.39\n0.49\n-0.10\n\n\n6\nLa atmosfera de la tienda me parecio agradable.\n0.80\n0.70\n0.10\n\n\n7\nLa pagina web me resulto util\n0.35\n0.34\n0.01\n\n\n8\nLa tienda tenia buenos precios.\n0.40\n0.60\n-0.20\n\n\n9\nLa tienda tenia una amplia variedad\n0.49\n0.47\n0.02\n\n\n10\nEncontre productos que no encontre en otras ti...\n0.74\n0.54\n0.20\n\n\n11\nEncontre productos a la moda\n0.65\n0.55\n0.10\n\n\n\n\n\n\n\n\nimport numpy as np\n# create a list of our conditions\nconditions = [\n    (df['dif'] &gt; 0),\n    (df['dif'] == 0),\n    (df['dif'] &lt; 0)]\n\n# creo una lista de valores que queremos asignar para cada condicion\nvalues = ['green', 'yellow','red']\n\n# creo una nueva columna dentro del dataset al usar np.selectasigno los valores usando una lista de argumentos\ndf['status'] = np.select(conditions, values)\n\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\n#ordeno la tabla\ndf = df.sort_values(by=['dif'])\n# Matplotlib \nfig, ax = plt.subplots(figsize=(12, 7))\nplt.barh(y=df.Area, width=df.dif,height=.9)\n\n# set label\nplt.xlabel(\"Diferencia entre nosotros y la competencia\")\nplt.ylabel(\"\")\nplt.title(\"Status frente a la competencia\")\n\n# Add Text watermark\nfig.text(0.9, 0.15, 'Nosotros-Competencia', fontsize=12,\n         color='grey', ha='right', va='bottom',\n         alpha=0.7)\n\nText(0.9, 0.15, 'Nosotros-Competencia')"
+  },
+  {
+    "objectID": "Vizualizacion/02-Intro.html",
+    "href": "Vizualizacion/02-Intro.html",
+    "title": "Introducción a la Visualización de Datos",
+    "section": "",
+    "text": "En esta clase introducimos los fundamentos de la Visualización y Narrativa de Datos, con foco en cómo las personas perciben, procesan e interpretan la información visual.\nEn particular, trabajaremos sobre:\n\nEl rol de la visualización dentro del proceso de Data Science\nPor qué visualizar: exploración, comprensión y comunicación\nCómo procesamos información visual\nQué caracteriza a una visualización eficiente\nAtributos visuales que guían la atención (color, tamaño, posición, orientación)\nPrincipios perceptuales y de Gestalt aplicados a gráficos y tablas\nErrores comunes, malas prácticas y problemas éticos en visualización\nIntroducción al storytelling con datos"
+  },
+  {
+    "objectID": "Vizualizacion/02-Intro.html#contenidos-de-la-clase",
+    "href": "Vizualizacion/02-Intro.html#contenidos-de-la-clase",
+    "title": "Introducción a la Visualización de Datos",
+    "section": "",
+    "text": "En esta clase introducimos los fundamentos de la Visualización y Narrativa de Datos, con foco en cómo las personas perciben, procesan e interpretan la información visual.\nEn particular, trabajaremos sobre:\n\nEl rol de la visualización dentro del proceso de Data Science\nPor qué visualizar: exploración, comprensión y comunicación\nCómo procesamos información visual\nQué caracteriza a una visualización eficiente\nAtributos visuales que guían la atención (color, tamaño, posición, orientación)\nPrincipios perceptuales y de Gestalt aplicados a gráficos y tablas\nErrores comunes, malas prácticas y problemas éticos en visualización\nIntroducción al storytelling con datos"
+  },
+  {
+    "objectID": "Vizualizacion/02-Intro.html#slides-de-la-clase",
+    "href": "Vizualizacion/02-Intro.html#slides-de-la-clase",
+    "title": "Introducción a la Visualización de Datos",
+    "section": "Slides de la clase",
+    "text": "Slides de la clase\n👉 Ver slides – Intro"
+  },
+  {
+    "objectID": "Vizualizacion/04-Menu.html",
+    "href": "Vizualizacion/04-Menu.html",
+    "title": "Menú de visualizaciones",
+    "section": "",
+    "text": "Al finalizar esta clase, el estudiante será capaz de:\n\nIdentificar el tipo de variables involucradas en un problema\nDefinir qué aspecto de los datos quiere comunicar\nSeleccionar visualizaciones adecuadas para:\n\ncantidades\ndistribuciones\nproporciones\nrelaciones entre variables\n\nReconocer cuándo una visualización es inapropiada o engañosa\nComprender las ventajas y desventajas de visualizaciones avanzadas\nIntroducir el pensamiento de la gramática de gráficos como marco conceptual"
+  },
+  {
+    "objectID": "Vizualizacion/04-Menu.html#contenidos-y-objetivos-de-aprendizaje",
+    "href": "Vizualizacion/04-Menu.html#contenidos-y-objetivos-de-aprendizaje",
+    "title": "Menú de visualizaciones",
+    "section": "",
+    "text": "Al finalizar esta clase, el estudiante será capaz de:\n\nIdentificar el tipo de variables involucradas en un problema\nDefinir qué aspecto de los datos quiere comunicar\nSeleccionar visualizaciones adecuadas para:\n\ncantidades\ndistribuciones\nproporciones\nrelaciones entre variables\n\nReconocer cuándo una visualización es inapropiada o engañosa\nComprender las ventajas y desventajas de visualizaciones avanzadas\nIntroducir el pensamiento de la gramática de gráficos como marco conceptual"
+  },
+  {
+    "objectID": "Vizualizacion/04-Menu.html#slides-de-la-clase",
+    "href": "Vizualizacion/04-Menu.html#slides-de-la-clase",
+    "title": "Menú de visualizaciones",
+    "section": "Slides de la clase",
+    "text": "Slides de la clase\n👉 Ver slides – Menu"
+  },
+  {
+    "objectID": "Vizualizacion/06-Univariado.html",
+    "href": "Vizualizacion/06-Univariado.html",
+    "title": "Univariado 1",
+    "section": "",
+    "text": "Al finalizar esta clase, el estudiante será capaz de:\n\nIdentificar cuándo utilizar visualizaciones univariadas\nSeleccionar geometrías adecuadas según el tipo de variable\nRepresentar cantidades, distribuciones y proporciones de manera efectiva\nEvaluar el impacto del orden, la orientación y la escala en la interpretación\nDiseñar gráficos autosuficientes mediante títulos, etiquetas y anotaciones\nDetectar elecciones gráficas que dificultan la lectura o inducen a error\nAplicar estos criterios utilizando la gramática de gráficos en ggplot2 (R & Python)"
+  },
+  {
+    "objectID": "Vizualizacion/06-Univariado.html#contenidos-y-objetivos-de-aprendizaje",
+    "href": "Vizualizacion/06-Univariado.html#contenidos-y-objetivos-de-aprendizaje",
+    "title": "Univariado 1",
+    "section": "",
+    "text": "Al finalizar esta clase, el estudiante será capaz de:\n\nIdentificar cuándo utilizar visualizaciones univariadas\nSeleccionar geometrías adecuadas según el tipo de variable\nRepresentar cantidades, distribuciones y proporciones de manera efectiva\nEvaluar el impacto del orden, la orientación y la escala en la interpretación\nDiseñar gráficos autosuficientes mediante títulos, etiquetas y anotaciones\nDetectar elecciones gráficas que dificultan la lectura o inducen a error\nAplicar estos criterios utilizando la gramática de gráficos en ggplot2 (R & Python)"
+  },
+  {
+    "objectID": "Vizualizacion/06-Univariado.html#slides-de-la-clase",
+    "href": "Vizualizacion/06-Univariado.html#slides-de-la-clase",
+    "title": "Univariado 1",
+    "section": "Slides de la clase",
+    "text": "Slides de la clase\n👉 Ver slides – Univariado 1"
+  },
+  {
+    "objectID": "Vizualizacion/07-Multivariado.html",
+    "href": "Vizualizacion/07-Multivariado.html",
+    "title": "Multivariado 1",
+    "section": "",
+    "text": "Al finalizar esta clase, el estudiante será capaz de:\n\nIdentificar relaciones entre variables continuas mediante visualizaciones\nElegir transformaciones y escalas adecuadas para mejorar la interpretación\nEvaluar supuestos de linealidad de forma visual\nReconocer los límites de los gráficos de dispersión con grandes volúmenes de datos\nAplicar técnicas alternativas para visualizar alta densidad de observaciones\nAnalizar múltiples relaciones mediante matrices de correlación\nConstruir visualizaciones multivariadas claras y honestas"
+  },
+  {
+    "objectID": "Vizualizacion/07-Multivariado.html#contenidos-y-objetivos-de-aprendizaje",
+    "href": "Vizualizacion/07-Multivariado.html#contenidos-y-objetivos-de-aprendizaje",
+    "title": "Multivariado 1",
+    "section": "",
+    "text": "Al finalizar esta clase, el estudiante será capaz de:\n\nIdentificar relaciones entre variables continuas mediante visualizaciones\nElegir transformaciones y escalas adecuadas para mejorar la interpretación\nEvaluar supuestos de linealidad de forma visual\nReconocer los límites de los gráficos de dispersión con grandes volúmenes de datos\nAplicar técnicas alternativas para visualizar alta densidad de observaciones\nAnalizar múltiples relaciones mediante matrices de correlación\nConstruir visualizaciones multivariadas claras y honestas"
+  },
+  {
+    "objectID": "Vizualizacion/07-Multivariado.html#slides-de-la-clase",
+    "href": "Vizualizacion/07-Multivariado.html#slides-de-la-clase",
+    "title": "Multivariado 1",
+    "section": "Slides de la clase",
+    "text": "Slides de la clase\n👉 Ver slides – Multivariado 1"
+  },
+  {
+    "objectID": "Vizualizacion/07C-Multivariado.html",
+    "href": "Vizualizacion/07C-Multivariado.html",
+    "title": "Multivariado 3",
+    "section": "",
+    "text": "Al finalizar esta clase, el estudiante será capaz de:\n\nIdentificar relaciones entre variables continuas mediante visualizaciones\nElegir transformaciones y escalas adecuadas para mejorar la interpretación\nEvaluar supuestos de linealidad de forma visual\nReconocer los límites de los gráficos de dispersión con grandes volúmenes de datos\nAplicar técnicas alternativas para visualizar alta densidad de observaciones\nAnalizar múltiples relaciones mediante matrices de correlación\nConstruir visualizaciones multivariadas claras y honestas"
+  },
+  {
+    "objectID": "Vizualizacion/07C-Multivariado.html#contenidos-y-objetivos-de-aprendizaje",
+    "href": "Vizualizacion/07C-Multivariado.html#contenidos-y-objetivos-de-aprendizaje",
+    "title": "Multivariado 3",
+    "section": "",
+    "text": "Al finalizar esta clase, el estudiante será capaz de:\n\nIdentificar relaciones entre variables continuas mediante visualizaciones\nElegir transformaciones y escalas adecuadas para mejorar la interpretación\nEvaluar supuestos de linealidad de forma visual\nReconocer los límites de los gráficos de dispersión con grandes volúmenes de datos\nAplicar técnicas alternativas para visualizar alta densidad de observaciones\nAnalizar múltiples relaciones mediante matrices de correlación\nConstruir visualizaciones multivariadas claras y honestas"
+  },
+  {
+    "objectID": "Vizualizacion/07C-Multivariado.html#slides-de-la-clase",
+    "href": "Vizualizacion/07C-Multivariado.html#slides-de-la-clase",
+    "title": "Multivariado 3",
+    "section": "Slides de la clase",
+    "text": "Slides de la clase\n👉 Ver slides – Multivariado 3"
+  }
+]
