@@ -140,165 +140,109 @@
     "text": "Other courses\nApplied Data Analysis & Visualization\nPricing & Market Analysis"
   },
   {
-    "objectID": "STAT/08-viernes13.html",
-    "href": "STAT/08-viernes13.html",
-    "title": "Viernes 13",
+    "objectID": "STAT/index.html",
+    "href": "STAT/index.html",
+    "title": "Universidad de Montevideo: Introducción a la Estadística (STATS)",
     "section": "",
-    "text": "Caso aplicado para integrar los conceptos del curso.\n\nformulación del problema\nanálisis estadístico\ninterpretación de resultados"
+    "text": "Este curso forma parte de la Maestría / Posgrado en Ciencia de Datos de la Universidad de Montevideo.\nSu objetivo es brindar las bases estadísticas necesarias para la práctica moderna de Data Science y Machine Learning.\nEl libro se encuentra en pdf. Si desea obtenerlo debe enviar un mail a los autores para solicitarlo."
   },
   {
-    "objectID": "STAT/08-viernes13.html#contenidos",
-    "href": "STAT/08-viernes13.html#contenidos",
-    "title": "Viernes 13",
+    "objectID": "STAT/07-prueba-hipotesis.html",
+    "href": "STAT/07-prueba-hipotesis.html",
+    "title": "Prueba de Hipotesis",
     "section": "",
-    "text": "Caso aplicado para integrar los conceptos del curso.\n\nformulación del problema\nanálisis estadístico\ninterpretación de resultados"
+    "text": "hipótesis nula y alternativa\nerrores tipo I y II\np-value\nejemplos aplicados"
   },
   {
-    "objectID": "STAT/08-viernes13.html#slides-de-la-clase",
-    "href": "STAT/08-viernes13.html#slides-de-la-clase",
-    "title": "Viernes 13",
+    "objectID": "STAT/07-prueba-hipotesis.html#contenidos",
+    "href": "STAT/07-prueba-hipotesis.html#contenidos",
+    "title": "Prueba de Hipotesis",
+    "section": "",
+    "text": "hipótesis nula y alternativa\nerrores tipo I y II\np-value\nejemplos aplicados"
+  },
+  {
+    "objectID": "STAT/07-prueba-hipotesis.html#slides-de-la-clase",
+    "href": "STAT/07-prueba-hipotesis.html#slides-de-la-clase",
+    "title": "Prueba de Hipotesis",
     "section": "Slides de la clase",
-    "text": "Slides de la clase\n👉 Ver slides – Viernes13"
+    "text": "Slides de la clase\n👉 Ver slides – Prueba de Hipotesis"
   },
   {
-    "objectID": "STAT/06-inferencia.html",
-    "href": "STAT/06-inferencia.html",
-    "title": "Inferencia e Intervalos de confianza",
+    "objectID": "STAT/05-variables-aleatorias.html",
+    "href": "STAT/05-variables-aleatorias.html",
+    "title": "Variables Aleatorias",
     "section": "",
-    "text": "estimación puntual\nintervalos de confianza\nintuición estadística\ninterpretación de resultados"
+    "text": "variables aleatorias discretas\nvariables continuas\ndistribuciones comunes\nesperanza y varianza"
   },
   {
-    "objectID": "STAT/06-inferencia.html#contenidos",
-    "href": "STAT/06-inferencia.html#contenidos",
-    "title": "Inferencia e Intervalos de confianza",
+    "objectID": "STAT/05-variables-aleatorias.html#contenidos",
+    "href": "STAT/05-variables-aleatorias.html#contenidos",
+    "title": "Variables Aleatorias",
     "section": "",
-    "text": "estimación puntual\nintervalos de confianza\nintuición estadística\ninterpretación de resultados"
+    "text": "variables aleatorias discretas\nvariables continuas\ndistribuciones comunes\nesperanza y varianza"
   },
   {
-    "objectID": "STAT/06-inferencia.html#slides-de-la-clase",
-    "href": "STAT/06-inferencia.html#slides-de-la-clase",
-    "title": "Inferencia e Intervalos de confianza",
+    "objectID": "STAT/05-variables-aleatorias.html#slides-de-la-clase",
+    "href": "STAT/05-variables-aleatorias.html#slides-de-la-clase",
+    "title": "Variables Aleatorias",
     "section": "Slides de la clase",
-    "text": "Slides de la clase\n👉 Ver slides – Inferencia"
+    "text": "Slides de la clase\n👉 Ver slides – Variables Aleatorias"
   },
   {
-    "objectID": "STAT/04-probabilidad.html",
-    "href": "STAT/04-probabilidad.html",
-    "title": "Probabilidad",
+    "objectID": "STAT/03-datos-estadisticos.html",
+    "href": "STAT/03-datos-estadisticos.html",
+    "title": "Datos Estadisticos",
     "section": "",
-    "text": "noción de probabilidad\neventos y espacio muestral\nprobabilidad condicional\nejemplos prácticos"
+    "text": "estadística descriptiva\nmedidas de tendencia central\nmedidas de dispersión\ninterpretación de datos"
   },
   {
-    "objectID": "STAT/04-probabilidad.html#contenidos",
-    "href": "STAT/04-probabilidad.html#contenidos",
-    "title": "Probabilidad",
+    "objectID": "STAT/03-datos-estadisticos.html#contenidos",
+    "href": "STAT/03-datos-estadisticos.html#contenidos",
+    "title": "Datos Estadisticos",
     "section": "",
-    "text": "noción de probabilidad\neventos y espacio muestral\nprobabilidad condicional\nejemplos prácticos"
+    "text": "estadística descriptiva\nmedidas de tendencia central\nmedidas de dispersión\ninterpretación de datos"
   },
   {
-    "objectID": "STAT/04-probabilidad.html#slides-de-la-clase",
-    "href": "STAT/04-probabilidad.html#slides-de-la-clase",
-    "title": "Probabilidad",
+    "objectID": "STAT/03-datos-estadisticos.html#slides-de-la-clase",
+    "href": "STAT/03-datos-estadisticos.html#slides-de-la-clase",
+    "title": "Datos Estadisticos",
     "section": "Slides de la clase",
-    "text": "Slides de la clase\n👉 Ver slides – Probabilidad"
+    "text": "Slides de la clase\n👉 Ver slides – Datos"
   },
   {
-    "objectID": "STAT/02-datos-experimentos.html",
-    "href": "STAT/02-datos-experimentos.html",
-    "title": "Datos y Experimentos",
+    "objectID": "STAT/01-bienvenida.html",
+    "href": "STAT/01-bienvenida.html",
+    "title": "Bienvenida",
     "section": "",
-    "text": "tipos de datos\ndatos categóricos y numéricos\ndiseño de experimentos\nejemplos aplicados"
+    "text": "En esta clase presentamos:\n\nel objetivo general del curso\nla metodología\nla forma de evaluación"
   },
   {
-    "objectID": "STAT/02-datos-experimentos.html#contenidos",
-    "href": "STAT/02-datos-experimentos.html#contenidos",
-    "title": "Datos y Experimentos",
+    "objectID": "STAT/01-bienvenida.html#objetivos-de-la-clase",
+    "href": "STAT/01-bienvenida.html#objetivos-de-la-clase",
+    "title": "Bienvenida",
     "section": "",
-    "text": "tipos de datos\ndatos categóricos y numéricos\ndiseño de experimentos\nejemplos aplicados"
+    "text": "En esta clase presentamos:\n\nel objetivo general del curso\nla metodología\nla forma de evaluación"
   },
   {
-    "objectID": "STAT/02-datos-experimentos.html#slides-de-la-clase",
-    "href": "STAT/02-datos-experimentos.html#slides-de-la-clase",
-    "title": "Datos y Experimentos",
+    "objectID": "STAT/01-bienvenida.html#slides-de-la-clase",
+    "href": "STAT/01-bienvenida.html#slides-de-la-clase",
+    "title": "Bienvenida",
     "section": "Slides de la clase",
-    "text": "Slides de la clase\n👉 Ver slides – Experimentos"
-  },
-  {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research",
-    "section": "",
-    "text": "Pricing Strategies of Supermarkets in Uruguay\n\nMaster in Economics – Universidad de la República\nDataset &gt; 700,000 price observations\nMethods: descriptive analysis, price duration, applied ML"
-  },
-  {
-    "objectID": "research.html#master-thesis",
-    "href": "research.html#master-thesis",
-    "title": "Research",
-    "section": "",
-    "text": "Pricing Strategies of Supermarkets in Uruguay\n\nMaster in Economics – Universidad de la República\nDataset &gt; 700,000 price observations\nMethods: descriptive analysis, price duration, applied ML"
-  },
-  {
-    "objectID": "research.html#masters-thesis-advisor",
-    "href": "research.html#masters-thesis-advisor",
-    "title": "Research",
-    "section": "🎓 Master’s Thesis Advisor",
-    "text": "🎓 Master’s Thesis Advisor\n🔹 Hermes Javier López Sosa\nCharacterization of Uruguay’s Regulated Financial System (2013–2023)\n🔹 Martín Rey & Paolo Pinotti\nMachine Learning Applications to Price Duration\nPresented at: Central Bank of Uruguay (BCU), 2025 📊 View Presentations"
-  },
-  {
-    "objectID": "awards.html",
-    "href": "awards.html",
-    "title": "Awards & Honors",
-    "section": "",
-    "text": "🏆 Iowa State University\nAwarded for innovative and creative contributions in recruitment analytics,\nrecognizing the development of data-driven models to support undergraduate,\ngraduate, and professional student recruitment strategies."
-  },
-  {
-    "objectID": "awards.html#recruitment-innovation-award-2024",
-    "href": "awards.html#recruitment-innovation-award-2024",
-    "title": "Awards & Honors",
-    "section": "",
-    "text": "🏆 Iowa State University\nAwarded for innovative and creative contributions in recruitment analytics,\nrecognizing the development of data-driven models to support undergraduate,\ngraduate, and professional student recruitment strategies."
-  },
-  {
-    "objectID": "awards.html#presidents-list",
-    "href": "awards.html#presidents-list",
-    "title": "Awards & Honors",
-    "section": "President’s List",
-    "text": "President’s List\n🎓 Des Moines Area Community College (DMACC)\nRecognized for outstanding academic performance, earning placement on the\nPresident’s List during the Data Science / Analytics program."
-  },
-  {
-    "objectID": "awards.html#phi-theta-kappa-honor-society",
-    "href": "awards.html#phi-theta-kappa-honor-society",
-    "title": "Awards & Honors",
-    "section": "Phi Theta Kappa Honor Society",
-    "text": "Phi Theta Kappa Honor Society\n⭐ Member – Phi Theta Kappa\nInternational honor society recognizing academic excellence, leadership,\nand commitment to service among high‑achieving students in higher education.\n\n\n🏆 Love DATAWEEK 2024 — First Place Award\nRecipient of the First‑Place Award for Innovative Visualizations at Love DATAWEEK 2024, recognizing excellence in data visualization, design, and analytical storytelling with Federico Veneri.\nProject"
-  },
-  {
-    "objectID": "applied-project.html",
-    "href": "applied-project.html",
-    "title": "5 minutes Applied Data Projects",
-    "section": "",
-    "text": "This page presents applied data science and visualization projects developed using publicly available datasets, with a strong focus on education, public policy, and institutional analytics.\nThe projects are designed both for teaching purposes and for demonstrating real‑world applications of data science methods.\n\n\n\nHigh School to Higher Education Enrollment\nThe project analyzes student migration patterns across the United States, with a focus on where high school graduates enroll in higher education institutions.\n\n\n\nData: National Center for Education Statistics (NCES)\nTools: R · Shiny · Geospatial visualization\n🚀 Open Live Dashboard\n\n\n\n\nDashboard based on public data\nThis Shiny app explores player and team performance under pressure during UEFA European Championship matches using StatsBomb event data. It focuses on how pressure influences passing, ball reception, and subsequent actions. The app includes five interactive views:\nOverall Pass Performance Summarises players’ pass success rates under pressure by year, team, and player, combining bar charts with supporting tables.\nPasses Under Pressure Visualises the location and direction of pressured passes on a football pitch, showing completion outcomes and common passing sources.\nBall Receipts Displays where players receive the ball and colours receptions by opponent proximity, highlighting moments of high and low pressure.\nNext Event Analysis Examines what actions occur immediately after a ball reception, revealing decision patterns under pressure.\nPlayer Info Profile Provides a compact table and bar chart summarising individual player behaviour under pressure, with filters by position, team, and year.\nOverall, the app allows users to interactively explore how pressure shapes on‑ball decisions, combining event-level data, pitch visualisations, and intuitive filters for exploratory football analytics.\n👉 Interactive Dash:\n📍 Open\n\nThese examples illustrate how open data can be transformed into actionable insights for decision‑making, communication, and teaching in Data Science and Analytics."
-  },
-  {
-    "objectID": "applied-project.html#overview",
-    "href": "applied-project.html#overview",
-    "title": "5 minutes Applied Data Projects",
-    "section": "",
-    "text": "This page presents applied data science and visualization projects developed using publicly available datasets, with a strong focus on education, public policy, and institutional analytics.\nThe projects are designed both for teaching purposes and for demonstrating real‑world applications of data science methods.\n\n\n\nHigh School to Higher Education Enrollment\nThe project analyzes student migration patterns across the United States, with a focus on where high school graduates enroll in higher education institutions.\n\n\n\nData: National Center for Education Statistics (NCES)\nTools: R · Shiny · Geospatial visualization\n🚀 Open Live Dashboard\n\n\n\n\nDashboard based on public data\nThis Shiny app explores player and team performance under pressure during UEFA European Championship matches using StatsBomb event data. It focuses on how pressure influences passing, ball reception, and subsequent actions. The app includes five interactive views:\nOverall Pass Performance Summarises players’ pass success rates under pressure by year, team, and player, combining bar charts with supporting tables.\nPasses Under Pressure Visualises the location and direction of pressured passes on a football pitch, showing completion outcomes and common passing sources.\nBall Receipts Displays where players receive the ball and colours receptions by opponent proximity, highlighting moments of high and low pressure.\nNext Event Analysis Examines what actions occur immediately after a ball reception, revealing decision patterns under pressure.\nPlayer Info Profile Provides a compact table and bar chart summarising individual player behaviour under pressure, with filters by position, team, and year.\nOverall, the app allows users to interactively explore how pressure shapes on‑ball decisions, combining event-level data, pitch visualisations, and intuitive filters for exploratory football analytics.\n👉 Interactive Dash:\n📍 Open\n\nThese examples illustrate how open data can be transformed into actionable insights for decision‑making, communication, and teaching in Data Science and Analytics."
+    "text": "Slides de la clase\n👉 Ver slides – Bienvenida"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Cecilia Regueira",
     "section": "",
-    "text": "NoteProfile\n\n\n\nEconomist and Data Scientist with over ten years of experience across higher education analytics, applied data science, and economic consulting. My work spans academic research and real‑world applications, with a strong focus on causal inference, statistical modeling, machine learning, and data visualization. I have led data‑driven projects for universities, international organizations, government agencies, and private firms, applying econometrics and advanced analytics to problems in pricing, public expenditure, labor markets, and decision‑making under uncertainty. I bring extensive experience translating complex analytical findings into clear, actionable insights for diverse stakeholders, and I am deeply committed to evidence‑based policy and data‑informed decision‑making."
+    "text": "NoteProfile\n\n\n\nEconomist and Data Scientist with over ten years of experience across higher education analytics, applied data science, and economic consulting. My work spans academic research and real‑world applications, with a strong focus on causal inference, statistical modeling, machine learning, and data visualization. I have led data‑driven projects for universities, international organizations, government agencies, and private firms, applying econometrics and advanced analytics to problems in pricing, public expenditure, labor markets, and decision‑making under uncertainty. I bring extensive experience translating complex analytical findings into clear, actionable insights for diverse stakeholders, and I am deeply committed to evidence‑based policy and data‑informed decision‑making.\nKey words: data analysis, applied statistics, machine learning, and data visualization focus on pricing, public expenditure, and decision‑making under uncertain"
   },
   {
     "objectID": "index.html#current-positions",
     "href": "index.html#current-positions",
     "title": "Cecilia Regueira",
     "section": "Current Positions",
-    "text": "Current Positions\nEconomist and Data Scientist with extensive experience in data analysis, applied statistics, machine learning, and data visualization.\nI currently teach Statistics in the Master in Data Science at Universidad de Montevideo and work as a Senior Data Analyst in higher education analytics.\nMy work bridges academic research and applied data science, with a strong focus on pricing, public expenditure, and decision‑making under uncertainty.\n📊 2022 – Present Senior Data Analyst Enrollment Research & Analytics – Iowa State University\nLead data modeling and analytics initiatives to support undergraduate and graduate recruitment and enrollment strategy Develop and implement innovative analytical models to improve student recruitment effectiveness Recognized with institutional awards for innovation in analytics and modeling\n🎓📈 2023 – Present Professor – Statistics, Master in Data Science Universidad de Montevideo\nDeliver graduate-level instruction in applied statistics for data science Teach probability, statistical inference, experimentation, and interpretation with a focus on machine learning applications\n🎓📈2022 – Present Professor – Data Visualization, Master in Data Science Universidad de Montevideo\nLead courses on data visualization, emphasizing effective visual communication and data storytelling Train students in exploratory analysis and visualization to support data-driven decision-making"
+    "text": "Current Positions\n📊 2022 – Present\nSenior Data Analyst\nEnrollment Research & Analytics – Iowa State University\nLead data modeling and analytics initiatives to support undergraduate and graduate recruitment and enrollment strategy Develop and implement innovative analytical models to improve student recruitment effectiveness Recognized with institutional awards for innovation in analytics and modeling\n🎓📈 2023 – Present\nProfessor – Statistics, Master in Data Science\nUniversidad de Montevideo\nDeliver graduate-level instruction in applied statistics for data science Teach probability, statistical inference, experimentation, and interpretation with a focus on machine learning applications\n🎓📈2022 – Present\nProfessor – Data Visualization, Master in Data Science\nUniversidad de Montevideo\nLead courses on data visualization, emphasizing effective visual communication and data storytelling Train students in exploratory analysis and visualization to support data-driven decision-making"
   },
   {
     "objectID": "index.html#research-interests",
@@ -357,95 +301,158 @@
     "text": "🌱 Beyond Work\n📚 Current Reading (2026)\nIn 2026, my reading balances intellectual curiosity 🧠 with personal enjoyment 💫. On the analytical side, I am reading 📘 The Book of Why by Judea Pearl, which deepens my understanding of causality, causal reasoning, and counterfactual thinking 🔗, extending data science beyond prediction. I am also revisiting 📗 Thinking, Fast and Slow by Daniel Kahneman, a foundational work on judgment under uncertainty ⚖️ and cognitive bias, which continues to shape how I think about decision‑making in both research and applied analytics.\nFor emotionally heavier moments—when I’m drawn to stories that explore grief, vulnerability, and human resilience 💔➡️💪—I read the 📖 Boys of Tommen series. These novels are deeply emotional and introspective, offering space for reflection and emotional release rather than light escapism.\nIn addition, I am part of a 📘 book club, which provides a collaborative space for discussion and collective interpretation of a diverse range of texts.\nOutside of reading, I enjoy 🧘️ yoga, a practice that helps me slow down, reset, and recenter 🌿. Beyond work, I deeply value 👨👩👧 time with my family—through shared activities, everyday conversations, or simply slowing down together—an essential counterweight ⚖️ to analytical work and a constant source of perspective ✨.\n\n📧 Contact\nceciliaregueira.m@gmail.com\nLinkedIn · GitHub"
   },
   {
-    "objectID": "STAT/01-bienvenida.html",
-    "href": "STAT/01-bienvenida.html",
-    "title": "Bienvenida",
+    "objectID": "applied-project.html",
+    "href": "applied-project.html",
+    "title": "5 minutes Applied Data Projects",
     "section": "",
-    "text": "En esta clase presentamos:\n\nel objetivo general del curso\nla metodología\nla forma de evaluación"
+    "text": "This page presents applied data science and visualization projects developed using publicly available datasets, with a strong focus on education, public policy, and institutional analytics.\nThe projects are designed both for teaching purposes and for demonstrating real‑world applications of data science methods.\n\n\n\nHigh School to Higher Education Enrollment\nThe project analyzes student migration patterns across the United States, with a focus on where high school graduates enroll in higher education institutions.\n\n\n\nData: National Center for Education Statistics (NCES)\nTools: R · Shiny · Geospatial visualization\n🚀 Open Live Dashboard NCES\n\n\n\n\nDashboard based on public data\nThis Shiny app explores player and team performance under pressure during UEFA European Championship matches using StatsBomb event data. It focuses on how pressure influences passing, ball reception, and subsequent actions. The app includes five interactive views:\nOverall Pass Performance Summarises players’ pass success rates under pressure by year, team, and player, combining bar charts with supporting tables.\nPasses Under Pressure Visualises the location and direction of pressured passes on a football pitch, showing completion outcomes and common passing sources.\nBall Receipts Displays where players receive the ball and colours receptions by opponent proximity, highlighting moments of high and low pressure.\nNext Event Analysis Examines what actions occur immediately after a ball reception, revealing decision patterns under pressure.\nPlayer Info Profile Provides a compact table and bar chart summarising individual player behaviour under pressure, with filters by position, team, and year.\nOverall, the app allows users to interactively explore how pressure shapes on‑ball decisions, combining event-level data, pitch visualisations, and intuitive filters for exploratory football analytics.\n👉 Interactive Dash:\n📍 Interactive Dash Soccer\n\nThese examples illustrate how open data can be transformed into actionable insights for decision‑making, communication, and teaching in Data Science and Analytics."
   },
   {
-    "objectID": "STAT/01-bienvenida.html#objetivos-de-la-clase",
-    "href": "STAT/01-bienvenida.html#objetivos-de-la-clase",
-    "title": "Bienvenida",
+    "objectID": "applied-project.html#overview",
+    "href": "applied-project.html#overview",
+    "title": "5 minutes Applied Data Projects",
     "section": "",
-    "text": "En esta clase presentamos:\n\nel objetivo general del curso\nla metodología\nla forma de evaluación"
+    "text": "This page presents applied data science and visualization projects developed using publicly available datasets, with a strong focus on education, public policy, and institutional analytics.\nThe projects are designed both for teaching purposes and for demonstrating real‑world applications of data science methods.\n\n\n\nHigh School to Higher Education Enrollment\nThe project analyzes student migration patterns across the United States, with a focus on where high school graduates enroll in higher education institutions.\n\n\n\nData: National Center for Education Statistics (NCES)\nTools: R · Shiny · Geospatial visualization\n🚀 Open Live Dashboard NCES\n\n\n\n\nDashboard based on public data\nThis Shiny app explores player and team performance under pressure during UEFA European Championship matches using StatsBomb event data. It focuses on how pressure influences passing, ball reception, and subsequent actions. The app includes five interactive views:\nOverall Pass Performance Summarises players’ pass success rates under pressure by year, team, and player, combining bar charts with supporting tables.\nPasses Under Pressure Visualises the location and direction of pressured passes on a football pitch, showing completion outcomes and common passing sources.\nBall Receipts Displays where players receive the ball and colours receptions by opponent proximity, highlighting moments of high and low pressure.\nNext Event Analysis Examines what actions occur immediately after a ball reception, revealing decision patterns under pressure.\nPlayer Info Profile Provides a compact table and bar chart summarising individual player behaviour under pressure, with filters by position, team, and year.\nOverall, the app allows users to interactively explore how pressure shapes on‑ball decisions, combining event-level data, pitch visualisations, and intuitive filters for exploratory football analytics.\n👉 Interactive Dash:\n📍 Interactive Dash Soccer\n\nThese examples illustrate how open data can be transformed into actionable insights for decision‑making, communication, and teaching in Data Science and Analytics."
   },
   {
-    "objectID": "STAT/01-bienvenida.html#slides-de-la-clase",
-    "href": "STAT/01-bienvenida.html#slides-de-la-clase",
-    "title": "Bienvenida",
+    "objectID": "awards.html",
+    "href": "awards.html",
+    "title": "Awards & Honors",
+    "section": "",
+    "text": "🏆 Iowa State University\nAwarded for innovative and creative contributions in recruitment analytics,\nrecognizing the development of data-driven models to support undergraduate,\ngraduate, and professional student recruitment strategies."
+  },
+  {
+    "objectID": "awards.html#recruitment-innovation-award-2024",
+    "href": "awards.html#recruitment-innovation-award-2024",
+    "title": "Awards & Honors",
+    "section": "",
+    "text": "🏆 Iowa State University\nAwarded for innovative and creative contributions in recruitment analytics,\nrecognizing the development of data-driven models to support undergraduate,\ngraduate, and professional student recruitment strategies."
+  },
+  {
+    "objectID": "awards.html#presidents-list",
+    "href": "awards.html#presidents-list",
+    "title": "Awards & Honors",
+    "section": "President’s List",
+    "text": "President’s List\n🎓 Des Moines Area Community College (DMACC)\nRecognized for outstanding academic performance, earning placement on the\nPresident’s List during the Data Science / Analytics program."
+  },
+  {
+    "objectID": "awards.html#phi-theta-kappa-honor-society",
+    "href": "awards.html#phi-theta-kappa-honor-society",
+    "title": "Awards & Honors",
+    "section": "Phi Theta Kappa Honor Society",
+    "text": "Phi Theta Kappa Honor Society\n⭐ Member – Phi Theta Kappa\nInternational honor society recognizing academic excellence, leadership,\nand commitment to service among high‑achieving students in higher education.\n\n\n🏆 Love DATAWEEK 2024 — First Place Award\nRecipient of the First‑Place Award for Innovative Visualizations at Love DATAWEEK 2024, recognizing excellence in data visualization, design, and analytical storytelling with Federico Veneri.\nProject"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "Pricing Strategies of Supermarkets in Uruguay\n\nMaster in Economics – Universidad de la República\nDataset &gt; 700,000 price observations\nMethods: descriptive analysis, price duration, applied ML"
+  },
+  {
+    "objectID": "research.html#master-thesis",
+    "href": "research.html#master-thesis",
+    "title": "Research",
+    "section": "",
+    "text": "Pricing Strategies of Supermarkets in Uruguay\n\nMaster in Economics – Universidad de la República\nDataset &gt; 700,000 price observations\nMethods: descriptive analysis, price duration, applied ML"
+  },
+  {
+    "objectID": "research.html#masters-thesis-advisor",
+    "href": "research.html#masters-thesis-advisor",
+    "title": "Research",
+    "section": "🎓 Master’s Thesis Advisor",
+    "text": "🎓 Master’s Thesis Advisor\n🔹 Hermes Javier López Sosa\nCharacterization of Uruguay’s Regulated Financial System (2013–2023)\n🔹 Martín Rey & Paolo Pinotti\nMachine Learning Applications to Price Duration\nPresented at: Central Bank of Uruguay (BCU), 2025 📊 View Presentations"
+  },
+  {
+    "objectID": "STAT/02-datos-experimentos.html",
+    "href": "STAT/02-datos-experimentos.html",
+    "title": "Datos y Experimentos",
+    "section": "",
+    "text": "tipos de datos\ndatos categóricos y numéricos\ndiseño de experimentos\nejemplos aplicados"
+  },
+  {
+    "objectID": "STAT/02-datos-experimentos.html#contenidos",
+    "href": "STAT/02-datos-experimentos.html#contenidos",
+    "title": "Datos y Experimentos",
+    "section": "",
+    "text": "tipos de datos\ndatos categóricos y numéricos\ndiseño de experimentos\nejemplos aplicados"
+  },
+  {
+    "objectID": "STAT/02-datos-experimentos.html#slides-de-la-clase",
+    "href": "STAT/02-datos-experimentos.html#slides-de-la-clase",
+    "title": "Datos y Experimentos",
     "section": "Slides de la clase",
-    "text": "Slides de la clase\n👉 Ver slides – Bienvenida"
+    "text": "Slides de la clase\n👉 Ver slides – Experimentos"
   },
   {
-    "objectID": "STAT/03-datos-estadisticos.html",
-    "href": "STAT/03-datos-estadisticos.html",
-    "title": "Datos Estadisticos",
+    "objectID": "STAT/04-probabilidad.html",
+    "href": "STAT/04-probabilidad.html",
+    "title": "Probabilidad",
     "section": "",
-    "text": "estadística descriptiva\nmedidas de tendencia central\nmedidas de dispersión\ninterpretación de datos"
+    "text": "noción de probabilidad\neventos y espacio muestral\nprobabilidad condicional\nejemplos prácticos"
   },
   {
-    "objectID": "STAT/03-datos-estadisticos.html#contenidos",
-    "href": "STAT/03-datos-estadisticos.html#contenidos",
-    "title": "Datos Estadisticos",
+    "objectID": "STAT/04-probabilidad.html#contenidos",
+    "href": "STAT/04-probabilidad.html#contenidos",
+    "title": "Probabilidad",
     "section": "",
-    "text": "estadística descriptiva\nmedidas de tendencia central\nmedidas de dispersión\ninterpretación de datos"
+    "text": "noción de probabilidad\neventos y espacio muestral\nprobabilidad condicional\nejemplos prácticos"
   },
   {
-    "objectID": "STAT/03-datos-estadisticos.html#slides-de-la-clase",
-    "href": "STAT/03-datos-estadisticos.html#slides-de-la-clase",
-    "title": "Datos Estadisticos",
+    "objectID": "STAT/04-probabilidad.html#slides-de-la-clase",
+    "href": "STAT/04-probabilidad.html#slides-de-la-clase",
+    "title": "Probabilidad",
     "section": "Slides de la clase",
-    "text": "Slides de la clase\n👉 Ver slides – Datos"
+    "text": "Slides de la clase\n👉 Ver slides – Probabilidad"
   },
   {
-    "objectID": "STAT/05-variables-aleatorias.html",
-    "href": "STAT/05-variables-aleatorias.html",
-    "title": "Variables Aleatorias",
+    "objectID": "STAT/06-inferencia.html",
+    "href": "STAT/06-inferencia.html",
+    "title": "Inferencia e Intervalos de confianza",
     "section": "",
-    "text": "variables aleatorias discretas\nvariables continuas\ndistribuciones comunes\nesperanza y varianza"
+    "text": "estimación puntual\nintervalos de confianza\nintuición estadística\ninterpretación de resultados"
   },
   {
-    "objectID": "STAT/05-variables-aleatorias.html#contenidos",
-    "href": "STAT/05-variables-aleatorias.html#contenidos",
-    "title": "Variables Aleatorias",
+    "objectID": "STAT/06-inferencia.html#contenidos",
+    "href": "STAT/06-inferencia.html#contenidos",
+    "title": "Inferencia e Intervalos de confianza",
     "section": "",
-    "text": "variables aleatorias discretas\nvariables continuas\ndistribuciones comunes\nesperanza y varianza"
+    "text": "estimación puntual\nintervalos de confianza\nintuición estadística\ninterpretación de resultados"
   },
   {
-    "objectID": "STAT/05-variables-aleatorias.html#slides-de-la-clase",
-    "href": "STAT/05-variables-aleatorias.html#slides-de-la-clase",
-    "title": "Variables Aleatorias",
+    "objectID": "STAT/06-inferencia.html#slides-de-la-clase",
+    "href": "STAT/06-inferencia.html#slides-de-la-clase",
+    "title": "Inferencia e Intervalos de confianza",
     "section": "Slides de la clase",
-    "text": "Slides de la clase\n👉 Ver slides – Variables Aleatorias"
+    "text": "Slides de la clase\n👉 Ver slides – Inferencia"
   },
   {
-    "objectID": "STAT/07-prueba-hipotesis.html",
-    "href": "STAT/07-prueba-hipotesis.html",
-    "title": "Prueba de Hipotesis",
+    "objectID": "STAT/08-viernes13.html",
+    "href": "STAT/08-viernes13.html",
+    "title": "Viernes 13",
     "section": "",
-    "text": "hipótesis nula y alternativa\nerrores tipo I y II\np-value\nejemplos aplicados"
+    "text": "Caso aplicado para integrar los conceptos del curso.\n\nformulación del problema\nanálisis estadístico\ninterpretación de resultados"
   },
   {
-    "objectID": "STAT/07-prueba-hipotesis.html#contenidos",
-    "href": "STAT/07-prueba-hipotesis.html#contenidos",
-    "title": "Prueba de Hipotesis",
+    "objectID": "STAT/08-viernes13.html#contenidos",
+    "href": "STAT/08-viernes13.html#contenidos",
+    "title": "Viernes 13",
     "section": "",
-    "text": "hipótesis nula y alternativa\nerrores tipo I y II\np-value\nejemplos aplicados"
+    "text": "Caso aplicado para integrar los conceptos del curso.\n\nformulación del problema\nanálisis estadístico\ninterpretación de resultados"
   },
   {
-    "objectID": "STAT/07-prueba-hipotesis.html#slides-de-la-clase",
-    "href": "STAT/07-prueba-hipotesis.html#slides-de-la-clase",
-    "title": "Prueba de Hipotesis",
+    "objectID": "STAT/08-viernes13.html#slides-de-la-clase",
+    "href": "STAT/08-viernes13.html#slides-de-la-clase",
+    "title": "Viernes 13",
     "section": "Slides de la clase",
-    "text": "Slides de la clase\n👉 Ver slides – Prueba de Hipotesis"
+    "text": "Slides de la clase\n👉 Ver slides – Viernes13"
   },
   {
-    "objectID": "STAT/index.html",
-    "href": "STAT/index.html",
-    "title": "Universidad de Montevideo: Introducción a la Estadística (STATS)",
+    "objectID": "STAT/tool.html",
+    "href": "STAT/tool.html",
+    "title": "Inference",
     "section": "",
-    "text": "Este curso forma parte de la Maestría / Posgrado en Ciencia de Datos de la Universidad de Montevideo.\nSu objetivo es brindar las bases estadísticas necesarias para la práctica moderna de Data Science y Machine Learning.\nEl libro se encuentra en pdf. Si desea obtenerlo debe enviar un mail a los autores para solicitarlo."
+    "text": "English:\nThese interactive Shiny applications are designed as didactic tools for introductory Statistics (STAT) courses.\nThey allow students to explore statistical inference and the normal distribution through dynamic input, automatic calculations, and graphical visualization.\n🚀 Tool for Confidence Intervals & Inference\nOne proportion and two proportions One mean and two means (equal variances) Confidence intervals, test statistics, p‑values, and decisions\n🚀 Tool for Normal Distribution & z‑Scores\nz‑scores and cumulative probabilities Percentiles and areas under the curve General normal distribution N(μ,σ)N(, )N(μ,σ)\nThese tools are suitable for class demonstrations, guided practice, and independent learning.\n\n\nEspañol\nEstas aplicaciones interactivas en Shiny fueron desarrolladas como herramientas didácticas para cursos introductorios de Estadística (STAT).\nPermiten explorar inferencia estadística y la distribución normal mediante visualizaciones, cálculos automáticos y análisis paso a paso.\n🚀 ToolIntervalos de Confianza e Inferencia Una y dos proporciones Una y dos medias (varianzas iguales) Intervalos, estadísticos de prueba, p‑values y decisiones\n🚀 Tool for Distribución Normal y Puntajes z\nz‑scores y probabilidades acumuladas Percentiles y áreas bajo la curva Normal general N(μ,σ)N(, )N(μ,σ)\nSon ideales para clases, prácticas guiadas y estudio autónomo."
   },
   {
     "objectID": "tienda/index.html",
