@@ -140,95 +140,186 @@
     "text": "Other courses\nApplied Data Analysis & Visualization\nPricing & Market Analysis"
   },
   {
-    "objectID": "STAT/index.html",
-    "href": "STAT/index.html",
-    "title": "Universidad de Montevideo: Introducción a la Estadística (STATS)",
+    "objectID": "STAT/work2.html",
+    "href": "STAT/work2.html",
+    "title": "Interview",
     "section": "",
-    "text": "Este curso forma parte de la Maestría / Posgrado en Ciencia de Datos de la Universidad de Montevideo.\nSu objetivo es brindar las bases estadísticas necesarias para la práctica moderna de Data Science y Machine Learning.\nEl libro se encuentra en pdf. Si desea obtenerlo debe enviar un mail a los autores para solicitarlo."
+    "text": "Note\n\n\n\n💡 QA\n\n\nThis document presents the top 10 statistics questions and answers that most frequently come up in job interviews. These questions are based on interviews I have personally participated in, either as a candidate or as an interviewer when assessing new hires. The goal is to highlight the statistical concepts that employers commonly expect candidates to understand."
   },
   {
-    "objectID": "STAT/07-prueba-hipotesis.html",
-    "href": "STAT/07-prueba-hipotesis.html",
-    "title": "Prueba de Hipotesis",
+    "objectID": "STAT/work2.html#top-10-statistics-interview-questions",
+    "href": "STAT/work2.html#top-10-statistics-interview-questions",
+    "title": "Interview",
     "section": "",
-    "text": "hipótesis nula y alternativa\nerrores tipo I y II\np-value\nejemplos aplicados"
+    "text": "This document presents the top 10 statistics questions and answers that most frequently come up in job interviews. These questions are based on interviews I have personally participated in, either as a candidate or as an interviewer when assessing new hires. The goal is to highlight the statistical concepts that employers commonly expect candidates to understand."
   },
   {
-    "objectID": "STAT/07-prueba-hipotesis.html#contenidos",
-    "href": "STAT/07-prueba-hipotesis.html#contenidos",
-    "title": "Prueba de Hipotesis",
-    "section": "",
-    "text": "hipótesis nula y alternativa\nerrores tipo I y II\np-value\nejemplos aplicados"
+    "objectID": "STAT/work2.html#answers-to-the-top-11-statistics-interview-questions",
+    "href": "STAT/work2.html#answers-to-the-top-11-statistics-interview-questions",
+    "title": "Interview",
+    "section": "Answers to the Top 11 Statistics Interview Questions",
+    "text": "Answers to the Top 11 Statistics Interview Questions\n\n1. What is the difference between descriptive and inferential statistics?\nDescriptive statistics summarize and describe the main features of a dataset (e.g., mean, median, standard deviation, plots).\nInferential statistics use a sample to make conclusions or predictions about a larger population (e.g., confidence intervals, hypothesis tests).\n\n\n\n\n\n\n### 2. What is the difference between correlation and causation? Correlation measures the strength and direction of a relationship between two variables. Causation means that changes in one variable directly cause changes in another. Correlation alone does not imply causation; establishing causation typically requires controlled experiments, causal models, or strong assumptions.\n\n\n\n\n\n3. What is a p-value and how should it be interpreted?\nA p-value is the probability of observing results as extreme as (or more extreme than) the data, assuming the null hypothesis is true.\nA small p-value suggests the data are unlikely under the null hypothesis, but it does not measure the probability that the null hypothesis is true.\n\n\n\n4. What is the difference between Type I and Type II errors?\n\nType I error: Rejecting a true null hypothesis (false positive).\n\nType II error: Failing to reject a false null hypothesis (false negative).\nWhich error is more costly depends on context (e.g., medical testing vs. fraud detection).\n\n\n\n\n\n\n\n### 5. What assumptions are required for linear regression? Key assumptions include: - Linearity - Independence of errors - Homoscedasticity (constant variance) - Normality of errors (for inference) These can be checked using residual plots, QQ plots, and diagnostic tests.\n\n\n\n\n### 6. What is the Central Limit Theorem and why is it important? The Central Limit Theorem (CLT) states that the sampling distribution of the sample mean approaches a normal distribution as sample size increases, regardless of the population distribution. It enables statistical inference using normal-based methods, even when the data are not normally distributed.\n\n\n\n\n\n7. What is a confidence interval and how do you interpret it?\nA confidence interval (CI) provides a range of plausible values for an unknown population parameter.\nA 95% CI means that if we repeated the sampling process many times, about 95% of those intervals would contain the true parameter.\n\n\n\n\n\n\n### 8. What is overfitting and how can it be prevented? Overfitting occurs when a model captures noise instead of the underlying pattern, performing well on training data but poorly on new data. It can be prevented using techniques like cross-validation, regularization, simpler models, and early stopping.\n\n\n\n\n### 9. How would you handle missing data in a dataset? Common approaches include: - Deleting missing observations (when missingness is minimal) - Mean/median imputation - Model-based or multiple imputation The choice depends on the amount and mechanism of missingness (MCAR, MAR, MNAR).\n\n\n\n\n\n10. How do you evaluate the performance of a statistical or predictive model?\nModel performance can be evaluated using: - Regression metrics: RMSE, MAE, R²\n- Classification metrics: accuracy, precision, recall, F1-score, AUC\nEvaluation should be done on validation or test data to assess generalization.\n\n\n\n11. What happens to a confidence interval when the sample size doubles?\nWhen the sample size doubles, the width of the confidence interval decreases, because the standard error scales with (1 / ).\nDoubling the sample size reduces the margin of error by approximately 29%, making the estimate more precise."
   },
   {
-    "objectID": "STAT/07-prueba-hipotesis.html#slides-de-la-clase",
-    "href": "STAT/07-prueba-hipotesis.html#slides-de-la-clase",
-    "title": "Prueba de Hipotesis",
+    "objectID": "STAT/work2.html#bonus",
+    "href": "STAT/work2.html#bonus",
+    "title": "Interview",
+    "section": "Bonus",
+    "text": "Bonus\n\n\nQuestion 1: Statistics Foundations\n\nYou are analyzing ride data for Uber.\n\nThe probability that a user takes a ride in the morning rush hour is 10%.\nThe probability that a user takes a ride in the evening rush hour is 20%.\nThe probability that a user takes an evening rush hour ride given that they took a morning rush hour ride is 50%.\n\nIf we observe that a user took an evening rush hour ride, what is the probability that they also took a morning rush hour ride?\nLet:\nMMM = event that the user took a morning rush hour ride EEE = event that the user took an evening rush hour ride\nGiven:\n\\(P(M)=0.10P(M) = 0.10P(M)=0.10\\)\n\\(P(E)=0.20P(E) = 0.20P(E)=0.20\\)\n\\(P(E∣M)=0.50P(E \\mid M) = 0.50P(E∣M)=0.50\\)\nStep 1: Use Bayes’ Theorem\n\\(P(M∣E)P(M \\mid E)P(M∣E)\\)\nBayes’ theorem states:\n$P(M∣E)=P(E∣M)⋅P(M)P(E)P(M E) = P(M∣E)=P(E)P(E∣M)⋅P(M)$\n\\(P(M∣E)=0.200.50×0.10​\\)\n\\(P(M∣E)=0.050.20=0.25P(M \\mid E) = \\frac{0.05}{0.20} = 0.25P(M∣E)=0.200.05​=0.25\\)\nThis means that given a user took an evening rush hour ride, there is a 25% probability that they also took a morning rush hour ride.\n\n\nQuestion 2: Experiment Design & Power Analysis\n\nWhen designing an experiment, given a fixed sample size, significance level, and desired power, we compute a Minimum Detectable Effect (MDE).\nSuppose you run the experiment, collect the data, and observe an effect size that is smaller than the MDE, yet the result is statistically significant.\nHow is this possible? Shouldn’t effects smaller than the MDE be non‑significant?\nThis situation is possible and not a contradiction. The key reason is that the Minimum Detectable Effect (MDE) is defined in terms of statistical power, not statistical significance.\n\nWhat the MDE Actually Means?\n\nThe MDE is the smallest effect size that your experiment is designed to detect with a specified probability (power), usually 80% or 90%, if that effect is truly present. In other words:\nIf the true effect equals the MDE, you have (for example) an 80% chance of obtaining a statistically significant result.\nIt does not mean:\nEffects smaller than the MDE can never be significant\n\nStatistical Significance Is Random Hypothesis testing involves sampling variability. Even if the true effect is smaller than the MDE:\n\nRandom variation may produce a larger observed effect The standard error may be smaller than expected The test statistic may cross the significance threshold\nAs a result, you can still obtain a statistically significant p‑value.\n\nPower Is About Probability, Not Certainty If the true effect is below the MDE:\n\nThe probability of detection is less than the target power But that probability is not zero\nSo significance can happen — just less frequently.\n\nRelationship Between Effect Size, Power, and Significance\n\n\n\n\n\n\n\n\nConcept\nWhat it Represents\n\n\n\n\nStatistical significance\nA single realization: did this sample cross the significance threshold?\n\n\nPower\nThe long-run probability of detecting a true effect when it exists\n\n\nMinimum Detectable Effect (MDE)\nThe smallest effect size that can be detected with a specified power\n\n\nObserved effect\nA random estimate of the effect size obtained from sampled data\n\n\n\nA statistically significant result answers:\n“Is this result unlikely under the null hypothesis?”\nThe MDE answers:\n“How likely am I to detect this effect if it is truly this large?”\nThese are related but not the same question."
+  },
+  {
+    "objectID": "STAT/tool.html",
+    "href": "STAT/tool.html",
+    "title": "Inference",
+    "section": "",
+    "text": "💻⚙️🧠📊 Data Science Starts with Statistics\nUnderstanding probability, classical distributions, confidence intervals, hypothesis testing, and sampling is essential in data science.\nThese concepts are foundational for model evaluation, uncertainty quantification, and sound data-driven decision‑making.\nStatistics is often an early course in the data science curriculum, and not all students start with the same level of experience in coding (R or Python).\nFor that reason, I am sharing interactive tools adapted from my teaching experience, including tools for sampling and inference.\nThey do not need to be fancy — they need to be useful, intuitive, and help students build strong statistical foundations before moving to more complex models.\n\n\nSurvey\nUnderstanding how to design a good survey—including how to determine an appropriate sample size, account for sampling error, and assess bias—is a fundamental statistical skill in data science. Sound sampling ensures that results are representative, reliable, and interpretable, allowing analysts to quantify uncertainty and make valid inferences about a population. Without careful attention to sample design and margins of error, even sophisticated models can produce misleading conclusions, highlighting why sampling theory is as important as modeling techniques themselves.\n🚀 Tool for Confidence Intervals & Inference\n\nOne proportion and two proportions\nOne mean and two means (equal variances)\nConfidence intervals, test statistics, p‑values, and decisions\n\n🚀 Tool for Normal Distribution & z‑Scores\n\nz‑scores and cumulative probabilities\nPercentiles and areas under the curve\nGeneral normal distribution N(μ,σ)N(, )N(μ,σ)\n\n\n\n\n\n\n\nNote\n\n\n\n💡 Teaching note\nThese interactive tools are designed to help students understand core ideas such as sampling variability, probability distributions, confidence intervals, and hypothesis testing — even before they become fluent in coding.\nThe goal is to support learning by focusing on statistical intuition first, and implementation later.\n\n\n``"
+  },
+  {
+    "objectID": "STAT/08-viernes13.html",
+    "href": "STAT/08-viernes13.html",
+    "title": "Viernes 13",
+    "section": "",
+    "text": "Caso aplicado para integrar los conceptos del curso.\n\nformulación del problema\nanálisis estadístico\ninterpretación de resultados"
+  },
+  {
+    "objectID": "STAT/08-viernes13.html#contenidos",
+    "href": "STAT/08-viernes13.html#contenidos",
+    "title": "Viernes 13",
+    "section": "",
+    "text": "Caso aplicado para integrar los conceptos del curso.\n\nformulación del problema\nanálisis estadístico\ninterpretación de resultados"
+  },
+  {
+    "objectID": "STAT/08-viernes13.html#slides-de-la-clase",
+    "href": "STAT/08-viernes13.html#slides-de-la-clase",
+    "title": "Viernes 13",
     "section": "Slides de la clase",
-    "text": "Slides de la clase\n👉 Ver slides – Prueba de Hipotesis"
+    "text": "Slides de la clase\n👉 Ver slides – Viernes13"
   },
   {
-    "objectID": "STAT/05-variables-aleatorias.html",
-    "href": "STAT/05-variables-aleatorias.html",
-    "title": "Variables Aleatorias",
+    "objectID": "STAT/06-inferencia.html",
+    "href": "STAT/06-inferencia.html",
+    "title": "Inferencia e Intervalos de confianza",
     "section": "",
-    "text": "variables aleatorias discretas\nvariables continuas\ndistribuciones comunes\nesperanza y varianza"
+    "text": "estimación puntual\nintervalos de confianza\nintuición estadística\ninterpretación de resultados"
   },
   {
-    "objectID": "STAT/05-variables-aleatorias.html#contenidos",
-    "href": "STAT/05-variables-aleatorias.html#contenidos",
-    "title": "Variables Aleatorias",
+    "objectID": "STAT/06-inferencia.html#contenidos",
+    "href": "STAT/06-inferencia.html#contenidos",
+    "title": "Inferencia e Intervalos de confianza",
     "section": "",
-    "text": "variables aleatorias discretas\nvariables continuas\ndistribuciones comunes\nesperanza y varianza"
+    "text": "estimación puntual\nintervalos de confianza\nintuición estadística\ninterpretación de resultados"
   },
   {
-    "objectID": "STAT/05-variables-aleatorias.html#slides-de-la-clase",
-    "href": "STAT/05-variables-aleatorias.html#slides-de-la-clase",
-    "title": "Variables Aleatorias",
+    "objectID": "STAT/06-inferencia.html#slides-de-la-clase",
+    "href": "STAT/06-inferencia.html#slides-de-la-clase",
+    "title": "Inferencia e Intervalos de confianza",
     "section": "Slides de la clase",
-    "text": "Slides de la clase\n👉 Ver slides – Variables Aleatorias"
+    "text": "Slides de la clase\n👉 Ver slides – Inferencia"
   },
   {
-    "objectID": "STAT/03-datos-estadisticos.html",
-    "href": "STAT/03-datos-estadisticos.html",
-    "title": "Datos Estadisticos",
+    "objectID": "STAT/04-probabilidad.html",
+    "href": "STAT/04-probabilidad.html",
+    "title": "Probabilidad",
     "section": "",
-    "text": "estadística descriptiva\nmedidas de tendencia central\nmedidas de dispersión\ninterpretación de datos"
+    "text": "noción de probabilidad\neventos y espacio muestral\nprobabilidad condicional\nejemplos prácticos"
   },
   {
-    "objectID": "STAT/03-datos-estadisticos.html#contenidos",
-    "href": "STAT/03-datos-estadisticos.html#contenidos",
-    "title": "Datos Estadisticos",
+    "objectID": "STAT/04-probabilidad.html#contenidos",
+    "href": "STAT/04-probabilidad.html#contenidos",
+    "title": "Probabilidad",
     "section": "",
-    "text": "estadística descriptiva\nmedidas de tendencia central\nmedidas de dispersión\ninterpretación de datos"
+    "text": "noción de probabilidad\neventos y espacio muestral\nprobabilidad condicional\nejemplos prácticos"
   },
   {
-    "objectID": "STAT/03-datos-estadisticos.html#slides-de-la-clase",
-    "href": "STAT/03-datos-estadisticos.html#slides-de-la-clase",
-    "title": "Datos Estadisticos",
+    "objectID": "STAT/04-probabilidad.html#slides-de-la-clase",
+    "href": "STAT/04-probabilidad.html#slides-de-la-clase",
+    "title": "Probabilidad",
     "section": "Slides de la clase",
-    "text": "Slides de la clase\n👉 Ver slides – Datos"
+    "text": "Slides de la clase\n👉 Ver slides – Probabilidad"
   },
   {
-    "objectID": "STAT/01-bienvenida.html",
-    "href": "STAT/01-bienvenida.html",
-    "title": "Bienvenida",
+    "objectID": "STAT/02-datos-experimentos.html",
+    "href": "STAT/02-datos-experimentos.html",
+    "title": "Datos y Experimentos",
     "section": "",
-    "text": "En esta clase presentamos:\n\nel objetivo general del curso\nla metodología\nla forma de evaluación"
+    "text": "tipos de datos\ndatos categóricos y numéricos\ndiseño de experimentos\nejemplos aplicados"
   },
   {
-    "objectID": "STAT/01-bienvenida.html#objetivos-de-la-clase",
-    "href": "STAT/01-bienvenida.html#objetivos-de-la-clase",
-    "title": "Bienvenida",
+    "objectID": "STAT/02-datos-experimentos.html#contenidos",
+    "href": "STAT/02-datos-experimentos.html#contenidos",
+    "title": "Datos y Experimentos",
     "section": "",
-    "text": "En esta clase presentamos:\n\nel objetivo general del curso\nla metodología\nla forma de evaluación"
+    "text": "tipos de datos\ndatos categóricos y numéricos\ndiseño de experimentos\nejemplos aplicados"
   },
   {
-    "objectID": "STAT/01-bienvenida.html#slides-de-la-clase",
-    "href": "STAT/01-bienvenida.html#slides-de-la-clase",
-    "title": "Bienvenida",
+    "objectID": "STAT/02-datos-experimentos.html#slides-de-la-clase",
+    "href": "STAT/02-datos-experimentos.html#slides-de-la-clase",
+    "title": "Datos y Experimentos",
     "section": "Slides de la clase",
-    "text": "Slides de la clase\n👉 Ver slides – Bienvenida"
+    "text": "Slides de la clase\n👉 Ver slides – Experimentos"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "Pricing Strategies of Supermarkets in Uruguay\n\nMaster in Economics – Universidad de la República\nDataset &gt; 700,000 price observations\nMethods: descriptive analysis, price duration, applied ML"
+  },
+  {
+    "objectID": "research.html#master-thesis",
+    "href": "research.html#master-thesis",
+    "title": "Research",
+    "section": "",
+    "text": "Pricing Strategies of Supermarkets in Uruguay\n\nMaster in Economics – Universidad de la República\nDataset &gt; 700,000 price observations\nMethods: descriptive analysis, price duration, applied ML"
+  },
+  {
+    "objectID": "research.html#masters-thesis-advisor",
+    "href": "research.html#masters-thesis-advisor",
+    "title": "Research",
+    "section": "🎓 Master’s Thesis Advisor",
+    "text": "🎓 Master’s Thesis Advisor\n🔹 Hermes Javier López Sosa\nCharacterization of Uruguay’s Regulated Financial System (2013–2023)\n🔹 Martín Rey & Paolo Pinotti\nMachine Learning Applications to Price Duration\nPresented at: Central Bank of Uruguay (BCU), 2025 📊 View Presentations"
+  },
+  {
+    "objectID": "awards.html",
+    "href": "awards.html",
+    "title": "Awards & Honors",
+    "section": "",
+    "text": "🏆 Iowa State University\nAwarded for innovative and creative contributions in recruitment analytics,\nrecognizing the development of data-driven models to support undergraduate,\ngraduate, and professional student recruitment strategies."
+  },
+  {
+    "objectID": "awards.html#recruitment-innovation-award-2024",
+    "href": "awards.html#recruitment-innovation-award-2024",
+    "title": "Awards & Honors",
+    "section": "",
+    "text": "🏆 Iowa State University\nAwarded for innovative and creative contributions in recruitment analytics,\nrecognizing the development of data-driven models to support undergraduate,\ngraduate, and professional student recruitment strategies."
+  },
+  {
+    "objectID": "awards.html#presidents-list",
+    "href": "awards.html#presidents-list",
+    "title": "Awards & Honors",
+    "section": "President’s List",
+    "text": "President’s List\n🎓 Des Moines Area Community College (DMACC)\nRecognized for outstanding academic performance, earning placement on the\nPresident’s List during the Data Science / Analytics program."
+  },
+  {
+    "objectID": "awards.html#phi-theta-kappa-honor-society",
+    "href": "awards.html#phi-theta-kappa-honor-society",
+    "title": "Awards & Honors",
+    "section": "Phi Theta Kappa Honor Society",
+    "text": "Phi Theta Kappa Honor Society\n⭐ Member – Phi Theta Kappa\nInternational honor society recognizing academic excellence, leadership,\nand commitment to service among high‑achieving students in higher education.\n\n\n🏆 Love DATAWEEK 2024 — First Place Award\nRecipient of the First‑Place Award for Innovative Visualizations at Love DATAWEEK 2024, recognizing excellence in data visualization, design, and analytical storytelling with Federico Veneri.\nProject"
+  },
+  {
+    "objectID": "applied-project.html",
+    "href": "applied-project.html",
+    "title": "5 minutes Applied Data Projects",
+    "section": "",
+    "text": "This page presents applied data science and visualization projects developed using publicly available datasets, with a strong focus on education, public policy, and institutional analytics.\nThe projects are designed both for teaching purposes and for demonstrating real‑world applications of data science methods.\n\n\n\nHigh School to Higher Education Enrollment\nThe project analyzes student migration patterns across the United States, with a focus on where high school graduates enroll in higher education institutions.\n\n\n\nData: National Center for Education Statistics (NCES)\nTools: R · Shiny · Geospatial visualization\n🚀 Open Live Dashboard NCES\n\n\n\n\nDashboard based on public data\nThis Shiny app explores player and team performance under pressure during UEFA European Championship matches using StatsBomb event data. It focuses on how pressure influences passing, ball reception, and subsequent actions. The app includes five interactive views:\nOverall Pass Performance Summarises players’ pass success rates under pressure by year, team, and player, combining bar charts with supporting tables.\nPasses Under Pressure Visualises the location and direction of pressured passes on a football pitch, showing completion outcomes and common passing sources.\nBall Receipts Displays where players receive the ball and colours receptions by opponent proximity, highlighting moments of high and low pressure.\nNext Event Analysis Examines what actions occur immediately after a ball reception, revealing decision patterns under pressure.\nPlayer Info Profile Provides a compact table and bar chart summarising individual player behaviour under pressure, with filters by position, team, and year.\nOverall, the app allows users to interactively explore how pressure shapes on‑ball decisions, combining event-level data, pitch visualisations, and intuitive filters for exploratory football analytics.\n👉 Interactive Dash:\n📍 Interactive Dash Soccer\n\nThese examples illustrate how open data can be transformed into actionable insights for decision‑making, communication, and teaching in Data Science and Analytics."
+  },
+  {
+    "objectID": "applied-project.html#overview",
+    "href": "applied-project.html#overview",
+    "title": "5 minutes Applied Data Projects",
+    "section": "",
+    "text": "This page presents applied data science and visualization projects developed using publicly available datasets, with a strong focus on education, public policy, and institutional analytics.\nThe projects are designed both for teaching purposes and for demonstrating real‑world applications of data science methods.\n\n\n\nHigh School to Higher Education Enrollment\nThe project analyzes student migration patterns across the United States, with a focus on where high school graduates enroll in higher education institutions.\n\n\n\nData: National Center for Education Statistics (NCES)\nTools: R · Shiny · Geospatial visualization\n🚀 Open Live Dashboard NCES\n\n\n\n\nDashboard based on public data\nThis Shiny app explores player and team performance under pressure during UEFA European Championship matches using StatsBomb event data. It focuses on how pressure influences passing, ball reception, and subsequent actions. The app includes five interactive views:\nOverall Pass Performance Summarises players’ pass success rates under pressure by year, team, and player, combining bar charts with supporting tables.\nPasses Under Pressure Visualises the location and direction of pressured passes on a football pitch, showing completion outcomes and common passing sources.\nBall Receipts Displays where players receive the ball and colours receptions by opponent proximity, highlighting moments of high and low pressure.\nNext Event Analysis Examines what actions occur immediately after a ball reception, revealing decision patterns under pressure.\nPlayer Info Profile Provides a compact table and bar chart summarising individual player behaviour under pressure, with filters by position, team, and year.\nOverall, the app allows users to interactively explore how pressure shapes on‑ball decisions, combining event-level data, pitch visualisations, and intuitive filters for exploratory football analytics.\n👉 Interactive Dash:\n📍 Interactive Dash Soccer\n\nThese examples illustrate how open data can be transformed into actionable insights for decision‑making, communication, and teaching in Data Science and Analytics."
   },
   {
     "objectID": "index.html",
@@ -301,158 +392,137 @@
     "text": "🌱 Beyond Work\n📚 Current Reading (2026)\nIn 2026, my reading balances intellectual curiosity 🧠 with personal enjoyment 💫. On the analytical side, I am reading 📘 The Book of Why by Judea Pearl, which deepens my understanding of causality, causal reasoning, and counterfactual thinking 🔗, extending data science beyond prediction. I am also revisiting 📗 Thinking, Fast and Slow by Daniel Kahneman, a foundational work on judgment under uncertainty ⚖️ and cognitive bias, which continues to shape how I think about decision‑making in both research and applied analytics.\nFor emotionally heavier moments—when I’m drawn to stories that explore grief, vulnerability, and human resilience 💔➡️💪—I read the 📖 Boys of Tommen series. These novels are deeply emotional and introspective, offering space for reflection and emotional release rather than light escapism.\nIn addition, I am part of a 📘 book club, which provides a collaborative space for discussion and collective interpretation of a diverse range of texts.\nOutside of reading, I enjoy 🧘️ yoga, a practice that helps me slow down, reset, and recenter 🌿. Beyond work, I deeply value 👨👩👧 time with my family—through shared activities, everyday conversations, or simply slowing down together—an essential counterweight ⚖️ to analytical work and a constant source of perspective ✨.\n\n📧 Contact\nceciliaregueira.m@gmail.com\nLinkedIn · GitHub"
   },
   {
-    "objectID": "applied-project.html",
-    "href": "applied-project.html",
-    "title": "5 minutes Applied Data Projects",
+    "objectID": "STAT/01-bienvenida.html",
+    "href": "STAT/01-bienvenida.html",
+    "title": "Bienvenida",
     "section": "",
-    "text": "This page presents applied data science and visualization projects developed using publicly available datasets, with a strong focus on education, public policy, and institutional analytics.\nThe projects are designed both for teaching purposes and for demonstrating real‑world applications of data science methods.\n\n\n\nHigh School to Higher Education Enrollment\nThe project analyzes student migration patterns across the United States, with a focus on where high school graduates enroll in higher education institutions.\n\n\n\nData: National Center for Education Statistics (NCES)\nTools: R · Shiny · Geospatial visualization\n🚀 Open Live Dashboard NCES\n\n\n\n\nDashboard based on public data\nThis Shiny app explores player and team performance under pressure during UEFA European Championship matches using StatsBomb event data. It focuses on how pressure influences passing, ball reception, and subsequent actions. The app includes five interactive views:\nOverall Pass Performance Summarises players’ pass success rates under pressure by year, team, and player, combining bar charts with supporting tables.\nPasses Under Pressure Visualises the location and direction of pressured passes on a football pitch, showing completion outcomes and common passing sources.\nBall Receipts Displays where players receive the ball and colours receptions by opponent proximity, highlighting moments of high and low pressure.\nNext Event Analysis Examines what actions occur immediately after a ball reception, revealing decision patterns under pressure.\nPlayer Info Profile Provides a compact table and bar chart summarising individual player behaviour under pressure, with filters by position, team, and year.\nOverall, the app allows users to interactively explore how pressure shapes on‑ball decisions, combining event-level data, pitch visualisations, and intuitive filters for exploratory football analytics.\n👉 Interactive Dash:\n📍 Interactive Dash Soccer\n\nThese examples illustrate how open data can be transformed into actionable insights for decision‑making, communication, and teaching in Data Science and Analytics."
+    "text": "En esta clase presentamos:\n\nel objetivo general del curso\nla metodología\nla forma de evaluación"
   },
   {
-    "objectID": "applied-project.html#overview",
-    "href": "applied-project.html#overview",
-    "title": "5 minutes Applied Data Projects",
+    "objectID": "STAT/01-bienvenida.html#objetivos-de-la-clase",
+    "href": "STAT/01-bienvenida.html#objetivos-de-la-clase",
+    "title": "Bienvenida",
     "section": "",
-    "text": "This page presents applied data science and visualization projects developed using publicly available datasets, with a strong focus on education, public policy, and institutional analytics.\nThe projects are designed both for teaching purposes and for demonstrating real‑world applications of data science methods.\n\n\n\nHigh School to Higher Education Enrollment\nThe project analyzes student migration patterns across the United States, with a focus on where high school graduates enroll in higher education institutions.\n\n\n\nData: National Center for Education Statistics (NCES)\nTools: R · Shiny · Geospatial visualization\n🚀 Open Live Dashboard NCES\n\n\n\n\nDashboard based on public data\nThis Shiny app explores player and team performance under pressure during UEFA European Championship matches using StatsBomb event data. It focuses on how pressure influences passing, ball reception, and subsequent actions. The app includes five interactive views:\nOverall Pass Performance Summarises players’ pass success rates under pressure by year, team, and player, combining bar charts with supporting tables.\nPasses Under Pressure Visualises the location and direction of pressured passes on a football pitch, showing completion outcomes and common passing sources.\nBall Receipts Displays where players receive the ball and colours receptions by opponent proximity, highlighting moments of high and low pressure.\nNext Event Analysis Examines what actions occur immediately after a ball reception, revealing decision patterns under pressure.\nPlayer Info Profile Provides a compact table and bar chart summarising individual player behaviour under pressure, with filters by position, team, and year.\nOverall, the app allows users to interactively explore how pressure shapes on‑ball decisions, combining event-level data, pitch visualisations, and intuitive filters for exploratory football analytics.\n👉 Interactive Dash:\n📍 Interactive Dash Soccer\n\nThese examples illustrate how open data can be transformed into actionable insights for decision‑making, communication, and teaching in Data Science and Analytics."
+    "text": "En esta clase presentamos:\n\nel objetivo general del curso\nla metodología\nla forma de evaluación"
   },
   {
-    "objectID": "awards.html",
-    "href": "awards.html",
-    "title": "Awards & Honors",
-    "section": "",
-    "text": "🏆 Iowa State University\nAwarded for innovative and creative contributions in recruitment analytics,\nrecognizing the development of data-driven models to support undergraduate,\ngraduate, and professional student recruitment strategies."
-  },
-  {
-    "objectID": "awards.html#recruitment-innovation-award-2024",
-    "href": "awards.html#recruitment-innovation-award-2024",
-    "title": "Awards & Honors",
-    "section": "",
-    "text": "🏆 Iowa State University\nAwarded for innovative and creative contributions in recruitment analytics,\nrecognizing the development of data-driven models to support undergraduate,\ngraduate, and professional student recruitment strategies."
-  },
-  {
-    "objectID": "awards.html#presidents-list",
-    "href": "awards.html#presidents-list",
-    "title": "Awards & Honors",
-    "section": "President’s List",
-    "text": "President’s List\n🎓 Des Moines Area Community College (DMACC)\nRecognized for outstanding academic performance, earning placement on the\nPresident’s List during the Data Science / Analytics program."
-  },
-  {
-    "objectID": "awards.html#phi-theta-kappa-honor-society",
-    "href": "awards.html#phi-theta-kappa-honor-society",
-    "title": "Awards & Honors",
-    "section": "Phi Theta Kappa Honor Society",
-    "text": "Phi Theta Kappa Honor Society\n⭐ Member – Phi Theta Kappa\nInternational honor society recognizing academic excellence, leadership,\nand commitment to service among high‑achieving students in higher education.\n\n\n🏆 Love DATAWEEK 2024 — First Place Award\nRecipient of the First‑Place Award for Innovative Visualizations at Love DATAWEEK 2024, recognizing excellence in data visualization, design, and analytical storytelling with Federico Veneri.\nProject"
-  },
-  {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research",
-    "section": "",
-    "text": "Pricing Strategies of Supermarkets in Uruguay\n\nMaster in Economics – Universidad de la República\nDataset &gt; 700,000 price observations\nMethods: descriptive analysis, price duration, applied ML"
-  },
-  {
-    "objectID": "research.html#master-thesis",
-    "href": "research.html#master-thesis",
-    "title": "Research",
-    "section": "",
-    "text": "Pricing Strategies of Supermarkets in Uruguay\n\nMaster in Economics – Universidad de la República\nDataset &gt; 700,000 price observations\nMethods: descriptive analysis, price duration, applied ML"
-  },
-  {
-    "objectID": "research.html#masters-thesis-advisor",
-    "href": "research.html#masters-thesis-advisor",
-    "title": "Research",
-    "section": "🎓 Master’s Thesis Advisor",
-    "text": "🎓 Master’s Thesis Advisor\n🔹 Hermes Javier López Sosa\nCharacterization of Uruguay’s Regulated Financial System (2013–2023)\n🔹 Martín Rey & Paolo Pinotti\nMachine Learning Applications to Price Duration\nPresented at: Central Bank of Uruguay (BCU), 2025 📊 View Presentations"
-  },
-  {
-    "objectID": "STAT/02-datos-experimentos.html",
-    "href": "STAT/02-datos-experimentos.html",
-    "title": "Datos y Experimentos",
-    "section": "",
-    "text": "tipos de datos\ndatos categóricos y numéricos\ndiseño de experimentos\nejemplos aplicados"
-  },
-  {
-    "objectID": "STAT/02-datos-experimentos.html#contenidos",
-    "href": "STAT/02-datos-experimentos.html#contenidos",
-    "title": "Datos y Experimentos",
-    "section": "",
-    "text": "tipos de datos\ndatos categóricos y numéricos\ndiseño de experimentos\nejemplos aplicados"
-  },
-  {
-    "objectID": "STAT/02-datos-experimentos.html#slides-de-la-clase",
-    "href": "STAT/02-datos-experimentos.html#slides-de-la-clase",
-    "title": "Datos y Experimentos",
+    "objectID": "STAT/01-bienvenida.html#slides-de-la-clase",
+    "href": "STAT/01-bienvenida.html#slides-de-la-clase",
+    "title": "Bienvenida",
     "section": "Slides de la clase",
-    "text": "Slides de la clase\n👉 Ver slides – Experimentos"
+    "text": "Slides de la clase\n👉 Ver slides – Bienvenida"
   },
   {
-    "objectID": "STAT/04-probabilidad.html",
-    "href": "STAT/04-probabilidad.html",
-    "title": "Probabilidad",
+    "objectID": "STAT/03-datos-estadisticos.html",
+    "href": "STAT/03-datos-estadisticos.html",
+    "title": "Datos Estadisticos",
     "section": "",
-    "text": "noción de probabilidad\neventos y espacio muestral\nprobabilidad condicional\nejemplos prácticos"
+    "text": "estadística descriptiva\nmedidas de tendencia central\nmedidas de dispersión\ninterpretación de datos"
   },
   {
-    "objectID": "STAT/04-probabilidad.html#contenidos",
-    "href": "STAT/04-probabilidad.html#contenidos",
-    "title": "Probabilidad",
+    "objectID": "STAT/03-datos-estadisticos.html#contenidos",
+    "href": "STAT/03-datos-estadisticos.html#contenidos",
+    "title": "Datos Estadisticos",
     "section": "",
-    "text": "noción de probabilidad\neventos y espacio muestral\nprobabilidad condicional\nejemplos prácticos"
+    "text": "estadística descriptiva\nmedidas de tendencia central\nmedidas de dispersión\ninterpretación de datos"
   },
   {
-    "objectID": "STAT/04-probabilidad.html#slides-de-la-clase",
-    "href": "STAT/04-probabilidad.html#slides-de-la-clase",
-    "title": "Probabilidad",
+    "objectID": "STAT/03-datos-estadisticos.html#slides-de-la-clase",
+    "href": "STAT/03-datos-estadisticos.html#slides-de-la-clase",
+    "title": "Datos Estadisticos",
     "section": "Slides de la clase",
-    "text": "Slides de la clase\n👉 Ver slides – Probabilidad"
+    "text": "Slides de la clase\n👉 Ver slides – Datos"
   },
   {
-    "objectID": "STAT/06-inferencia.html",
-    "href": "STAT/06-inferencia.html",
-    "title": "Inferencia e Intervalos de confianza",
+    "objectID": "STAT/05-variables-aleatorias.html",
+    "href": "STAT/05-variables-aleatorias.html",
+    "title": "Variables Aleatorias",
     "section": "",
-    "text": "estimación puntual\nintervalos de confianza\nintuición estadística\ninterpretación de resultados"
+    "text": "variables aleatorias discretas\nvariables continuas\ndistribuciones comunes\nesperanza y varianza"
   },
   {
-    "objectID": "STAT/06-inferencia.html#contenidos",
-    "href": "STAT/06-inferencia.html#contenidos",
-    "title": "Inferencia e Intervalos de confianza",
+    "objectID": "STAT/05-variables-aleatorias.html#contenidos",
+    "href": "STAT/05-variables-aleatorias.html#contenidos",
+    "title": "Variables Aleatorias",
     "section": "",
-    "text": "estimación puntual\nintervalos de confianza\nintuición estadística\ninterpretación de resultados"
+    "text": "variables aleatorias discretas\nvariables continuas\ndistribuciones comunes\nesperanza y varianza"
   },
   {
-    "objectID": "STAT/06-inferencia.html#slides-de-la-clase",
-    "href": "STAT/06-inferencia.html#slides-de-la-clase",
-    "title": "Inferencia e Intervalos de confianza",
+    "objectID": "STAT/05-variables-aleatorias.html#slides-de-la-clase",
+    "href": "STAT/05-variables-aleatorias.html#slides-de-la-clase",
+    "title": "Variables Aleatorias",
     "section": "Slides de la clase",
-    "text": "Slides de la clase\n👉 Ver slides – Inferencia"
+    "text": "Slides de la clase\n👉 Ver slides – Variables Aleatorias"
   },
   {
-    "objectID": "STAT/08-viernes13.html",
-    "href": "STAT/08-viernes13.html",
-    "title": "Viernes 13",
+    "objectID": "STAT/07-prueba-hipotesis.html",
+    "href": "STAT/07-prueba-hipotesis.html",
+    "title": "Prueba de Hipotesis",
     "section": "",
-    "text": "Caso aplicado para integrar los conceptos del curso.\n\nformulación del problema\nanálisis estadístico\ninterpretación de resultados"
+    "text": "hipótesis nula y alternativa\nerrores tipo I y II\np-value\nejemplos aplicados"
   },
   {
-    "objectID": "STAT/08-viernes13.html#contenidos",
-    "href": "STAT/08-viernes13.html#contenidos",
-    "title": "Viernes 13",
+    "objectID": "STAT/07-prueba-hipotesis.html#contenidos",
+    "href": "STAT/07-prueba-hipotesis.html#contenidos",
+    "title": "Prueba de Hipotesis",
     "section": "",
-    "text": "Caso aplicado para integrar los conceptos del curso.\n\nformulación del problema\nanálisis estadístico\ninterpretación de resultados"
+    "text": "hipótesis nula y alternativa\nerrores tipo I y II\np-value\nejemplos aplicados"
   },
   {
-    "objectID": "STAT/08-viernes13.html#slides-de-la-clase",
-    "href": "STAT/08-viernes13.html#slides-de-la-clase",
-    "title": "Viernes 13",
+    "objectID": "STAT/07-prueba-hipotesis.html#slides-de-la-clase",
+    "href": "STAT/07-prueba-hipotesis.html#slides-de-la-clase",
+    "title": "Prueba de Hipotesis",
     "section": "Slides de la clase",
-    "text": "Slides de la clase\n👉 Ver slides – Viernes13"
+    "text": "Slides de la clase\n👉 Ver slides – Prueba de Hipotesis"
   },
   {
-    "objectID": "STAT/tool.html",
-    "href": "STAT/tool.html",
-    "title": "Inference",
+    "objectID": "STAT/index.html",
+    "href": "STAT/index.html",
+    "title": "Universidad de Montevideo: Introducción a la Estadística (STATS)",
     "section": "",
-    "text": "💻⚙️🧠📊 Data Science Starts with Statistics\nUnderstanding probability, classical distributions, confidence intervals, hypothesis testing, and sampling is essential in data science.\nThese concepts are foundational for model evaluation, uncertainty quantification, and sound data-driven decision‑making.\nStatistics is often an early course in the data science curriculum, and not all students start with the same level of experience in coding (R or Python).\nFor that reason, I am sharing interactive tools adapted from my teaching experience, including tools for sampling and inference.\nThey do not need to be fancy — they need to be useful, intuitive, and help students build strong statistical foundations before moving to more complex models.\n\n\nSurvey\nUnderstanding how to design a good survey—including how to determine an appropriate sample size, account for sampling error, and assess bias—is a fundamental statistical skill in data science. Sound sampling ensures that results are representative, reliable, and interpretable, allowing analysts to quantify uncertainty and make valid inferences about a population. Without careful attention to sample design and margins of error, even sophisticated models can produce misleading conclusions, highlighting why sampling theory is as important as modeling techniques themselves.\n🚀 Tool for Confidence Intervals & Inference\n\nOne proportion and two proportions\nOne mean and two means (equal variances)\nConfidence intervals, test statistics, p‑values, and decisions\n\n🚀 Tool for Normal Distribution & z‑Scores\n\nz‑scores and cumulative probabilities\nPercentiles and areas under the curve\nGeneral normal distribution N(μ,σ)N(, )N(μ,σ)\n\n\n\n\n\n\n\nNote\n\n\n\n💡 Teaching note\nThese interactive tools are designed to help students understand core ideas such as sampling variability, probability distributions, confidence intervals, and hypothesis testing — even before they become fluent in coding.\nThe goal is to support learning by focusing on statistical intuition first, and implementation later.\n\n\n``"
+    "text": "Este curso forma parte de la Maestría / Posgrado en Ciencia de Datos de la Universidad de Montevideo.\nSu objetivo es brindar las bases estadísticas necesarias para la práctica moderna de Data Science y Machine Learning.\nEl libro se encuentra en pdf. Si desea obtenerlo debe enviar un mail a los autores para solicitarlo."
+  },
+  {
+    "objectID": "STAT/work.html",
+    "href": "STAT/work.html",
+    "title": "Interview Answer Key",
+    "section": "",
+    "text": "Note\n\n\n\n💡 QA\nThis document presents the top 10 statistics questions that most frequently come up in job interviews. These questions are based on interviews I have personally participated in, either as a candidate or as an interviewer when assessing new hires. The goal is to highlight the statistical concepts that employers commonly expect candidates to understand.\n\n\n\nWhat is the difference between descriptive and inferential statistics?\nGive examples of when you would use each.\nCan you explain the difference between correlation and causation?\nHow would you test whether a relationship is causal?\nWhat is a p-value, and how should it be interpreted?\nWhat are common misconceptions about p-values?\nExplain the difference between Type I and Type II errors.\nIn what situations might one be more costly than the other?\nWhat assumptions are required for linear regression?\nHow would you check whether these assumptions are violated?\nWhat is the Central Limit Theorem and why is it important?\nHow does it apply in real-world data analysis?\nWhat is a confidence interval and how do you interpret it?\nExplain what it means in practice and what a 95% confidence interval represents.\nWhat is overfitting, and how can it be prevented?\nHow does the bias–variance tradeoff relate to this?\nHow would you handle missing data in a dataset?\nWhat are the pros and cons of different approaches?\nHow do you evaluate the performance of a statistical or predictive model?\nWhich metrics would you choose and why?\nWhat happens to a confidence interval when the sample size doubles?\nExplain how increasing the sample size affects the width of the confidence interval and why."
+  },
+  {
+    "objectID": "STAT/work.html#top-10-statistics-interview-questions",
+    "href": "STAT/work.html#top-10-statistics-interview-questions",
+    "title": "Interview Answer Key",
+    "section": "",
+    "text": "Note\n\n\n\n💡 QA\nThis document presents the top 10 statistics questions that most frequently come up in job interviews. These questions are based on interviews I have personally participated in, either as a candidate or as an interviewer when assessing new hires. The goal is to highlight the statistical concepts that employers commonly expect candidates to understand.\n\n\n\nWhat is the difference between descriptive and inferential statistics?\nGive examples of when you would use each.\nCan you explain the difference between correlation and causation?\nHow would you test whether a relationship is causal?\nWhat is a p-value, and how should it be interpreted?\nWhat are common misconceptions about p-values?\nExplain the difference between Type I and Type II errors.\nIn what situations might one be more costly than the other?\nWhat assumptions are required for linear regression?\nHow would you check whether these assumptions are violated?\nWhat is the Central Limit Theorem and why is it important?\nHow does it apply in real-world data analysis?\nWhat is a confidence interval and how do you interpret it?\nExplain what it means in practice and what a 95% confidence interval represents.\nWhat is overfitting, and how can it be prevented?\nHow does the bias–variance tradeoff relate to this?\nHow would you handle missing data in a dataset?\nWhat are the pros and cons of different approaches?\nHow do you evaluate the performance of a statistical or predictive model?\nWhich metrics would you choose and why?\nWhat happens to a confidence interval when the sample size doubles?\nExplain how increasing the sample size affects the width of the confidence interval and why."
+  },
+  {
+    "objectID": "STAT/work.html#bonus",
+    "href": "STAT/work.html#bonus",
+    "title": "Interview Answer Key",
+    "section": "Bonus",
+    "text": "Bonus\n\nQuestion 1: Statistics Foundations\nYou are analyzing ride data for Uber.\n\nThe probability that a user takes a ride in the morning rush hour is 10%.\nThe probability that a user takes a ride in the evening rush hour is 20%.\nThe probability that a user takes an evening rush hour ride given that they took a morning rush hour ride is 50%.\n\nIf we observe that a user took an evening rush hour ride, what is the probability that they also took a morning rush hour ride?\n\n\nQuestion 2: Experiment Design & Power Analysis\nWhen designing an experiment, given a fixed sample size, significance level, and desired power, we compute a Minimum Detectable Effect (MDE).\nSuppose you run the experiment, collect the data, and observe an effect size that is smaller than the MDE, yet the result is statistically significant.\nHow is this possible? Shouldn’t effects smaller than the MDE be non‑significant?\n\n\nQuestion 3: Correlation vs. Causation\nAmazon Prime members place an average of 10 orders per month, while non‑Prime users place 2 orders per month.\nDoes Amazon Prime membership cause users to place more orders? Explain your reasoning.\n\n 📘 View Answer Key"
+  },
+  {
+    "objectID": "STAT/work3.html",
+    "href": "STAT/work3.html",
+    "title": "Interview",
+    "section": "",
+    "text": "Note\n\n\n\n💡 Mock \nThis document presents the top 10 statistics questions and answers that most frequently come up in job interviews. These questions are based on interviews I have personally participated in, either as a candidate or as an interviewer when assessing new hires. The goal is to highlight the statistical concepts that employers commonly expect candidates to understand.\n\n\n\n\n\n\n✅ Click to reveal answer\n\nDescriptive statistics summarize and describe the main features of a dataset (e.g., mean, median, standard deviation, plots).\nInferential statistics use a sample to make conclusions or predictions about a larger population (e.g., confidence intervals, hypothesis tests).\n\n\n\n\n\n\n\n✅ Click to reveal answer\n\nCorrelation measures the strength and direction of a relationship between two variables.\nCausation means that changes in one variable directly cause changes in another.\nCorrelation alone does not imply causation; establishing causation typically requires controlled experiments, causal models, or strong assumptions.\n\n\n\n\n\n\n\n✅ Click to reveal answer\n\nA p-value is the probability of observing results as extreme as (or more extreme than) the data, assuming the null hypothesis is true.\nA small p-value suggests the data are unlikely under the null hypothesis, but it does not measure the probability that the null hypothesis is true.\n\n\n\n\n\n\n\n✅ Click to reveal answer\n\n\nType I error: Rejecting a true null hypothesis (false positive).\n\nType II error: Failing to reject a false null hypothesis (false negative).\nWhich error is more costly depends on context (e.g., medical testing vs. fraud detection).\n\n\n\n\n\n\n\n\n✅ Click to reveal answer\n\nKey assumptions include:\n\nLinearity\nIndependence of errors\nHomoscedasticity (constant variance)\nNormality of errors (for inference)\n\nThese can be checked using residual plots, QQ plots, and diagnostic tests.\n\n\n\n\n\n\n\n✅ Click to reveal answer\n\nThe Central Limit Theorem (CLT) states that the sampling distribution of the sample mean approaches a normal distribution as sample size increases, regardless of the population distribution.\nIt enables statistical inference using normal-based methods, even when the data are not normally distributed.\n\n\n\n\n\n\n\n✅ Click to reveal answer\n\nA confidence interval (CI) provides a range of plausible values for an unknown population parameter.\nA 95% CI means that if we repeated the sampling process many times, about 95% of those intervals would contain the true parameter.\n\n\n\n\n\n\n\n✅ Click to reveal answer\n\nOverfitting occurs when a model captures noise instead of the underlying pattern, performing well on training data but poorly on new data.\nIt can be prevented using techniques like cross-validation, regularization, simpler models, and early stopping.\n\n\n\n\n\n\n\n✅ Click to reveal answer\n\nCommon approaches include: - Deleting missing observations (when missingness is minimal)\n- Mean/median imputation\n- Model-based or multiple imputation\nThe choice depends on the amount and mechanism of missingness (MCAR, MAR, MNAR).\n\n\n\n\n\n\n\n✅ Click to reveal answer\n\nModel performance can be evaluated using: - Regression metrics: RMSE, MAE, R²\n- Classification metrics: accuracy, precision, recall, F1-score, AUC\nEvaluation should be done on validation or test data to assess generalization.\n\n\n\n\n\n\n\n✅ Click to reveal answer\n\nWhen the sample size doubles, the width of the confidence interval decreases, because the standard error scales with (1 / ).\nDoubling the sample size reduces the margin of error by approximately 29%, making the estimate more precise."
+  },
+  {
+    "objectID": "STAT/work3.html#top-10-statistics-interview-questions",
+    "href": "STAT/work3.html#top-10-statistics-interview-questions",
+    "title": "Interview",
+    "section": "",
+    "text": "Note\n\n\n\n💡 Mock \nThis document presents the top 10 statistics questions and answers that most frequently come up in job interviews. These questions are based on interviews I have personally participated in, either as a candidate or as an interviewer when assessing new hires. The goal is to highlight the statistical concepts that employers commonly expect candidates to understand.\n\n\n\n\n\n\n✅ Click to reveal answer\n\nDescriptive statistics summarize and describe the main features of a dataset (e.g., mean, median, standard deviation, plots).\nInferential statistics use a sample to make conclusions or predictions about a larger population (e.g., confidence intervals, hypothesis tests).\n\n\n\n\n\n\n\n✅ Click to reveal answer\n\nCorrelation measures the strength and direction of a relationship between two variables.\nCausation means that changes in one variable directly cause changes in another.\nCorrelation alone does not imply causation; establishing causation typically requires controlled experiments, causal models, or strong assumptions.\n\n\n\n\n\n\n\n✅ Click to reveal answer\n\nA p-value is the probability of observing results as extreme as (or more extreme than) the data, assuming the null hypothesis is true.\nA small p-value suggests the data are unlikely under the null hypothesis, but it does not measure the probability that the null hypothesis is true.\n\n\n\n\n\n\n\n✅ Click to reveal answer\n\n\nType I error: Rejecting a true null hypothesis (false positive).\n\nType II error: Failing to reject a false null hypothesis (false negative).\nWhich error is more costly depends on context (e.g., medical testing vs. fraud detection).\n\n\n\n\n\n\n\n\n✅ Click to reveal answer\n\nKey assumptions include:\n\nLinearity\nIndependence of errors\nHomoscedasticity (constant variance)\nNormality of errors (for inference)\n\nThese can be checked using residual plots, QQ plots, and diagnostic tests.\n\n\n\n\n\n\n\n✅ Click to reveal answer\n\nThe Central Limit Theorem (CLT) states that the sampling distribution of the sample mean approaches a normal distribution as sample size increases, regardless of the population distribution.\nIt enables statistical inference using normal-based methods, even when the data are not normally distributed.\n\n\n\n\n\n\n\n✅ Click to reveal answer\n\nA confidence interval (CI) provides a range of plausible values for an unknown population parameter.\nA 95% CI means that if we repeated the sampling process many times, about 95% of those intervals would contain the true parameter.\n\n\n\n\n\n\n\n✅ Click to reveal answer\n\nOverfitting occurs when a model captures noise instead of the underlying pattern, performing well on training data but poorly on new data.\nIt can be prevented using techniques like cross-validation, regularization, simpler models, and early stopping.\n\n\n\n\n\n\n\n✅ Click to reveal answer\n\nCommon approaches include: - Deleting missing observations (when missingness is minimal)\n- Mean/median imputation\n- Model-based or multiple imputation\nThe choice depends on the amount and mechanism of missingness (MCAR, MAR, MNAR).\n\n\n\n\n\n\n\n✅ Click to reveal answer\n\nModel performance can be evaluated using: - Regression metrics: RMSE, MAE, R²\n- Classification metrics: accuracy, precision, recall, F1-score, AUC\nEvaluation should be done on validation or test data to assess generalization.\n\n\n\n\n\n\n\n✅ Click to reveal answer\n\nWhen the sample size doubles, the width of the confidence interval decreases, because the standard error scales with (1 / ).\nDoubling the sample size reduces the margin of error by approximately 29%, making the estimate more precise."
+  },
+  {
+    "objectID": "STAT/work3.html#bonus",
+    "href": "STAT/work3.html#bonus",
+    "title": "Interview",
+    "section": "Bonus",
+    "text": "Bonus\n\n\nQuestion 1: Statistics Foundations\nYou are analyzing ride data for Uber.\n\nThe probability that a user takes a ride in the morning rush hour is 10%.\nThe probability that a user takes a ride in the evening rush hour is 20%.\nThe probability that a user takes an evening rush hour ride given that they took a morning rush hour ride is 50%.\n\nIf we observe that a user took an evening rush hour ride, what is the probability that they also took a morning rush hour ride?\n\n\n✅ Click to reveal answer\n\nLet:\nMMM = event that the user took a morning rush hour ride EEE = event that the user took an evening rush hour ride\nGiven:\n\\(P(M)=0.10P(M) = 0.10P(M)=0.10\\)\n\\(P(E)=0.20P(E) = 0.20P(E)=0.20\\)\n\\(P(E∣M)=0.50P(E \\mid M) = 0.50P(E∣M)=0.50\\)\nStep 1: Use Bayes’ Theorem\n\\(P(M∣E)P(M \\mid E)P(M∣E)\\)\nBayes’ theorem states:\n$P(M∣E)=P(E∣M)⋅P(M)P(E)P(M E) = P(M∣E)=P(E)P(E∣M)⋅P(M)$\n\\(P(M∣E)=0.200.50×0.10​\\)\n\\(P(M∣E)=0.050.20=0.25P(M \\mid E) = \\frac{0.05}{0.20} = 0.25P(M∣E)=0.200.05​=0.25\\)\nThis means that given a user took an evening rush hour ride, there is a 25% probability that they also took a morning rush hour ride.\n\n\n\nQuestion 2: Experiment Design & Power Analysis\nWhen designing an experiment, given a fixed sample size, significance level, and desired power, we compute a Minimum Detectable Effect (MDE).\nSuppose you run the experiment, collect the data, and observe an effect size that is smaller than the MDE, yet the result is statistically significant.\nHow is this possible? Shouldn’t effects smaller than the MDE be non‑significant?\n\n\n✅ Click to reveal answer\n\nThis situation is possible and not a contradiction. The key reason is that the Minimum Detectable Effect (MDE) is defined in terms of statistical power, not statistical significance.\n\nWhat the MDE Actually Means?\n\nThe MDE is the smallest effect size that your experiment is designed to detect with a specified probability (power), usually 80% or 90%, if that effect is truly present. In other words:\nIf the true effect equals the MDE, you have (for example) an 80% chance of obtaining a statistically significant result.\nIt does not mean:\nEffects smaller than the MDE can never be significant\n\nStatistical Significance Is Random Hypothesis testing involves sampling variability. Even if the true effect is smaller than the MDE:\n\nRandom variation may produce a larger observed effect The standard error may be smaller than expected The test statistic may cross the significance threshold\nAs a result, you can still obtain a statistically significant p‑value.\n\nPower Is About Probability, Not Certainty If the true effect is below the MDE:\n\nThe probability of detection is less than the target power But that probability is not zero\nSo significance can happen — just less frequently.\n\nRelationship Between Effect Size, Power, and Significance\n\n\n\n\n\n\n\n\nConcept\nWhat it Represents\n\n\n\n\nStatistical significance\nA single realization: did this sample cross the significance threshold?\n\n\nPower\nThe long-run probability of detecting a true effect when it exists\n\n\nMinimum Detectable Effect (MDE)\nThe smallest effect size that can be detected with a specified power\n\n\nObserved effect\nA random estimate of the effect size obtained from sampled data\n\n\n\nA statistically significant result answers:\n“Is this result unlikely under the null hypothesis?”\nThe MDE answers:\n“How likely am I to detect this effect if it is truly this large?”\nThese are related but not the same question.\n\n\n\nQuestion 3: Causation\nAmazon Prime members place an average of 10 orders per month, while non‑Prime users place 2 orders per month.\nDoes Amazon Prime membership cause users to place more orders? Explain your reasoning.\n\n\n✅ Click to reveal answer\n\nThere is selection bias.\nPrime members self‑select into the program, and their higher number of orders may reflect pre‑existing shopping behavior rather than a causal effect of Prime membership.\nTo establish causality, we would need a randomized experiment or a credible causal identification strategy."
   },
   {
     "objectID": "tienda/index.html",

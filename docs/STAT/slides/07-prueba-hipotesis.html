@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Universidad de Montevideo: Introducción a la Estadística (STATS) - 8&nbsp; Prueba de Hipotesis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./08-viernes13.html" rel="next">
+<link href="./06-inferencia.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07-prueba-hipotesis.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Prueba de Hipotesis</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Universidad de Montevideo: Introducción a la Estadística (STATS)</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Universidad de Montevideo: Introducción a la Estadística (STATS)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-bienvenida.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>Bienvenidos</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-datos-experimentos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Proceso estadístico y Experimentos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-datos-estadisticos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Datos y estadisticos.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-probabilidad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilidad: Eventos y Probabilidades.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-variables-aleatorias.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Variables aleatorias.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-inferencia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Inferencia e Intervalos de confianza.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-prueba-hipotesis.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Prueba de Hipotesis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-viernes13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estadísticas zombis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Epilogo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Epilogue</strong></span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#un-paso-más-que-un-dato." id="toc-un-paso-más-que-un-dato." class="nav-link active" data-scroll-target="#un-paso-más-que-un-dato."><span class="header-section-number">8.1</span> Un paso más que un dato.</a></li>
+  <li><a href="#una-poblacion-continua." id="toc-una-poblacion-continua." class="nav-link" data-scroll-target="#una-poblacion-continua."><span class="header-section-number">8.2</span> Una Poblacion: continua.</a>
+  <ul class="collapse">
+  <li><a href="#regla-practica" id="toc-regla-practica" class="nav-link" data-scroll-target="#regla-practica"><span class="header-section-number">8.2.1</span> Regla practica:</a></li>
+  <li><a href="#mi-turno-el-ejemplo-de-la-cerveza-continuado" id="toc-mi-turno-el-ejemplo-de-la-cerveza-continuado" class="nav-link" data-scroll-target="#mi-turno-el-ejemplo-de-la-cerveza-continuado"><span class="header-section-number">8.2.2</span> Mi turno: El ejemplo de la cerveza continuado</a></li>
+  </ul></li>
+  <li><a href="#dos-poblaciones-continua" id="toc-dos-poblaciones-continua" class="nav-link" data-scroll-target="#dos-poblaciones-continua"><span class="header-section-number">8.3</span> Dos poblaciones: Continua</a></li>
+  <li><a href="#dos-poblaciones-proporciones" id="toc-dos-poblaciones-proporciones" class="nav-link" data-scroll-target="#dos-poblaciones-proporciones"><span class="header-section-number">8.4</span> Dos poblaciones: proporciones</a>
+  <ul class="collapse">
+  <li><a href="#el-ejemplo-de-la-app-continuado" id="toc-el-ejemplo-de-la-app-continuado" class="nav-link" data-scroll-target="#el-ejemplo-de-la-app-continuado"><span class="header-section-number">8.4.1</span> El ejemplo de la app: continuado</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Prueba de Hipotesis</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="un-paso-más-que-un-dato." class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="un-paso-más-que-un-dato."><span class="header-section-number">8.1</span> Un paso más que un dato.</h2>
+<ul>
+<li><p>En la práctica, muchas veces nos piden un dato (estimación puntual).</p></li>
+<li><p>Podemos acompañarlo con una estimación de la incertidumbre (IC)</p></li>
+<li><p>Pero puede <strong>NO</strong> ser nuestra pregunta de investigación:</p>
+<ul>
+<li><p>Somos una empresa de gestión de pagos, queremos invertir en una app por la cual le podemos enviar recordatorios de pago a nuestros clientes. Antes de invertir queremos saber si enviar estos recordatorios tiene el efecto esperado.</p></li>
+<li><p>Responde un IC este problema? SI/NO</p></li>
+</ul>
+<p><strong>Recordemos de nuestra primera clase:</strong></p></li>
+<li><p>Objetivo: Evaluar la efectividad del mensaje para reducir morosidad.</p></li>
+<li><p>En este último modulo vamos a ver las herramientas para responder este tipo de pregunta.</p>
+<ul>
+<li>Vamos a ver dos tipos de prueba de hipotesis para <span class="math inline">\(\mu\)</span>
+<ul>
+<li><strong>Una población</strong></li>
+<li><strong>Dos poblaciones</strong></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="una-poblacion-continua." class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="una-poblacion-continua."><span class="header-section-number">8.2</span> Una Poblacion: continua.</h2>
+<ul>
+<li><p>Supongamos que queremos plantear una hipótesis sobre el parámetro <span class="math inline">\(\mu\)</span> de una población desconocida que asumimos continua.</p></li>
+<li><p>Podemos obtener una muestra de la poblacion y calcular <span class="math inline">\(\bar{x}\)</span>.</p></li>
+<li><p>Si quisiéramos testear una hipótesis de que el parámetro es igual a una constante <span class="math inline">\(\mu_0\)</span></p></li>
+</ul>
+<p><span class="math display">\[H_0) \mu=\mu_0\]</span></p>
+<p>En test de hipótesis clásico, las alternativas pueden tomar tres formas:</p>
+<ul>
+<li><p><span class="math inline">\(H_A) \mu\neq\mu_0\)</span></p></li>
+<li><p><span class="math inline">\(H_A) \mu&lt;\mu_0\)</span></p></li>
+<li><p><span class="math inline">\(H_A) \mu&gt;\mu_0\)</span></p></li>
+</ul>
+<p><strong>Que podemos utilizar?</strong></p>
+<ul>
+<li><p>Podemos obtener una muestra aleatoria de los datos, calcular la media muestral: <span class="math inline">\(\hat{\mu}=\bar{x}\)</span></p></li>
+<li><p>Si aplicamos lo que vimos del TCL y la distribución t, si <span class="math inline">\(H_0\)</span> fuera cierto se cumplirá que:</p>
+<p><span class="math display">\[t=\frac{\bar{X}-\mu_0}{\sqrt{\hat{S}^2/n}}\sim t_{n-1}\]</span></p></li>
+<li><p><strong>Que nos dice esto?</strong></p>
+<ul>
+<li>Bajo <span class="math inline">\(H_0\)</span> cierta podemos calcular probabilidades y verificar, si el del estadístico <span class="math inline">\(t\)</span> observado es raro.</li>
+<li><strong>Que es raro?</strong></li>
+</ul></li>
+<li><p>Rechazaremos la hipótesis nula cuando el estadístico de prueba tome valores extremos, es decir, cuando la probabilidad de observar ese valor del estadístico es poco probable.</p>
+<ul>
+<li>Poco probable <span class="math inline">\(\approx\)</span> esta en colas de las distribución.</li>
+</ul></li>
+</ul>
+<p><strong>Graficamente:</strong></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Imagenes/Raro.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>p-value:</strong></p>
+<ul>
+<li><p>Definimos como el p-valor o p-value a la probabilidad de observar un valor del estadístico igual o más extremo, dado que la hipótesis nula es correcta.</p>
+<ul>
+<li>Ejemplo a una cola:</li>
+</ul></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Imagenes/Valor_p.svg.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="regla-practica" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="regla-practica"><span class="header-section-number">8.2.1</span> Regla practica:</h3>
+<ul>
+<li><p>Antes de realizar un test vamos a considerar un valor a priori <span class="math inline">\(\alpha\)</span> (por ejemplo:0.05), si el valor observado es más extremo que el punto de corte preestablecido rechazamos la hipótesis nula.</p>
+<ul>
+<li>Si p-valor <span class="math inline">\(\leq \alpha \to\)</span> Rechazamos <span class="math inline">\(H_0\)</span></li>
+<li>Si p-valor <span class="math inline">\(&gt; \alpha \to\)</span> no hay evidencia para rechazar <span class="math inline">\(H_0\)</span></li>
+</ul></li>
+</ul>
+<p>Alternativamente, podemos buscar en las colas de la distribución aquel valor de <span class="math inline">\(t^*\)</span> que acumula cierta probabilidad, esto dependerá del tipo de hipótesis alternativa:</p>
+<ul>
+<li><span class="math inline">\(H_A) \mu&lt;\mu_0\)</span>
+<ul>
+<li>Buscamos <span class="math inline">\(t^*\)</span> que acumula <span class="math inline">\(\alpha\)</span> (cola izquierda), si <span class="math inline">\(t&lt;t^*\)</span> Rechazo</li>
+</ul></li>
+<li><span class="math inline">\(H_A) \mu \neq \mu_0\)</span>
+<ul>
+<li>Buscamos <span class="math inline">\(t^*\)</span> que acumula deja dos colas que sumen <span class="math inline">\(\alpha\)</span>, es decir los valores que dejan <span class="math inline">\(\alpha/2\)</span> en cada cola. , si <span class="math inline">\(|t|&gt;|t^*|\)</span> Rechazo.</li>
+</ul></li>
+<li><span class="math inline">\(H_A) \mu&gt;\mu_0\)</span>
+<ul>
+<li>Buscamos <span class="math inline">\(t^*\)</span> que acumula <span class="math inline">\(1-\alpha\)</span> (cola derecha) , si <span class="math inline">\(t&gt;t^*\)</span> Rechazo</li>
+</ul></li>
+</ul>
+</section>
+<section id="mi-turno-el-ejemplo-de-la-cerveza-continuado" class="level3" data-number="8.2.2">
+<h3 data-number="8.2.2" class="anchored" data-anchor-id="mi-turno-el-ejemplo-de-la-cerveza-continuado"><span class="header-section-number">8.2.2</span> Mi turno: El ejemplo de la cerveza continuado</h3>
+<ul>
+<li>Retomemos nuestro ejemplo de la cerveza, vamos a asumir que el llenado de botellas sigue una distribución normal y queremos hacer inferencia sobre <span class="math inline">\(\mu\)</span>.</li>
+</ul>
+<ul>
+<li><p>Sacamos una muestra de datos y encontre lo siguiente: <span class="math inline">\(\bar{X}=\)</span> 914.93, <span class="math inline">\(S_{x}=\)</span> 101.38, <span class="math inline">\(n=\)</span> 20</p></li>
+<li><p>Primero, me defino cual es mi hipotesis a testear.</p>
+<ul>
+<li><span class="math inline">\(H_0) \mu=1000ml\)</span></li>
+</ul></li>
+<li><p><strong>Cual seria la alntertniva que me preocupa?</strong></p>
+<ul>
+<li><p><span class="math inline">\(H_A) \mu&lt;1000\)</span></p></li>
+<li><p><span class="math inline">\(H_A) \mu \neq 1000\)</span></p>
+<p><strong>Discusión en clase:</strong></p></li>
+</ul></li>
+</ul>
+<section id="menos-de-1000" class="level4" data-number="8.2.2.1">
+<h4 data-number="8.2.2.1" class="anchored" data-anchor-id="menos-de-1000"><span class="header-section-number">8.2.2.1</span> <strong>Menos de</strong> 1000</h4>
+<ul>
+<li>Pensemos que me interesa testear <span class="math inline">\(H_A) \mu&lt;1000\)</span></li>
+<li>Calculo el estadístico:</li>
+</ul>
+<p><span class="math display">\[t=\frac{\bar{x}-1000}{S_{x}/\sqrt{20}}=-3.752659\]</span></p>
+<p>Dada mi <span class="math inline">\(H_a\)</span> debería buscar una de las dos:</p>
+<ul>
+<li><p>A. El valor de tabla <span class="math inline">\(t^*\)</span> que deja una cola a la izquierda de <span class="math inline">\(5\%\)</span></p></li>
+<li><p>B. La probabilidad de observar un valor más extremo <span class="math inline">\(P(t\leq -3.752659)\)</span></p></li>
+</ul>
+<!-- -->
+<ul>
+<li><p>Podemos utilizar la app de la distribución t</p>
+<ul>
+<li><p>A <span class="math inline">\(P(t&lt;t^*)=0.05\)</span> <span class="math inline">\(\to\)</span> el valor critico es <span class="math inline">\(t^*=-1.72913\)</span></p></li>
+<li><p>B <span class="math inline">\(P(t\leq -3.752659)\)</span>=p-valor <span class="math inline">\(\to\)</span> p-valor es 0.00067</p></li>
+</ul></li>
+<li><p>O utilizar r:</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.align='center'</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(<span class="fl">0.05</span>,<span class="at">df=</span><span class="dv">19</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -1.729133</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pt</span>(<span class="sc">-</span><span class="fl">3.752659</span>,<span class="at">df=</span><span class="dv">19</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.0006738893</code></pre>
+</div>
+</div>
+<ul>
+<li>Que podemos concluir?
+<ul>
+<li>Utilizando nuestras regla, si fijáramos un <span class="math inline">\(\alpha=0.05\)</span> hay suficiente evidencia para rechazar <span class="math inline">\(H_0)\mu=1000\)</span> a favor de la hipótesis alternativa.
+<ul>
+<li>O lo que en la práctica quiere decir que la maquina está fallando.</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="no-es-1000" class="level4" data-number="8.2.2.2">
+<h4 data-number="8.2.2.2" class="anchored" data-anchor-id="no-es-1000"><span class="header-section-number">8.2.2.2</span> No es 1000</h4>
+<ul>
+<li>Supongamos que me interesa testear <span class="math inline">\(H_A) \mu\neq1000\)</span>, el valor del estadístico no cambia, <span class="math inline">\(t=-3.752659\)</span></li>
+</ul>
+<p>Dada mi <span class="math inline">\(H_a\)</span> debería buscar una de las dos: * A. El valor de tabla <span class="math inline">\(t^*\)</span> que deja una cola a la derecha de <span class="math inline">\(2.5\%\)</span> o que acumula <span class="math inline">\(97.5\%\)</span> * B. La probabilidad de observar un valor más extremo <span class="math inline">\(2 \times P(t&gt;|-3.752659|)\)</span></p>
+<ul>
+<li>Podemos usar R o la app.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.align='center'</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(<span class="fl">0.975</span>,<span class="at">df=</span><span class="dv">19</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.093024</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span><span class="fu">pt</span>(<span class="fl">3.752659</span>,<span class="at">lower.tail =</span> F,<span class="at">df=</span><span class="dv">19</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.001347779</code></pre>
+</div>
+</div>
+</section>
+<section id="aplicacion-en-r" class="level4" data-number="8.2.2.3">
+<h4 data-number="8.2.2.3" class="anchored" data-anchor-id="aplicacion-en-r"><span class="header-section-number">8.2.2.3</span> Aplicacion en R:</h4>
+<p><strong>One side</strong></p>
+<ul>
+<li>R tiene un comando para hacer la prueba de hipótesis directamente sin hacer los pasos intermedios.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x =</span> X,<span class="at">alternative=</span><span class="st">"less"</span>,<span class="at">mu=</span><span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One Sample t-test
+
+data:  X
+t = -3.7525, df = 19, p-value = 0.0006742
+alternative hypothesis: true mean is less than 1000
+95 percent confidence interval:
+    -Inf 954.132
+sample estimates:
+mean of x 
+ 914.9336 </code></pre>
+</div>
+</div>
+<p><strong>Two side</strong></p>
+<ul>
+<li>R tiene un comando para hacer la prueba de hipótesis directamente sin hacer los pasos intermedios.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x =</span> X,<span class="at">alternative=</span><span class="st">"two.sided"</span>,<span class="at">mu=</span><span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One Sample t-test
+
+data:  X
+t = -3.7525, df = 19, p-value = 0.001348
+alternative hypothesis: true mean is not equal to 1000
+95 percent confidence interval:
+ 867.4859 962.3813
+sample estimates:
+mean of x 
+ 914.9336 </code></pre>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="dos-poblaciones-continua" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="dos-poblaciones-continua"><span class="header-section-number">8.3</span> Dos poblaciones: Continua</h2>
+<ul>
+<li><p>En lo que vimos del curso, podemos estar interesados en comparar dos tratamientos o dos poblaciones, llamémosle X y Y ambas continuas.</p></li>
+<li><p>Hay evidencia de que se comporten diferente?</p></li>
+<li><p>En la practica vamos a obtener una muestra de los datos <span class="math inline">\(n_y\)</span> y <span class="math inline">\(n_x\)</span> para calcular el promedio <span class="math inline">\(\bar{x}\)</span>, <span class="math inline">\(\bar{y}\)</span> y nuestro objetivo será testear</p></li>
+</ul>
+<p><span class="math display">\[\mu_x=\mu_y\]</span></p>
+<ul>
+<li>Si bien podemos testear todas las alternativas anteriores, nos vamos a concentrar en</li>
+</ul>
+<p><span class="math display">\[H_A) \mu_x\neq\mu_y\]</span> <strong>Que podemos utilizar?</strong></p>
+<ul>
+<li>Para el caso de dos poblaciones que asumimos tienen igual varianza utilizamos:</li>
+</ul>
+<p><span class="math display">\[t = \frac{\bar{x} -\bar{y} - (\mu_X - \mu_Y)}{\sqrt{S_p^2(\frac{1}{x_x}+\frac{1}{n_y})}}\]</span> Donde <span class="math inline">\(S_P^2 = \frac{(n_x-1)S_X^2 + (n_y-1)S_Y^2}{n_x+n_y-2}\)</span>, se conoce como la varianza pooleada.</p>
+<ul>
+<li>Bajo <span class="math inline">\(H_0:\)</span></li>
+</ul>
+<p><span class="math display">\[t = \frac{\bar{x} -\bar{y}}{\sqrt{S_p^2(\frac{1}{n_x}+\frac{1}{n_y})}}\sim t_{n_x+n_y-2}\]</span></p>
+<ul>
+<li>Podemos utilizar las mismas reglas anteriores, pero ahora vamos a usar una <span class="math inline">\(t\)</span> con <span class="math inline">\(n_x+n_y-2\)</span> grados de libertad.</li>
+</ul>
+</section>
+<section id="dos-poblaciones-proporciones" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="dos-poblaciones-proporciones"><span class="header-section-number">8.4</span> Dos poblaciones: proporciones</h2>
+<ul>
+<li><p>Consideremos el caso nuevamente de dos variables aleatorias X y Y, cada individuo refleja un éxito o un fracaso (Bernoulli)</p></li>
+<li><p>Vamos a estar interesados en ver si las probabilidades son diferentes entre los grupos.</p></li>
+<li><p>En la práctica vamos a obtener una muestra de datos de tamaño <span class="math inline">\(n_x\)</span> y <span class="math inline">\(n_y\)</span> respectivamente, para calcular el promedio <span class="math inline">\(\bar{x}\)</span>, <span class="math inline">\(\bar{y}\)</span> y nuestro objetivo será testear</p></li>
+</ul>
+<p><span class="math display">\[p_x=p_y\]</span></p>
+<ul>
+<li><p>Si bien podemos testear todas las alternativas anteriores, nos vamos a concentrar en <span class="math display">\[p_x\neq p_y\]</span></p></li>
+<li><p>Que podemos utilizar? ¿Nuevamente una prueba t?</p></li>
+</ul>
+<!-- -->
+<ul>
+<li><p>Recordemos que para las variables Bernoulli habíamos visto:</p>
+<ul>
+<li>La estimación de <span class="math inline">\(\hat{p}_x=\bar{x}\)</span></li>
+<li>El error estándar <span class="math inline">\(\sqrt{\bar{x}(1-\bar{x})/n_x}\)</span></li>
+</ul></li>
+<li><p>Vamos a adaptar la prueba t bajo <span class="math inline">\(H_0\)</span> a:</p></li>
+</ul>
+<p><span class="math display">\[t = \frac{\hat{p_x} -\hat{p_y}}{\sqrt{p^*(1-p^*)(\frac{1}{n_x}+\frac{1}{n_y})}} \sim t_{n_x+n_y-2}\]</span></p>
+<p>Donde <span class="math inline">\(p^*=\frac{\sum y_i+\sum x_i}{n_x+n_y}\)</span>, es decir sumamos todos los éxitos de los dos grupos y estimamos las proporciones conjuntamente.</p>
+<p>Nota: En algunos libros se utiliza, $t N(0,1) $ y el estadístico lo denotan <span class="math inline">\(z\)</span>, bajo algunos supuestos extra esto es válido y en muestras “grandes” la diferencia entre la distribución t y la normal no es relevante.</p>
+<section id="el-ejemplo-de-la-app-continuado" class="level3" data-number="8.4.1">
+<h3 data-number="8.4.1" class="anchored" data-anchor-id="el-ejemplo-de-la-app-continuado"><span class="header-section-number">8.4.1</span> El ejemplo de la app: continuado</h3>
+<ul>
+<li><p>Podemos hacer este ejercicio con el ejemplo de botellas de cerveza, pero quiero cambiar al ejemplo de la app para ver un ejemplo de proporciones (Bernoulli).</p></li>
+<li><p>Somos una empresa de gestión de pagos, queremos invertir en una app por la cual le podemos enviar recordatorios de pago a nuestros clientes. Antes de invertir queremos saber si enviar estos recordatorios tiene el efecto esperado</p></li>
+<li><p>Se saco una muestra de nuestra de 100 clientes, a 50 se les asigno aleatoriamente el envió de recordatorios. A los restantes 50 solo se los monitoreo.</p></li>
+<li><p>A fin de mes, evaluamos si el cliente pago en fecha: Éxito 1, Fracaso 0.</p></li>
+</ul>
+<p><strong>Datos:</strong></p>
+<ul>
+<li><p>Saque una muestra de 50 para cada tratamiento, 100 usuarios en total y encontré lo siguiente:</p></li>
+<li><p><span class="math inline">\(\hat{p}_x=\bar{x}=\)</span> 0.84</p></li>
+<li><p><span class="math inline">\(\hat{p}_y=\bar{y}=\)</span> 0.76</p></li>
+<li><p><span class="math inline">\(\hat{p}^*\)</span> = 0.8</p></li>
+<li><p>Por lo que puedo calcular mi estadístico de prueba:</p></li>
+</ul>
+<span class="math display">\[\begin{align}
+t = \frac{\hat{p_x} -\hat{p_y}}{\sqrt{p^*(1-p^*)(\frac{1}{n_x}+\frac{1}{n_y})}}\\ =\frac{0.84 -0.76}{\sqrt{0.8(1-0.8)(\frac{1}{50}+\frac{1}{50})}}= 1
+\end{align}\]</span>
+<p><strong>P-val</strong></p>
+<ul>
+<li>Calculo los valores criticos o p-values:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(<span class="fl">0.975</span>,<span class="at">df=</span><span class="dv">98</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.984467</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span><span class="fu">pt</span>(<span class="dv">1</span>,<span class="at">lower.tail =</span> F,<span class="at">df=</span><span class="dv">98</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.3197733</code></pre>
+</div>
+</div>
+<p>Aplicacion en R:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(X,Y,<span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Two Sample t-test
+
+data:  X and Y
+t = 0.99494, df = 98, p-value = 0.3222
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.07956533  0.23956533
+sample estimates:
+mean of x mean of y 
+     0.84      0.76 </code></pre>
+</div>
+</div>
+<p><strong>Conclusiones:</strong></p>
+<ul>
+<li><p>Puedo decir que las personas que reciben la notificación tienden a comportarse diferente en términos de pagar en fecha?</p>
+<ul>
+<li>Dado los p-valores (o valores críticos), no parece haber evidencia de un efecto de los mensajes en el pago en fecha.</li>
+</ul></li>
+<li><p>Puedo hacer inferencia causal? SI/NO</p></li>
+<li><p>Puedo hablar de toda la población de clientes? SI/NO</p></li>
+<li><p>Tendría que descartar cualquier tipo de iniciativa con los mensajes?</p></li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./06-inferencia.html" class="pagination-link" aria-label="Inferencia e Intervalos de confianza.">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Inferencia e Intervalos de confianza.</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./08-viernes13.html" class="pagination-link" aria-label="Estadísticas zombis">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estadísticas zombis</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

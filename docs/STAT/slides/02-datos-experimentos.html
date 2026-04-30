@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Universidad de Montevideo: Introducción a la Estadística (STATS) - 3&nbsp; Proceso estadístico y Experimentos</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./03-datos-estadisticos.html" rel="next">
+<link href="./01-bienvenida.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-datos-experimentos.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Proceso estadístico y Experimentos</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Universidad de Montevideo: Introducción a la Estadística (STATS)</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Universidad de Montevideo: Introducción a la Estadística (STATS)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-bienvenida.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>Bienvenidos</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-datos-experimentos.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Proceso estadístico y Experimentos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-datos-estadisticos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Datos y estadisticos.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-probabilidad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilidad: Eventos y Probabilidades.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-variables-aleatorias.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Variables aleatorias.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-inferencia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Inferencia e Intervalos de confianza.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-prueba-hipotesis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Prueba de Hipotesis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-viernes13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estadísticas zombis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Epilogo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Epilogue</strong></span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#lenguaje-estadístico" id="toc-lenguaje-estadístico" class="nav-link active" data-scroll-target="#lenguaje-estadístico"><span class="header-section-number">3.1</span> Lenguaje estadístico</a>
+  <ul class="collapse">
+  <li><a href="#proceso-del-método-científico" id="toc-proceso-del-método-científico" class="nav-link" data-scroll-target="#proceso-del-método-científico"><span class="header-section-number">3.1.1</span> Proceso del método científico</a></li>
+  <li><a href="#pregunta-de-investigación" id="toc-pregunta-de-investigación" class="nav-link" data-scroll-target="#pregunta-de-investigación"><span class="header-section-number">3.1.2</span> Pregunta de investigación</a></li>
+  <li><a href="#tipos-de-estudios-experimentos-vs-observacion" id="toc-tipos-de-estudios-experimentos-vs-observacion" class="nav-link" data-scroll-target="#tipos-de-estudios-experimentos-vs-observacion"><span class="header-section-number">3.1.3</span> Tipos de estudios: Experimentos vs Observacion</a></li>
+  <li><a href="#unidades" id="toc-unidades" class="nav-link" data-scroll-target="#unidades"><span class="header-section-number">3.1.4</span> Unidades</a></li>
+  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables"><span class="header-section-number">3.1.5</span> Variables</a></li>
+  </ul></li>
+  <li><a href="#mi-turno-estudio-i" id="toc-mi-turno-estudio-i" class="nav-link" data-scroll-target="#mi-turno-estudio-i"><span class="header-section-number">3.2</span> Mi turno: Estudio I</a></li>
+  <li><a href="#mi-turno-estudio-ii" id="toc-mi-turno-estudio-ii" class="nav-link" data-scroll-target="#mi-turno-estudio-ii"><span class="header-section-number">3.3</span> Mi turno: Estudio II</a></li>
+  <li><a href="#tu-turno-estudio-i" id="toc-tu-turno-estudio-i" class="nav-link" data-scroll-target="#tu-turno-estudio-i"><span class="header-section-number">3.4</span> Tu turno: Estudio I</a></li>
+  <li><a href="#un-poco-más-sobre-causalidad-y-representatividad" id="toc-un-poco-más-sobre-causalidad-y-representatividad" class="nav-link" data-scroll-target="#un-poco-más-sobre-causalidad-y-representatividad"><span class="header-section-number">3.5</span> Un poco más sobre causalidad y representatividad</a>
+  <ul class="collapse">
+  <li><a href="#mini-mi-tu-turno" id="toc-mini-mi-tu-turno" class="nav-link" data-scroll-target="#mini-mi-tu-turno"><span class="header-section-number">3.5.1</span> Mini mi-tu turno:</a></li>
+  <li><a href="#cuando-conviene-usar-cada-metodo" id="toc-cuando-conviene-usar-cada-metodo" class="nav-link" data-scroll-target="#cuando-conviene-usar-cada-metodo"><span class="header-section-number">3.5.2</span> Cuando conviene usar cada metodo?</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-proceso-estadístico-y-experimentos" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Proceso estadístico y Experimentos</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>From:</p>
+<ul>
+<li><p>Statistical Sleuth</p></li>
+<li><p>Open Intro to Stats</p></li>
+<li><p>Diseño de Experimentos</p></li>
+</ul>
+<section id="lenguaje-estadístico" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="lenguaje-estadístico"><span class="header-section-number">3.1</span> Lenguaje estadístico</h2>
+<p>Como cualquier ciencia, la estadística tiene definiciones y lenguaje propio. Por eso vamos a realizar un:</p>
+<ul>
+<li><p>Repaso del método científico aplicado a ciencia de datos.</p></li>
+<li><p>Definiciones básicas sobre experimentos y tipos de variables.</p></li>
+<li><p>Causalidad.</p></li>
+<li><p>Tipos de muestreo.</p></li>
+</ul>
+<section id="proceso-del-método-científico" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="proceso-del-método-científico"><span class="header-section-number">3.1.1</span> Proceso del método científico</h3>
+<ol type="1">
+<li><p><strong>Hipótesis</strong><br>
+Parto de una pregunta de investigación.</p></li>
+<li><p><strong>Observación</strong><br>
+Recolecto los datos necesarios para responder la pregunta de investigación.</p></li>
+<li><p><em>Prueba de hipótesis</em><br>
+Utilizamos herramental estadístico para responder nuestra pregunta de investigación</p></li>
+<li><p><em>Conclusión</em><br>
+Valido la hipótesis inicial o la descarto..</p></li>
+</ol>
+<p>En estadistica, el metodo cientifico tambien aplica, nos definen:</p>
+<ul>
+<li>La pregunta de investigación</li>
+<li>Que tipo de estudio voy a realizar: experimentales vs observacionales
+<ul>
+<li>Que define si tenemos unidades Observacionales y Experimentales (UO/UE)</li>
+</ul></li>
+<li>Variables que vamos a relevar.</li>
+</ul>
+</section>
+<section id="pregunta-de-investigación" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="pregunta-de-investigación"><span class="header-section-number">3.1.2</span> Pregunta de investigación</h3>
+<ul>
+<li><p>Antes de empezar a recolectar datos tenemos que definir nuestro objetivo y pregunta de investigacion.</p></li>
+<li><p>Esta etapa inicial va a definir también las herramientas que vamos a utilizar.</p></li>
+<li><p>No hay preguntas de investigacion invalidas, pero es importante establecerlas (hacer un draft?) y comenzar a pensar que herramientas precisamos.</p>
+<ul>
+<li><p>En esta etapa puede suceder que:</p></li>
+<li><p>No tenemos los datos.</p></li>
+<li><p>No hay forma de conseguir esa información</p></li>
+<li><p>No conocemos las herramientas para responder esa pregunta.</p></li>
+</ul></li>
+<li><p>Esta etapa deriva en un proceso de <em>diseño</em> de la investigación.</p></li>
+</ul>
+</section>
+<section id="tipos-de-estudios-experimentos-vs-observacion" class="level3" data-number="3.1.3">
+<h3 data-number="3.1.3" class="anchored" data-anchor-id="tipos-de-estudios-experimentos-vs-observacion"><span class="header-section-number">3.1.3</span> Tipos de estudios: Experimentos vs Observacion</h3>
+<ul>
+<li>Cuando contamos con la pregunta de investigación, tenemos que definir cómo vamos a obtener los datos y el tipo de estudio a realizar.</li>
+</ul>
+<p><strong>Estudios observacionales: Recolectamos los datos de manera de no interferir en el proceso.</strong></p>
+<ul>
+<li><p>Por ejemplo: tomamos una muestra, utilizamos un censo.</p></li>
+<li><p>Para qué sirve: nos permite identificar asociaciones entre -variables-, no necesariamente una relación causal.</p></li>
+</ul>
+<p><strong>Estudios experimentales: Recolectamos los datos, pero intervenimos, el investigador asigna los tratamientos.</strong></p>
+<ul>
+<li><p>Por ejemplo: seleccionando a que sujetos vamos a darle un tratamiento/placebo.</p></li>
+<li><p>Para qué sirve: nos permite identificar efectos causales entre variables.</p></li>
+<li><p>Porque no hacer siempre experimentos?</p></li>
+</ul>
+</section>
+<section id="unidades" class="level3" data-number="3.1.4">
+<h3 data-number="3.1.4" class="anchored" data-anchor-id="unidades"><span class="header-section-number">3.1.4</span> Unidades</h3>
+<ul>
+<li><p>La pregunta seguramente va a referir a cosas, personas animales u otras unidades que vamos a analizar.</p></li>
+<li><p>Vamos a diferenciar entre:</p>
+<ul>
+<li><p><strong>Unidades experimentales:</strong> son las unidades a las que se les asigna un <strong>tratamiento</strong> en caso de un experimento.</p></li>
+<li><p><strong>Unidades observacionales:</strong> son las unidades donde se miden las <strong>variable</strong>.</p></li>
+</ul></li>
+</ul>
+<p>Ejemplos: Un nutricionista de una escuela quiere testear si una dieta vegetariana tiene efectos sobre el colesterol de los niños. Diseño un experimento con dos recetas, y se las envió a los padres de la escuela de manera aleatoria.</p>
+</section>
+<section id="variables" class="level3" data-number="3.1.5">
+<h3 data-number="3.1.5" class="anchored" data-anchor-id="variables"><span class="header-section-number">3.1.5</span> Variables</h3>
+<p>La pregunta de investigación va a definir qué es lo que vamos a medir.</p>
+<ul>
+<li><p>Vamos a diferenciar entre:</p></li>
+<li><p><em>Varoables de respuesta</em> refiere a la principal variable de interés por parte del investigador.</p></li>
+<li><p><em>Variables de Control</em> refiere a otras variables relevantes para el experimento.</p></li>
+<li><p><em>Variables de Tratamiento</em> Refiere a la variable que permite distinguir a que unidades le fue asignado un tratamiento.</p></li>
+<li><p>Los últimos dos son factores controlables, en el sentido que los podemos medir y controlar por ellos.</p></li>
+</ul>
+<p>Es util pensar en las variables como partes de un proceso:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Imagenes/Sit_exp.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><p>La comunicad estadística y machine learning tiene muchos nombres para las mimas cosas.</p></li>
+<li><p>Unidades observacionales-: Observaciones, instancias, casos</p></li>
+<li><p>Variables de respuesta-: Outcomes, <span class="math inline">\(Y\)</span>.</p></li>
+<li><p>Variables de control-: Covariadas, features, <span class="math inline">\(X\)</span>.</p></li>
+</ul>
+</section>
+</section>
+<section id="mi-turno-estudio-i" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="mi-turno-estudio-i"><span class="header-section-number">3.2</span> Mi turno: Estudio I</h2>
+<p><strong>Problema</strong></p>
+<p>Un problema común en ciencias economía es la existencia de brechas salariales.</p>
+<ul>
+<li><p>Algunos factores que explican estas brechas son evidencia de discriminación laboral. El hecho que una empresa tenga prácticas discriminatorias puede tener consecuencias legales.</p></li>
+<li><p>Ejemplo: Harris Trust and Savings Bank: An Analysis of employee compensation (1979) (Statistical Sleuth, Cap1)</p></li>
+<li><p>Los investigadores tomaron una muestra, recolectaron los salarios iniciales de empleados contratados por el banco entre 1969 y 1977. Se registro el ingreso y el género de las personas.</p></li>
+</ul>
+<p>En las siguientes secciones vamos a identificar los componentes que vimos antes.</p>
+<p><strong>Analisis</strong></p>
+<ul>
+<li>Pregunta de investigacion:
+<ul>
+<li><strong>El banco paga un salario inicial más alto a las mujeres que a los hombres?</strong></li>
+</ul></li>
+<li>Experimento o estudio observacional?
+<ul>
+<li>Se trata de un estudio observacional, el investigador no puede asignar un tratamiento. En nuestro caso el ‘tratamiento’ sería el género de los empleados.</li>
+</ul></li>
+</ul>
+<p>Unidades:</p>
+<ul>
+<li>Empleados contratados por el banco entre 1969 - 1977</li>
+<li>Variables:
+<ul>
+<li>Respuesta: Salario base de los empleados</li>
+<li>Atributos: Genero de los empleados.</li>
+</ul></li>
+<li>Conclusiones:
+<ul>
+<li>Podemos obtener una asociación entre el género y el ingreso de los empleados. Pero no es una relacion causal.</li>
+</ul></li>
+</ul>
+<p><strong>Datos:</strong></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Imagenes/Dif.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="mi-turno-estudio-ii" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="mi-turno-estudio-ii"><span class="header-section-number">3.3</span> Mi turno: Estudio II</h2>
+<p><strong>Problema:</strong></p>
+<ul>
+<li><p>En educación, un factor relevante es que incentivos hace que los estudiantes sean más creativos.</p></li>
+<li><p>Hay dos clases de incentivos Intrínsecos / Extrínsecos.</p></li>
+<li><p>Ejemplo: Estudio de Teresa Amabile (Statistical Sleuth, Cap1):</p>
+<ul>
+<li><p>La investigadora recluto 47 estudiantes. Implemento un cuestionario para hacer reflexionar a los estudiantes sobre motivaciones.</p></li>
+<li><p>A 24 estudiantes se les asigno un formulario para hacerlos reflecionar sobre motivaciones intrínsecas, a 23 sobre motivaciones extrínsecas.</p></li>
+<li><p>Se les pidió que escribieran un poema (haiku). Sus poemas fueron evaluados por 12 expertos que le asignaron un puntaje (0 a 40) y se computo el puntaje promedio por poema.</p></li>
+</ul></li>
+</ul>
+<p><strong>Diseno :</strong></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Imagenes/Experimento1.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Analisis</strong>:</p>
+<ul>
+<li>Pregunta de investigación
+<ul>
+<li><strong>El tipo de motivación tiene impacto sobre la creatividad de los estudiantes?</strong></li>
+</ul></li>
+<li>Experimento o estudio observacional?
+<ul>
+<li>Se trata de un experimento, el investigador asigno un tratamiento a algunas unidades.</li>
+</ul></li>
+<li>Unidades:
+<ul>
+<li>Estudiantes reclutados por la investigadora.</li>
+</ul></li>
+</ul>
+<!-- -->
+<ul>
+<li>Variables:
+<ul>
+<li>Respuesta: Puntaje promedio asignado por los expertos.</li>
+<li>Tratamiento: Asignación al grupo intrínseco o extrínseco</li>
+</ul></li>
+<li>Conclusiones:
+<ul>
+<li>Podemos obtener una relación causal entre las motivaciones y la creatividad</li>
+</ul></li>
+</ul>
+</section>
+<section id="tu-turno-estudio-i" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="tu-turno-estudio-i"><span class="header-section-number">3.4</span> Tu turno: Estudio I</h2>
+<p><strong>Problema</strong></p>
+<ul>
+<li><p>Somos una empresa de gestión de pagos, queremos invertir en una app por la cual le podemos enviar recordatorios de pago a nuestros clientes. Antes de invertir queremos saber si enviar estos recordatorios tiene el efecto esperado</p></li>
+<li><p>Se saco una muestra de nuestra de 100 clientes que utilizaron nuestro servicio el mes pasado y se les asigno un número del 1 al 100. (ID)</p></li>
+<li><p>Con un bolillero (de 100 bolillas), se sacó secuencialmente 50 bolillas para identificar los Ids que van a recibir el mensaje de texto,</p></li>
+<li><p>A fin de mes, evaluamos si el cliente pago en fecha.</p></li>
+</ul>
+<p><strong>Análisis</strong></p>
+<ul>
+<li><p>Pregunta de investigación:</p></li>
+<li><p>Experimento o estudio observacional?</p></li>
+<li><p>Unidades:</p></li>
+<li><p>Variables:</p>
+<ul>
+<li>Respuesta: .</li>
+<li>Tratamiento/Controles:</li>
+</ul></li>
+<li><p>Conclusiones:</p></li>
+</ul>
+</section>
+<section id="un-poco-más-sobre-causalidad-y-representatividad" class="level2 center middle inverse" data-number="3.5">
+<h2 class="center middle inverse anchored" data-number="3.5" data-anchor-id="un-poco-más-sobre-causalidad-y-representatividad"><span class="header-section-number">3.5</span> Un poco más sobre causalidad y representatividad</h2>
+<p>From:Stat 500 at ISU&nbsp;Open Intro to Stats</p>
+<ul>
+<li>El objetivo de nuestros estudios es poder sacar conclusiones, hacer inferencia estadística.
+<ul>
+<li>Causalidad: SI/NO</li>
+<li>Poblacional: SI/NO</li>
+</ul></li>
+<li>El tipo de inferencia que podemos realizar va a estar delimitada por la aleatoriedad que podamos controlar en nuestro estudio.</li>
+</ul>
+<p><strong>Causalidad</strong></p>
+<ul>
+<li>Conclusiones estadísticas de causa-efecto, pueden obtenerse de experimentos.
+<ul>
+<li>Donde el tratamiento fue asignado al azar <strong>por el investigador</strong>.</li>
+<li>Randomizar el tratamiento nos permite que unidades con diferentes características sean asignados a los grupos de manera más balanceada.</li>
+</ul></li>
+</ul>
+<!-- -->
+<ul>
+<li><p>En un estudio observacional, no podemos extraer causalidad.</p>
+<ul>
+<li><p>No podemos descartar que otros factores (no controlables) están afectando el resultado.</p>
+<ul>
+<li>Esto no quiere decir que no podamos controlar por algunos factores.</li>
+<li>En el ejemplo del banco, podriamos controlar por nivel educativo. Pero nada nos asegura que otros factores que no podamos medir estén impactado en el resultado.</li>
+</ul></li>
+</ul>
+<p><strong>Población</strong></p></li>
+<li><p>El otro componente que si los investigadores estan interesados es si podemos extrapolar las conclusiones a toda una población.</p>
+<ul>
+<li>Generalmente nos interesa derivar conclusiones sobre una población, pero no podemos experimentar en cada persona.</li>
+<li>Por esto obtenemos una muestra de la población</li>
+</ul></li>
+<li><p>Una muestra aleatoria de la población nos permite extrapolar lo que aprendimos con pocos datos a toda la población.</p>
+<ul>
+<li><p>Una buena muestra asegura que la población está bien representada en este pequeño número de casos.</p></li>
+<li><p>En general asumimos muestreo aleatorio simple (sin remplazo):</p>
+<ul>
+<li>Todas las posibles unidades tienen la misma probabilidad de ser elegidas.</li>
+</ul></li>
+</ul></li>
+</ul>
+<!-- -->
+<ul>
+<li>Pero existen otros tipos de muestreo aleatorio:
+<ul>
+<li><p><strong>Muestra estratificada</strong>: antes se muestrear, se organiza la población en estratos y se toman muestras en cada grupo.</p></li>
+<li><p><strong>Muestra por conglomerados (cluster)</strong>: se seleccionan conglomerados al azar, no unidades.</p></li>
+<li><p><strong>Muestreo sistemático:</strong> Se obtiene una lista y se seleccionada cada x casos.</p></li>
+</ul></li>
+<li>No siempre las muestras tienen porque ser aleatorias:
+<ul>
+<li>Muestras de conveniencia. (ej: Le pregunto a mis amigos)</li>
+<li>Auto selección. (ej: Tratamiento super experimental)</li>
+</ul></li>
+<li>La falta de aleatoriedad genera sesgos en nuestras conclusiones.</li>
+</ul>
+<p>La discusion anterior sobre el tipo de conclusiones puedo derivar, la podemos resumir de la siguiente manera:</p>
+<table class="table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 39%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Muestra aleatoria: NO</th>
+<th>Muestra aleatoria: SI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Tratamiento aleatorio: NO</td>
+<td>Asociaciones, no extrapolable a la población</td>
+<td>Asociaciones, extrapolable a la población</td>
+</tr>
+<tr class="even">
+<td>Tratamiento aleatorio: SI</td>
+<td>Causalidad, no extrapolable a la población</td>
+<td>Causalidad, extrapolable a la población</td>
+</tr>
+</tbody>
+</table>
+<section id="mini-mi-tu-turno" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="mini-mi-tu-turno"><span class="header-section-number">3.5.1</span> Mini mi-tu turno:</h3>
+<p><strong>Problema 1:</strong></p>
+<p>Que tipo de muestra es usada en la situación descripta a continuación.</p>
+<p>Para determinar la opinión de un cliente sobre el precio, una empresa de retail selecciona de forma aleatoria a 140 cajas registradoras y se les pone un enlace para completar una encuesta en el ticket al cliente.</p>
+<ul>
+<li>Muestra de conveniencia</li>
+<li>Muestra sistemática</li>
+<li>Muestra estratificada</li>
+<li>Muestra cluster</li>
+<li>Muestra aleatoria</li>
+</ul>
+<p><strong>Problema 2:</strong></p>
+<p>Que tipo de muestra es usada en la situación descripta a continuación.</p>
+<p>Para estimar el porcentaje de casos defectuosos por batchs manufacturados, el manager de control de calidad de Toshiba selecciona una computadora cada 20 laptops que vienen de la línea de ensamblaje, empezando con la tercera hasta que obtiene una muestra de 70 laptops.</p>
+<ul>
+<li>Muestra de conveniencia</li>
+<li>Muestra sistemática</li>
+<li>Muestra estratificada</li>
+<li>Muestra cluster</li>
+<li>Muestra random</li>
+</ul>
+<p><strong>Problema 3:</strong></p>
+<p>Ustedes que tomaron el curso, le recomiendan lo siguiente: Ir al depósito, donde se sabe la cantidad de computadoras que hay 70.000 y tomar una muestra de 70 laptops al azar.</p>
+<ul>
+<li>Muestra de conveniencia</li>
+<li>Muestra sistemática</li>
+<li>Muestra estratificada</li>
+<li>Muestra cluster</li>
+<li>Muestra random</li>
+</ul>
+</section>
+<section id="cuando-conviene-usar-cada-metodo" class="level3" data-number="3.5.2">
+<h3 data-number="3.5.2" class="anchored" data-anchor-id="cuando-conviene-usar-cada-metodo"><span class="header-section-number">3.5.2</span> Cuando conviene usar cada metodo?</h3>
+<ul>
+<li>Muestrear tiene un costo asociado ($).</li>
+<li>Depende del dominio donde estemos trabajando.</li>
+<li>Este no es un curso de muestreo, pero quiero cerrar esta unidad con algunos ejemplos para pensar en los beneficios y desventajas.</li>
+</ul>
+<p><strong>Ejemplo 1:</strong></p>
+<p>Quiero estimar que opinan las personas sobre una marca de ropa, distinguiendo segun nivel socio economico .</p>
+<ul>
+<li>Envio una encuesta a 500 usuarios de Facebook.</li>
+<li>Voy a 500 hogares de Montevideo, elegidos al azar.</li>
+<li>Voy a 500 hogares de Montevideo, elegidos según barrio.</li>
+</ul>
+<p><strong>Ejemplo 2:</strong></p>
+<p>Quiero estimar el rendimiento de dos tipos de semilla (A/B) en la produccion de maiz. Tengo un campo experimental donde puedo elegir que voy a plantar en cada parcela (10).</p>
+<ul>
+<li>Elijo las primeras 5 A.</li>
+<li>Elijo al azar 5 parcelas para A.</li>
+<li>Tiro semillas al azar por el campo y veo que pasa.</li>
+</ul>
+<p>Que pasa si les doy mas informacion?</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Imagenes/Field1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Ejemplo 2:</strong></p>
+<ul>
+<li><p>Porque es importante estas discusiones sobre muestreo? En algunas aplicaciones los investigadores quieren hacer inferencia sobre las personas pero accedieron a informacion sobre clusters.</p>
+<ul>
+<li>Un cuento de encuestas y futbol.</li>
+</ul></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Imagenes/Field2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Porque es importante estas discusiones sobre muestreo si quiero hacer Machine Learning?
+<ul>
+<li>Un cuento de Buses y autos.</li>
+</ul></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Imagenes/Buses.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./01-bienvenida.html" class="pagination-link" aria-label="**Bienvenidos**">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>Bienvenidos</strong></span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./03-datos-estadisticos.html" class="pagination-link" aria-label="Datos y estadisticos.">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Datos y estadisticos.</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

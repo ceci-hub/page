@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Universidad de Montevideo: Introducción a la Estadística (STATS) - 5&nbsp; Probabilidad: Eventos y Probabilidades.</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./05-variables-aleatorias.html" rel="next">
+<link href="./03-datos-estadisticos.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-probabilidad.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilidad: Eventos y Probabilidades.</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Universidad de Montevideo: Introducción a la Estadística (STATS)</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Universidad de Montevideo: Introducción a la Estadística (STATS)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-bienvenida.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>Bienvenidos</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-datos-experimentos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Proceso estadístico y Experimentos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-datos-estadisticos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Datos y estadisticos.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-probabilidad.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilidad: Eventos y Probabilidades.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-variables-aleatorias.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Variables aleatorias.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-inferencia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Inferencia e Intervalos de confianza.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-prueba-hipotesis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Prueba de Hipotesis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-viernes13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estadísticas zombis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Epilogo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Epilogue</strong></span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#definiendo-probabilidad" id="toc-definiendo-probabilidad" class="nav-link active" data-scroll-target="#definiendo-probabilidad"><span class="header-section-number">5.1</span> Definiendo probabilidad</a></li>
+  <li><a href="#calculos-de-probabilidades" id="toc-calculos-de-probabilidades" class="nav-link" data-scroll-target="#calculos-de-probabilidades"><span class="header-section-number">5.2</span> Calculos de probabilidades</a>
+  <ul class="collapse">
+  <li><a href="#bayes" id="toc-bayes" class="nav-link" data-scroll-target="#bayes"><span class="header-section-number">5.2.1</span> Bayes</a></li>
+  </ul></li>
+  <li><a href="#aplicacion-la-gran-estafa." id="toc-aplicacion-la-gran-estafa." class="nav-link" data-scroll-target="#aplicacion-la-gran-estafa."><span class="header-section-number">5.3</span> Aplicacion: La gran estafa.</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilidad: Eventos y Probabilidades.</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><span class="math inline">\(P(A)\)</span> y <span class="math inline">\(P(B)\)</span></p>
+<p>From: Open Intro to Stats</p>
+<section id="definiendo-probabilidad" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="definiendo-probabilidad"><span class="header-section-number">5.1</span> Definiendo probabilidad</h2>
+<p><strong>Proceso</strong></p>
+<ul>
+<li><p>Antes definir probabilidad, es útil pensar en <strong>procesos aleatorios</strong>: situaciones donde sabemos potencialmente que puede pasar (Suceso, Evento, Outcomes), pero no sabemos con certeza que es lo que vamos a observar.</p>
+<ul>
+<li>Tirar una moneda de $10 : Puma o escudo.</li>
+<li>Tirar un dado: pueden salir cualquiera de los 6 números.</li>
+</ul></li>
+<li><p>En los dos próximos módulos vamos a ver algunas familias de distribución famosas y repasar el cálculo de probabilidades.</p></li>
+</ul>
+<p><strong>Enfoque</strong></p>
+<ul>
+<li>Existen diferentes escuelas de pensamiento sobre cómo interpretar probabilidades.</li>
+<li><em>Frecuentistas:</em> La probabilidad es un evento, es la proporción (frecuencia relativa) que ocurre ese evento si observamos el proceso infinitas veces.
+<ul>
+<li><p>Ejemplo: Tirar una moneda.</p></li>
+<li><p>Otras: Bayesianos, Fiduciarios, Teoría de la decisión, Likelihoodistas.</p></li>
+</ul></li>
+<li>Porque tiene sentido la perspectiva frecuentista?</li>
+<li>Esta basadao en la <em>ley de los grandes numeros</em>:
+<ul>
+<li><span class="math inline">\(p_n \to p\)</span>, la frecuencia relativa converge la probabilidad real.</li>
+</ul></li>
+<li>Pero, puedo observar infinitas veces el proceso?</li>
+</ul>
+<p><strong>Para discutir en clase, Se rompió la moneda?</strong></p>
+<ul>
+<li><p>Supongamos que tenemos una moneda, puede salir: O,X</p></li>
+<li><p>Empezamos a tirar y salió:</p></li>
+</ul>
+<p><span class="math display">\[\underline{X} \underline{X} \underline{X} \underline{X} \underline{X} \underline{X} \underline{X} \underline{X}\]</span></p>
+<ul>
+<li>Cual es la probabilidad de que salga O?</li>
+</ul>
+<!-- -->
+<ul>
+<li>Sigue siendo: 1/2</li>
+<li>La moneda no tiene que dar una X. La ley de los grandes números no te dice que el proceso tiene que compensar lo que ocurrió en el pasado, esto se llama la <em>falacia del apostador</em>.</li>
+<li>Los analistas también somos susceptibles a estos errores.</li>
+</ul>
+<p><strong>Eventos</strong></p>
+<ul>
+<li>Para estudiar probabilidad precisamos definir eventos posibles los procesos:
+<ul>
+<li>Tirar un dado:</li>
+<li>Sacar una carta:</li>
+<li>Resultado de este curso:</li>
+</ul></li>
+<li>Definimos el espacio muestral como el conjunto de todos los posibles eventos.</li>
+</ul>
+<p><strong>Tipo de eventos:</strong></p>
+<ul>
+<li>Algunos eventos pueden ser excluyentes (disjuntos): No pueden ocurrir al mismo tiempo.
+<ul>
+<li>Tiro un dado: Sacar 1 y 6.</li>
+</ul></li>
+<li>Algunos eventos pueden ser no excluyentes (no disjuntos): Pueden ocurrir al mismo tiempo.
+<ul>
+<li>Tiro un dado saco 1 y que Peñarol gane algún partido.</li>
+</ul></li>
+</ul>
+<p><strong>Ejemplo con cartas:</strong></p>
+<ul>
+<li>Consideremos un mazo de 52 cartas de Póker.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Imagenes/prob.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:120.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Sacar una J y sacar una carta roja? Excluyente/No Excluyente</li>
+<li>Sacar un as de diamantes y sacar una carta negra? Excluyente/No Excluyente</li>
+</ul>
+<p><strong>Calculo de probabilidades</strong></p>
+<ul>
+<li>En una maso bien barajado, podemos asumir que hay total aleatoriedad de la próxima carta.
+<ul>
+<li>En algunos escenarios podemos calcular la probabilidad como:
+<ul>
+<li>Total de casos a favor/ Total de casos posibles.</li>
+</ul></li>
+</ul></li>
+<li>P(J)=</li>
+<li>P(rojo)=</li>
+</ul>
+<p><strong>Sol:</strong></p>
+<ul>
+<li>P(J)= 4/52</li>
+<li>P(rojo)=26/52</li>
+</ul>
+<p>¿Y cuál es la probabilidad de que sea roja y J?</p>
+<p>P(J y roja)=2/52</p>
+<p>P(As diamantes y negra)=0</p>
+<p>Los eventos excluyentes tienen probabilidad cero de ocurrir a la vez.</p>
+<p>Y la probabilidad de roja o J?</p>
+<p>* P(J o roja)=</p>
+<ul>
+<li><p>No son eventos excluyentes!</p></li>
+<li><p>P(J o roja)=P(J)+P(roja)-p(J y roja) <span class="math display">\[\frac{4}{52}+\frac{26}{52}-\frac{2}{52}\]</span></p></li>
+</ul>
+<p><strong>DIAGRAMA DE VEN</strong></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Imagenes/Diag.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Regla para calculo de probabilidades:</strong></p>
+<ul>
+<li><p>La regla general para dos eventos A y B: <span class="math display">\[P(A o B)=P(A)+P(B)-P(AyB)\]</span></p></li>
+<li><p>Cuando dos eventos son excluyentes, <span class="math inline">\(P(AyB)=0\)</span> y se simplifica.</p></li>
+</ul>
+<p><strong>Eventos Complementarios</strong></p>
+<ul>
+<li>Eventos <strong>complementarios</strong>: dos eventos que su probabilidad suma 1.
+<ul>
+<li>Una pareja espera el nacimiento de su primogénito, posibles resultados en términos del género biológico:</li>
+<li><span class="math inline">\(S=\{M,F\}\)</span>, sexo masculino y femenino son complementarios.</li>
+</ul></li>
+<li></li>
+<li>Utilidad: Como su probabilidad suma 1, <span class="math inline">\(P(F)+P(M)=1\)</span> podemos usar <span class="math inline">\(P(F)=1-P(M)\)</span>.</li>
+<li>Intuición: Cuando decidamos modelar probabilidad, podemos pensar en modelar el proceso más sencillo.</li>
+</ul>
+<p><strong>Eventos Independientes</strong></p>
+<ul>
+<li>Eventos <em>Independientes:</em> dos eventos son independientes cuando conocer el resultado de uno no aporta información sobre el resultado del otro.
+<ul>
+<li><p>Saber que tire un dado y salió 6, probabilidad de que gane Peñarol.</p></li>
+<li><p>Tire una moneda equilibrada <span class="math inline">\(\{O,X\}\)</span> salió <span class="math inline">\(O\)</span>, cual es la probabilidad de que salga <span class="math inline">\(X\)</span> en la próxima oportunidad.</p></li>
+<li><p>Sacar una <span class="math inline">\(J\)</span> en el juego de cartas, afecta la probabilidad de sacar una segunda J?</p></li>
+</ul></li>
+</ul>
+<!-- -->
+<ul>
+<li>Supongamos que tenemos dos eventos A y B.</li>
+<li>Queremos calcular la probabilidad de que pase A dado que ya sabemos que paso B.</li>
+</ul>
+<p><span class="math display">\[P(A \mid B)\]</span> * La notación anterior indica probabilidad condicionada.</p>
+<ul>
+<li><p>Si A y B son independientes: <span class="math inline">\(P(A\mid B)=P(A)\)</span></p></li>
+<li><p>Esto nos da una herramienta para verificar si dos eventos son independientes en la práctica, si podemos calcular la probabilidad condicionada <span class="math inline">\(P(A\mid B)\)</span> y la probabilidad marginal <span class="math inline">\(P(A)\)</span>, popudiendo verificar si son iguales.</p>
+<ul>
+<li>Supongamos tenemos un modelo para clasificar Fraude y tenemos historial de compras. Podemos obtener un modelo de probabilidad condicionada y compararlo con la probabilidad margina para evaluar si el modelo aporta algo.</li>
+</ul></li>
+</ul>
+<p><strong>Regla de calculo:</strong></p>
+<ul>
+<li>Cuando sabemos que dos eventos son independientes, podemos usar la <em>regla del producto</em> para calcular la probabilidad conjunta.</li>
+</ul>
+<p><span class="math display">\[P(AyB)=P(A)\times P(B)\]</span> - Supongamos que tenemos una moneda equilibrada <span class="math inline">\(\{0,X\}\)</span>, cual es la probabilidad de sacar dos veces al hilo O?</p>
+<p><span class="math display">\[P(0 \text{ Primer tirada y }  0 \text{ Segunda tirada})=\\
+P(0) \times P(0) =\frac{1}{2}\frac{1}{2}=\frac{1}{4}\]</span></p>
+<ul>
+<li>Y de sacar 10 al hilo?</li>
+</ul>
+<p><span class="math display">\[P( \text{diez } 0s)= P(0)\times \ldots\times P(0)=P(0)^{10}=0.0009765625\]</span> - Que nos dice: Si hiciéramos el mismo experimento 1000 veces aproximadamente lo lograríamos solo 1 vez.</p>
+</section>
+<section id="calculos-de-probabilidades" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="calculos-de-probabilidades"><span class="header-section-number">5.2</span> Calculos de probabilidades</h2>
+<ul>
+<li><p>En algunas ocasiones vamos a tener estimaciones de las probabilidades y las vamos a utilizar para hacer cálculos.</p>
+<ul>
+<li>Estas probabilidades pueden estar derivadas de un modelo de ML.</li>
+</ul></li>
+<li><p>Vamos a ver algunas definiciones adicionales basadas en un ejemplo. Supongamos que tenemos dos procesos para el caso de nacimientos:</p>
+<ul>
+<li><p>Genero: M, F</p></li>
+<li><p>Pelo: R, C,M</p>
+<p><strong><em>Distribución de probabilidad (marginal)</em></strong></p></li>
+</ul></li>
+<li><p>La <strong><em>distribución de probabilidad</em></strong> indica todos los posibles eventos y la probabilidad con la que ocurren</p></li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Evento</th>
+<th>M</th>
+<th>F</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Probabilidad</td>
+<td>0.4</td>
+<td>0.6</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>Reglas</strong>:</p>
+<ul>
+<li>Los eventos tiene que ser disjuntos.</li>
+<li>Las probabilidades tienen que estar entre 0 y 1.</li>
+<li>La suma de probabilidades tiene que sumar 1.</li>
+</ul></li>
+<li><p>Otra notacion:</p></li>
+</ul>
+<p><span class="math display">\[P(\text{Genero})= \begin{cases} 0.4 &amp; \text { si Genero=Masculino }  \\ 0.6 &amp; \text { si Genero=Femenino} \end{cases}\]</span></p>
+<p><strong>Distribucion conjunta</strong></p>
+<ul>
+<li>La <em>distribución conjunta</em> indica todos los posibles eventos (de dos o más procesos) y la probabilidad con la que ocurren conjuntamente.</li>
+</ul>
+<p><span class="math display">\[P(\text{Genero},\text{Pelo})\]</span></p>
+<ul>
+<li>En nuestro ejemplo, cuales serían todos los posibles eventos?
+<ul>
+<li>Son los siguientes pares de resultados. <span class="math display">\[(Genero,Pelo)=\{(M,R),(M,C),(M,M),(F,R),(F,C),(F,M)\}\]</span></li>
+</ul></li>
+</ul>
+<!-- -->
+<ul>
+<li>En algunas ocasiones las datas pueden estar presentada en tablas.</li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">M</th>
+<th style="text-align: center;">F</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">R</td>
+<td style="text-align: center;">P(M,R)</td>
+<td style="text-align: center;">P(F,R)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">P(M,C)</td>
+<td style="text-align: center;">P(F,C)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">M</td>
+<td style="text-align: center;">P(M,M)</td>
+<td style="text-align: center;">P(F,M)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>En aplicaciones podemos estar interesados en la probabilidad condicionada.</p>
+<ul>
+<li>Dado que sabemos que sucede con un proceso, que va a pasar con el otro?</li>
+</ul></li>
+<li><p>En nuestro ejemplo, podemos estar interesados en la probabilidad que el bebe tenga un cierto color de pelo dado que sabemos el género.</p>
+<ul>
+<li><span class="math inline">\(P( Pelo \mid Genero)\)</span></li>
+</ul></li>
+</ul>
+<!-- -->
+<ul>
+<li>La función de distribución condicionada</li>
+</ul>
+<p><span class="math display">\[P(Pelo\mid\text{Genero=F})= \begin{cases} 0.3 &amp; \text{Rubio si F}  \\\ 0.4 &amp; \text { Castanio si F} \\\ 0.3 &amp; \text{ Morocho si F} \end{cases}
+\]</span></p>
+<section id="bayes" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="bayes"><span class="header-section-number">5.2.1</span> Bayes</h3>
+<ul>
+<li><p>El <em>teorema de Bayes</em>: Un teorema ampliamente usado en estadística y ML que nos permite calcular probabilidades condicionadas.</p></li>
+<li><p>Para dos eventos A, B: queremos saber la probabilidad de que pase A dado que paso B.</p></li>
+</ul>
+<p><span class="math display">\[P(A\mid B)=\frac{P(AyB)}{P(B)}\]</span></p>
+<ul>
+<li>En nuestro ejemplo, podemos estar interesados en:</li>
+</ul>
+<p><span class="math display">\[P(Pelo=C\mid Genero=F)=\frac{P(CyF)}{P(F)}\]</span></p>
+<ul>
+<li>Los que nos dice es que, si podemos calcular la probabilidad de nacimientos femeninos, y la probabilidad de nacimientos femeninos y castaños podríamos obtener las probabilidad de interes.</li>
+</ul>
+</section>
+</section>
+<section id="aplicacion-la-gran-estafa." class="level2 center middle inverse" data-number="5.3">
+<h2 class="center middle inverse anchored" data-number="5.3" data-anchor-id="aplicacion-la-gran-estafa."><span class="header-section-number">5.3</span> Aplicacion: La gran estafa.</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Imagenes/Estafa.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Fraude</strong></p>
+<ul>
+<li><p>Vamos a usar un estudio de caso para hacerlo más digerible.</p></li>
+<li><p>Un grupo de investigación conformado por contadores analizo 72 transacciones sospechosas de tarjetas para determinar si se trataba de estafas o no.</p></li>
+<li><p>En la muestra determinaron si transacción fue una estafa(SI,NO) y que tipo de transacción fue, nos presentaron una tabla con todos los resultados que observaron.</p></li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Si</th>
+<th style="text-align: center;">No</th>
+<th style="text-align: center;">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">24</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">24</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Total</td>
+<td style="text-align: center;">48</td>
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">72</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Eventos:</strong></p>
+<ul>
+<li><p>Que posibles resultados podemos observar para cada variable.</p>
+<ul>
+<li><p>Estafas: Si o no</p></li>
+<li><p>Transacción: A, B , C</p></li>
+<li><p>Es buena idea digerir los problemas para evitar errores de interpretacion.</p></li>
+</ul></li>
+<li><p>Los investigadores nos dieron los resultados, ahora a nosotros nos toca usarlos para calcular probabilidades.</p></li>
+</ul>
+<p><strong>Distribuciones marginales y probabilidad de estafa</strong></p>
+<p>Tabla</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Sí</th>
+<th style="text-align: center;">No</th>
+<th style="text-align: center;">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">24</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">24</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Total</strong></td>
+<td style="text-align: center;"><strong>48</strong></td>
+<td style="text-align: center;"><strong>24</strong></td>
+<td style="text-align: center;"><strong>72</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Preguntas: Dist Marginal</strong></p>
+<ul>
+<li>Probabilidad de observar una transacción tipo A <span class="math inline">\(P(A)\)</span></li>
+<li>Probabilidad de observar una transacción tipo B <span class="math inline">\(P(B)\)</span></li>
+<li>Cual es la probabilidad de estafa? <span class="math inline">\(P(S)\)</span></li>
+<li>Cual es la distribución marginal de transacción?</li>
+</ul>
+<p><strong>Respuestas:</strong></p>
+<p>Prob de cada transacción:</p>
+<p><span class="math display">\[P(A)=24/72\]</span> <span class="math display">\[P(B)=24/72\]</span> <span class="math display">\[P(C)=1-P(A)+P(B)\]</span> <span class="math display">\[P(C)=1-\frac{24}{72}-\frac{24}{72}\]</span></p>
+<p><strong>Probabilidad de estafa:</strong></p>
+<p><span class="math inline">\(P(Estafa=Si)=48/72=0.6666667\)</span></p>
+<p><strong>Distribución marginal:</strong></p>
+<p><span class="math display">\[P(Transaccion)= \begin{cases} \frac{1}{3} &amp; \text{si A}  \\\ \frac{1}{3} &amp; \text {si B} \\\ \frac{1}{3} &amp; \text{ si C} \end{cases}
+\]</span></p>
+<p><strong>Preguntas: Dist Conjunta.</strong></p>
+<p>Tabla de contingencia</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Sí</th>
+<th style="text-align: center;">No</th>
+<th style="text-align: center;">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">24</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">24</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Total</strong></td>
+<td style="text-align: center;"><strong>48</strong></td>
+<td style="text-align: center;"><strong>24</strong></td>
+<td style="text-align: center;"><strong>72</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Probabilidad de observar una <strong>transacción tipo A y fraudulenta</strong>.<br>
+</li>
+<li>Probabilidad de observar una <strong>transacción tipo B y fraudulenta</strong>.<br>
+</li>
+<li>Probabilidad de observar una <strong>transacción tipo C y fraudulenta</strong>.</li>
+</ul>
+<p><strong>Respuestas:</strong></p>
+<ul>
+<li><span class="math inline">\(P(\text{Estafa y transaccion A})\)</span> <span class="math inline">\(=\frac{10}{72}\)</span></li>
+<li><span class="math inline">\(P(\text{Estafa y transaccion B})\)</span> <span class="math inline">\(=\frac{18}{72}\)</span></li>
+<li><span class="math inline">\(P(\text{Estafa y transaccion C})\)</span> <span class="math inline">\(=\frac{20}{72}\)</span></li>
+</ul>
+<p><strong>Preguntas: Dist Conjunta.</strong></p>
+<ul>
+<li>Probabilidad de observar una transacción fraudulenta dado que sé que es del tipo A <span class="math display">\[P(\text{Estafa} \mid A)\]</span></li>
+<li>Calcular la distribucion de probabilidad condicionada de que sea fraude dado que ya conozco el tipo de transacción.</li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Si</th>
+<th style="text-align: center;">No</th>
+<th style="text-align: center;">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">24</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">24</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Total</td>
+<td style="text-align: center;">48</td>
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">72</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Respuestas:</strong></p>
+<span class="math display">\[\begin{align}
+P(\text{Estafa} \mid A)&amp;=\frac{P(\text{Estafa y transaccion A})}{P(transaccion A)}\\
+&amp;= \frac{10/72}{24/72}=\frac{10}{24}=0.42
+\end{align}\]</span>
+<p><strong>Todas las probabilidades condicionales:</strong></p>
+<span class="math display">\[\begin{align}
+P(\text{Estafa} \mid A)&amp;=0.42\\
+P(\text{Estafa} \mid B)&amp;=0.75\\
+P(\text{Estafa} \mid C)&amp;=0.83
+\end{align}\]</span>
+<p><strong>Interpretación.</strong> Hay mayor probabilidad de estafa en transacciones tipo <strong>C</strong> que en <strong>A</strong>.</p>
+<p><strong>Pregunta abierta.</strong> ¿Usarías estas probabilidades para un <strong>sistema de monitoreo</strong>?</p>
+<p>(Advertencia: no controla por costos/beneficios ni por tasas base fuera de la muestra.)</p>
+<p><strong>Notas sobre ML:</strong></p>
+<ul>
+<li><p>En muchas ocasiones tenemos problemas de clasificación en ML de este estilo.</p></li>
+<li><p>Clasificar fraudes: SI,NO</p></li>
+<li><p>Abajo de nombres elegantes lo que muchas veces aproximamos es una probabilidad condicionada.</p>
+<ul>
+<li>Logit, vecino más cercano, etc.</li>
+<li>Cuidado con los modelos que van a estudiar en los próximos módulos, no siempre dan probabilidades.</li>
+</ul></li>
+</ul>
+<p><span class="math display">\[P(\text{Fraude}\mid\text{Historial de compra})\]</span><strong>Discusion de clase:</strong></p>
+<p>- Si quisiéramos implementar un sistema de monitoreo, podemos usar esta regla para todas las transacciones?</p>
+<ul>
+<li><p>Recordemos el problema:</p>
+<ul>
+<li>Un grupo de investigación conformado por contadores analizo 72 <strong>transacciones sospechosas</strong> de tarjetas para determinar si se trataba de estafas o no.</li>
+</ul></li>
+<li><p>Si la población es transacciones sospechosas: SI</p></li>
+<li><p>Si la población es transacciones: … y no, porque?</p></li>
+</ul>
+<p><strong>Siempre recuerden como se obtuvo la data, condiciona el analisis que podemos hacer.</strong></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./03-datos-estadisticos.html" class="pagination-link" aria-label="Datos y estadisticos.">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Datos y estadisticos.</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./05-variables-aleatorias.html" class="pagination-link" aria-label="Variables aleatorias.">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Variables aleatorias.</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

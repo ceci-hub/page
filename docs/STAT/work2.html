@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Cecilia Regueira">
 
-<title>Datos y Experimentos – Cecilia Regueira</title>
+<title>Interview – Cecilia Regueira</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,20 +56,49 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No se han encontrado resultados",
-    "search-matching-documents-text": "documentos encontrados",
-    "search-copy-link-title": "Copiar el enlace en la búsqueda",
-    "search-hide-matches-text": "Ocultar resultados adicionales",
-    "search-more-match-text": "resultado adicional en este documento",
-    "search-more-matches-text": "resultados adicionales en este documento",
-    "search-clear-button-title": "Borrar",
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Enviar",
-    "search-label": "Buscar"
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -83,8 +113,8 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Cecilia Regueira</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Buscar"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -152,11 +182,19 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">En esta página</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#contenidos" id="toc-contenidos" class="nav-link active" data-scroll-target="#contenidos">Contenidos</a></li>
-  <li><a href="#slides-de-la-clase" id="toc-slides-de-la-clase" class="nav-link" data-scroll-target="#slides-de-la-clase">Slides de la clase</a></li>
+  <li><a href="#answers-to-the-top-11-statistics-interview-questions" id="toc-answers-to-the-top-11-statistics-interview-questions" class="nav-link active" data-scroll-target="#answers-to-the-top-11-statistics-interview-questions">Answers to the Top 11 Statistics Interview Questions</a>
+  <ul class="collapse">
+  <li><a href="#what-is-the-difference-between-descriptive-and-inferential-statistics" id="toc-what-is-the-difference-between-descriptive-and-inferential-statistics" class="nav-link" data-scroll-target="#what-is-the-difference-between-descriptive-and-inferential-statistics">1. What is the difference between descriptive and inferential statistics?</a></li>
+  <li><a href="#what-is-a-p-value-and-how-should-it-be-interpreted" id="toc-what-is-a-p-value-and-how-should-it-be-interpreted" class="nav-link" data-scroll-target="#what-is-a-p-value-and-how-should-it-be-interpreted">3. What is a p-value and how should it be interpreted?</a></li>
+  <li><a href="#what-is-the-difference-between-type-i-and-type-ii-errors" id="toc-what-is-the-difference-between-type-i-and-type-ii-errors" class="nav-link" data-scroll-target="#what-is-the-difference-between-type-i-and-type-ii-errors">4. What is the difference between Type I and Type II errors?</a></li>
+  <li><a href="#what-is-a-confidence-interval-and-how-do-you-interpret-it" id="toc-what-is-a-confidence-interval-and-how-do-you-interpret-it" class="nav-link" data-scroll-target="#what-is-a-confidence-interval-and-how-do-you-interpret-it">7. What is a confidence interval and how do you interpret it?</a></li>
+  <li><a href="#how-do-you-evaluate-the-performance-of-a-statistical-or-predictive-model" id="toc-how-do-you-evaluate-the-performance-of-a-statistical-or-predictive-model" class="nav-link" data-scroll-target="#how-do-you-evaluate-the-performance-of-a-statistical-or-predictive-model">10. How do you evaluate the performance of a statistical or predictive model?</a></li>
+  <li><a href="#what-happens-to-a-confidence-interval-when-the-sample-size-doubles" id="toc-what-happens-to-a-confidence-interval-when-the-sample-size-doubles" class="nav-link" data-scroll-target="#what-happens-to-a-confidence-interval-when-the-sample-size-doubles">11. What happens to a confidence interval when the sample size doubles?</a></li>
+  </ul></li>
+  <li><a href="#bonus" id="toc-bonus" class="nav-link" data-scroll-target="#bonus">Bonus</a></li>
   </ul>
 </nav>
     </div>
@@ -165,14 +203,19 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Datos y Experimentos</h1>
-<p class="subtitle lead">Federico Veneri, Cecilia Regueira</p>
+<h1 class="title">Interview</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Cecilia Regueira </p>
+          </div>
+  </div>
     
   
     
@@ -183,18 +226,193 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="contenidos" class="level2">
-<h2 class="anchored" data-anchor-id="contenidos">Contenidos</h2>
-<ul>
-<li>tipos de datos</li>
-<li>datos categóricos y numéricos</li>
-<li>diseño de experimentos</li>
-<li>ejemplos aplicados</li>
-</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>💡 <strong>QA</strong></p>
+<section id="top-10-statistics-interview-questions" class="level2">
+<h2 class="anchored" data-anchor-id="top-10-statistics-interview-questions">Top 10 Statistics Interview Questions</h2>
+<p>This document presents the top 10 statistics questions and answers that most frequently come up in job interviews. These questions are based on interviews I have personally participated in, either as a candidate or as an interviewer when assessing new hires. The goal is to highlight the statistical concepts that employers commonly expect candidates to understand.</p>
 </section>
-<section id="slides-de-la-clase" class="level2">
-<h2 class="anchored" data-anchor-id="slides-de-la-clase">Slides de la clase</h2>
-<p>👉 <a href="slides/02-datos-experimentos.html">Ver slides – Experimentos</a></p>
+</div>
+</div>
+<section id="answers-to-the-top-11-statistics-interview-questions" class="level2">
+<h2 class="anchored" data-anchor-id="answers-to-the-top-11-statistics-interview-questions">Answers to the Top 11 Statistics Interview Questions</h2>
+<section id="what-is-the-difference-between-descriptive-and-inferential-statistics" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-the-difference-between-descriptive-and-inferential-statistics">1. What is the difference between descriptive and inferential statistics?</h3>
+<p><strong>Descriptive statistics</strong> summarize and describe the main features of a dataset (e.g., mean, median, standard deviation, plots).<br>
+<strong>Inferential statistics</strong> use a sample to make conclusions or predictions about a larger population (e.g., confidence intervals, hypothesis tests).</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">### 2. What is the difference between correlation and causation? <strong>Correlation</strong> measures the strength and direction of a relationship between two variables. <strong>Causation</strong> means that changes in one variable directly cause changes in another. Correlation alone does not imply causation; establishing causation typically requires controlled experiments, causal models, or strong assumptions.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="what-is-a-p-value-and-how-should-it-be-interpreted" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-a-p-value-and-how-should-it-be-interpreted">3. What is a p-value and how should it be interpreted?</h3>
+<p>A <strong>p-value</strong> is the probability of observing results as extreme as (or more extreme than) the data, assuming the null hypothesis is true.<br>
+A small p-value suggests the data are unlikely under the null hypothesis, but it does <strong>not</strong> measure the probability that the null hypothesis is true.</p>
+<hr>
+</section>
+<section id="what-is-the-difference-between-type-i-and-type-ii-errors" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-the-difference-between-type-i-and-type-ii-errors">4. What is the difference between Type I and Type II errors?</h3>
+<ul>
+<li><strong>Type I error</strong>: Rejecting a true null hypothesis (false positive).<br>
+</li>
+<li><strong>Type II error</strong>: Failing to reject a false null hypothesis (false negative).<br>
+Which error is more costly depends on context (e.g., medical testing vs.&nbsp;fraud detection).</li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">### 5. What assumptions are required for linear regression? Key assumptions include: - Linearity - Independence of errors - Homoscedasticity (constant variance) - Normality of errors (for inference) These can be checked using residual plots, QQ plots, and diagnostic tests.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">### 6. What is the Central Limit Theorem and why is it important? The <strong>Central Limit Theorem (CLT)</strong> states that the sampling distribution of the sample mean approaches a normal distribution as sample size increases, regardless of the population distribution. It enables statistical inference using normal-based methods, even when the data are not normally distributed.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="what-is-a-confidence-interval-and-how-do-you-interpret-it" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-a-confidence-interval-and-how-do-you-interpret-it">7. What is a confidence interval and how do you interpret it?</h3>
+<p>A <strong>confidence interval (CI)</strong> provides a range of plausible values for an unknown population parameter.<br>
+A 95% CI means that if we repeated the sampling process many times, about 95% of those intervals would contain the true parameter.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">### 8. What is overfitting and how can it be prevented? <strong>Overfitting</strong> occurs when a model captures noise instead of the underlying pattern, performing well on training data but poorly on new data. It can be prevented using techniques like cross-validation, regularization, simpler models, and early stopping.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">### 9. How would you handle missing data in a dataset? Common approaches include: - Deleting missing observations (when missingness is minimal) - Mean/median imputation - Model-based or multiple imputation The choice depends on the amount and mechanism of missingness (MCAR, MAR, MNAR).</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="how-do-you-evaluate-the-performance-of-a-statistical-or-predictive-model" class="level3">
+<h3 class="anchored" data-anchor-id="how-do-you-evaluate-the-performance-of-a-statistical-or-predictive-model">10. How do you evaluate the performance of a statistical or predictive model?</h3>
+<p>Model performance can be evaluated using: - Regression metrics: RMSE, MAE, R²<br>
+- Classification metrics: accuracy, precision, recall, F1-score, AUC<br>
+Evaluation should be done on validation or test data to assess generalization.</p>
+<hr>
+</section>
+<section id="what-happens-to-a-confidence-interval-when-the-sample-size-doubles" class="level3">
+<h3 class="anchored" data-anchor-id="what-happens-to-a-confidence-interval-when-the-sample-size-doubles">11. What happens to a confidence interval when the sample size doubles?</h3>
+<p>When the sample size doubles, the <strong>width of the confidence interval decreases</strong>, because the standard error scales with (1 / ).<br>
+Doubling the sample size reduces the margin of error by approximately <strong>29%</strong>, making the estimate more precise.</p>
+<hr>
+</section>
+</section>
+<section id="bonus" class="level2">
+<h2 class="anchored" data-anchor-id="bonus">Bonus</h2>
+<hr>
+<ul>
+<li>Question 1: Statistics Foundations</li>
+</ul>
+<p>You are analyzing ride data for Uber.</p>
+<ul>
+<li>The probability that a user takes a ride in the <strong>morning rush hour</strong> is 10%.</li>
+<li>The probability that a user takes a ride in the <strong>evening rush hour</strong> is 20%.</li>
+<li>The probability that a user takes an <strong>evening rush hour ride given that they took a morning rush hour ride</strong> is 50%.</li>
+</ul>
+<p>If we observe that a user took an <strong>evening rush hour ride</strong>, what is the probability that they also took a <strong>morning rush hour ride</strong>?</p>
+<p>Let:</p>
+<p>MMM = event that the user took a morning rush hour ride EEE = event that the user took an evening rush hour ride</p>
+<p>Given:</p>
+<p><span class="math inline">\(P(M)=0.10P(M) = 0.10P(M)=0.10\)</span></p>
+<p><span class="math inline">\(P(E)=0.20P(E) = 0.20P(E)=0.20\)</span></p>
+<p><span class="math inline">\(P(E∣M)=0.50P(E \mid M) = 0.50P(E∣M)=0.50\)</span></p>
+<p>Step 1: Use Bayes’ Theorem</p>
+<p><span class="math inline">\(P(M∣E)P(M \mid E)P(M∣E)\)</span></p>
+<p>Bayes’ theorem states:</p>
+<p>$P(M∣E)=P(E∣M)⋅P(M)P(E)P(M E) = P(M∣E)=P(E)P(E∣M)⋅P(M)$</p>
+<p><span class="math inline">\(P(M∣E)=0.200.50×0.10​\)</span></p>
+<p><span class="math inline">\(P(M∣E)=0.050.20=0.25P(M \mid E) = \frac{0.05}{0.20} = 0.25P(M∣E)=0.200.05​=0.25\)</span></p>
+<p>This means that given a user took an evening rush hour ride, there is a 25% probability that they also took a morning rush hour ride.</p>
+<hr>
+<ul>
+<li>Question 2: Experiment Design &amp; Power Analysis</li>
+</ul>
+<p>When designing an experiment, given a fixed sample size, significance level, and desired power, we compute a Minimum Detectable Effect (MDE).</p>
+<p>Suppose you run the experiment, collect the data, and observe an effect size that is smaller than the MDE, yet the result is statistically significant.</p>
+<p>How is this possible? Shouldn’t effects smaller than the MDE be non‑significant?</p>
+<p>This situation is possible and not a contradiction. The key reason is that the Minimum Detectable Effect (MDE) is defined in terms of statistical power, not statistical significance.</p>
+<ol type="1">
+<li>What the MDE Actually Means?</li>
+</ol>
+<p>The MDE is the smallest effect size that your experiment is designed to detect with a specified probability (power), usually 80% or 90%, if that effect is truly present. In other words:</p>
+<p>If the true effect equals the MDE, you have (for example) an 80% chance of obtaining a statistically significant result.</p>
+<p>It does not mean:</p>
+<p>Effects smaller than the MDE can never be significant</p>
+<ol start="2" type="1">
+<li>Statistical Significance Is Random Hypothesis testing involves sampling variability. Even if the true effect is smaller than the MDE:</li>
+</ol>
+<p>Random variation may produce a larger observed effect The standard error may be smaller than expected The test statistic may cross the significance threshold</p>
+<p>As a result, you can still obtain a statistically significant p‑value.</p>
+<ol start="3" type="1">
+<li>Power Is About Probability, Not Certainty If the true effect is below the MDE:</li>
+</ol>
+<p>The probability of detection is less than the target power But that probability is not zero</p>
+<p>So significance can happen — just less frequently.</p>
+<ol start="4" type="1">
+<li>Relationship Between Effect Size, Power, and Significance</li>
+</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 58%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>What it Represents</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Statistical significance</td>
+<td>A single realization: did this sample cross the significance threshold?</td>
+</tr>
+<tr class="even">
+<td>Power</td>
+<td>The long-run probability of detecting a true effect when it exists</td>
+</tr>
+<tr class="odd">
+<td>Minimum Detectable Effect (MDE)</td>
+<td>The smallest effect size that can be detected with a specified power</td>
+</tr>
+<tr class="even">
+<td>Observed effect</td>
+<td>A random estimate of the effect size obtained from sampled data</td>
+</tr>
+</tbody>
+</table>
+<p>A statistically significant result answers:</p>
+<p>“Is this result unlikely under the null hypothesis?”</p>
+<p>The MDE answers:</p>
+<p>“How likely am I to detect this effect if it is truly this large?”</p>
+<p>These are related but not the same question.</p>
 
 
 </section>
@@ -225,12 +443,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copiado");
+      button.setAttribute("title", "Copied!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copiado");
+        button.setAttribute("data-bs-title", "Copied!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",

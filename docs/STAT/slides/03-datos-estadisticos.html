@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Universidad de Montevideo: Introducción a la Estadística (STATS) - 4&nbsp; Datos y estadisticos.</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./04-probabilidad.html" rel="next">
+<link href="./02-datos-experimentos.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-datos-estadisticos.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Datos y estadisticos.</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Universidad de Montevideo: Introducción a la Estadística (STATS)</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Universidad de Montevideo: Introducción a la Estadística (STATS)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-bienvenida.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>Bienvenidos</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-datos-experimentos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Proceso estadístico y Experimentos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-datos-estadisticos.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Datos y estadisticos.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-probabilidad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilidad: Eventos y Probabilidades.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-variables-aleatorias.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Variables aleatorias.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-inferencia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Inferencia e Intervalos de confianza.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-prueba-hipotesis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Prueba de Hipotesis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-viernes13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estadísticas zombis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Epilogo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Epilogue</strong></span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#datos-y-muchos-formatos" id="toc-datos-y-muchos-formatos" class="nav-link active" data-scroll-target="#datos-y-muchos-formatos"><span class="header-section-number">4.1</span> Datos y (muchos) formatos:</a>
+  <ul class="collapse">
+  <li><a href="#base-de-datostablas." id="toc-base-de-datostablas." class="nav-link" data-scroll-target="#base-de-datostablas."><span class="header-section-number">4.1.1</span> Base de datos:Tablas.</a></li>
+  </ul></li>
+  <li><a href="#tipos-de-variables-medidas." id="toc-tipos-de-variables-medidas." class="nav-link" data-scroll-target="#tipos-de-variables-medidas."><span class="header-section-number">4.2</span> Tipos de variables medidas.</a>
+  <ul class="collapse">
+  <li><a href="#tu-turno-i" id="toc-tu-turno-i" class="nav-link" data-scroll-target="#tu-turno-i"><span class="header-section-number">4.2.1</span> Tu turno I</a></li>
+  </ul></li>
+  <li><a href="#estadisticos-descriptivos." id="toc-estadisticos-descriptivos." class="nav-link" data-scroll-target="#estadisticos-descriptivos."><span class="header-section-number">4.3</span> Estadisticos descriptivos.</a>
+  <ul class="collapse">
+  <li><a href="#analisis-univariante" id="toc-analisis-univariante" class="nav-link" data-scroll-target="#analisis-univariante"><span class="header-section-number">4.3.1</span> Analisis univariante:</a></li>
+  <li><a href="#análisis-multivariante" id="toc-análisis-multivariante" class="nav-link" data-scroll-target="#análisis-multivariante"><span class="header-section-number">4.3.2</span> Análisis multivariante:</a></li>
+  <li><a href="#mi-turno" id="toc-mi-turno" class="nav-link" data-scroll-target="#mi-turno"><span class="header-section-number">4.3.3</span> Mi turno:</a></li>
+  </ul></li>
+  <li><a href="#analisis-grafico." id="toc-analisis-grafico." class="nav-link" data-scroll-target="#analisis-grafico."><span class="header-section-number">4.4</span> Analisis grafico.</a></li>
+  <li><a href="#mi-turno-1" id="toc-mi-turno-1" class="nav-link" data-scroll-target="#mi-turno-1"><span class="header-section-number">4.5</span> Mi turno</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Datos y estadisticos.</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>From:</p>
+<p>Statistical Sleuth</p>
+<p>Open Intro to Stats</p>
+<section id="datos-y-muchos-formatos" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="datos-y-muchos-formatos"><span class="header-section-number">4.1</span> Datos y (muchos) formatos:</h2>
+<p>Los datos pueden venir en muchos formatos:</p>
+<p>Imagenes:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="03-datos-estadisticos_files/figure-html/cars-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  format width height colorspace matte filesize density
+1    PNM    70     46       sRGB FALSE     9673   72x72</code></pre>
+</div>
+</div>
+<p>Sonidos:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="03-datos-estadisticos_files/figure-html/sonidos-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  channels sample_rate    codec frames bitrate layout sample_fmt
+1        2       44100 mp3float     NA  192000 stereo       fltp</code></pre>
+</div>
+</div>
+<ul>
+<li>Existen muchos formatos de datos, pero en general a todos les podemos calcular estadisticos descriptivos para resumir la informacion.</li>
+<li>En el curso vamos a asumir que los datos están formateados como tablas.</li>
+</ul>
+<section id="base-de-datostablas." class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="base-de-datostablas."><span class="header-section-number">4.1.1</span> Base de datos:Tablas.</h3>
+<ul>
+<li><p>En el curso, partimos de la base que se quiere trabajar sobre una población, se obtuvo una muestra, se midieron atributos y la base ya está preparada.</p></li>
+<li><p>En general contamos con una base de datos de observaciones en las que vamos a medir ciertos atributos (features).</p></li>
+</ul>
+<p><span class="math display">\[X_{n \times p} \]</span></p>
+<ul>
+<li><ul>
+<li><p>n: Número de casos</p></li>
+<li><p>p: Numero de atributos medidos</p></li>
+</ul></li>
+<li><p>En algunos casos podemos tener una variable a explicar.<br>
+<span class="math display">\[y_{n \times 1} \]</span></p></li>
+<li><p>En los próximos cursos, van a intentar modelar la relación entre las variables.</p></li>
+</ul>
+<p><span class="math display">\[y_i=g(x_i)\]</span></p>
+<ul>
+<li><p>El tipo de análisis (y modelos) está determinado por el tipo de variables que tenemos.</p></li>
+<li><p>En los siguientes cursos van a ver los datos (Tablas) como matrices:</p></li>
+</ul>
+<p><span class="math display">\[\mathbf{X}=\left(\begin{array}{cccc}
+x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1 p} \\
+x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1 p} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+x_{n 1} &amp; x_{n 2} &amp; \cdots &amp; x_{n p}
+\end{array}\right)=\left(\begin{array}{c}
+\text { individuo } 1 \\
+\text { individuo } 2 \\
+\vdots \\
+\text { individuo } \mathrm{n}
+\end{array}\right)\]</span></p>
+<p><span class="math display">\[\mathbf{X}=\left(\begin{array}{cccc}
+x_{11} &amp; x_{12} &amp; \ldots &amp; x_{1 p} \\
+x_{11} &amp; x_{12} &amp; \ldots &amp; x_{1 p} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+x_{n 1} &amp; x_{n 2} &amp; \ldots &amp; x_{n p}
+\end{array}\right)=\left(\begin{array}{cccc}
+v &amp; v &amp; \ldots  &amp; v \\
+a &amp; a &amp; \ldots  &amp; a \\
+r &amp; r &amp; \ldots &amp; r \\
+1 &amp; 2 &amp; \ldots  &amp; p
+\end{array}\right)\]</span></p>
+<ul>
+<li><p>En nuestro curso, vamos a repasar el concepto de variables aleatorias.</p>
+<ul>
+<li>Distribuciones conocidas y cálculos de probabilidad.</li>
+</ul></li>
+<li><p>Podemos pensar que las observaciones son el resultado de un proceso aleatorio.</p></li>
+<li><p>Vamos a asumir que existe un modelo de probabilidad <span class="math inline">\(f()\)</span> que explica la distribución de alguna variable aleatoria <span class="math inline">\(X\)</span></p></li>
+<li><p>Decimos que X se distribuye segun <span class="math inline">\(f\)</span> (o que <span class="math inline">\(f\)</span> es la función de densidad)</p></li>
+</ul>
+<p><span class="math display">\[X\sim f()\]</span></p>
+<ul>
+<li><p>No conocemos a ciencia cierta la variavle aletoria <span class="math inline">\(X\)</span>, en la práctica obtenemos una muestra de casos <span class="math inline">\(x_i\)</span> <span class="math inline">\((i=1,\ldots,n)\)</span> que vamos a usar para hacer inferencia sobre <span class="math inline">\(f\)</span></p></li>
+<li><p>Cuando tenemos la muestra, decimos que <span class="math inline">\(x_i\)</span> son realizaciones de <span class="math inline">\(X\)</span></p></li>
+</ul>
+</section>
+</section>
+<section id="tipos-de-variables-medidas." class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="tipos-de-variables-medidas."><span class="header-section-number">4.2</span> Tipos de variables medidas.</h2>
+<p>En la práctica, existen varios métodos/técnicas que podemos aplicar para analizar datos. Durante el programa van a ver varios. Pero algunos métodos son más apropiados para ciertos tipos de variables.</p>
+<p><strong>Categóricas</strong></p>
+<ul>
+<li>Refiere a la medición de una variable en categorías.</li>
+</ul>
+<p>Vamos a diferenciar entre:</p>
+<ul>
+<li><p><strong>Ordinales</strong>: Cuando existe un grado de intensidad (no necesariamente podemos determinar los incrementos).</p>
+<ul>
+<li>Ejemplo: Bueno, Regular, Malo.</li>
+</ul></li>
+<li><p><strong>Nominales</strong>: Existen categorías, pero no existe un orden establecido.</p>
+<ul>
+<li>Ejemplo: Si, NO</li>
+</ul></li>
+<li><p>Un caso particular de las variables categorías son las variables dicotómicas.</p>
+<ul>
+<li>Ejemplo: Sexo, M/F : Encoding: Masculino=1</li>
+</ul></li>
+</ul>
+<p><strong>Numéricas</strong></p>
+<ul>
+<li><p><em>Discretas</em>: Los valores toman números enteros <span class="math inline">\((\in N)\)</span></p>
+<ul>
+<li>Ejemplo: El número de personas en un Hogar.</li>
+</ul></li>
+<li><p><em>Continuas</em>: Pueden tomar cualquier valor entero o fracción <span class="math inline">\((\in R)\)</span></p>
+<ul>
+<li>Ejemplo: Altura de los alumnos</li>
+</ul></li>
+</ul>
+<p>Preguntas para discutir:</p>
+<ul>
+<li><p>Existen variables continuas? Por ejemplo, la altura de los alumnos</p></li>
+<li><p>Las dicotómicas son discretas?</p>
+<ul>
+<li>Ejemplo:
+<ul>
+<li>Sexo, M/F</li>
+<li>Hombre: 0,1</li>
+</ul></li>
+</ul></li>
+</ul>
+<section id="tu-turno-i" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="tu-turno-i"><span class="header-section-number">4.2.1</span> Tu turno I</h3>
+<p><strong>Problema</strong></p>
+<ul>
+<li><p>Un problema común en ciencias economía es la existencia de brechas salariales.</p></li>
+<li><p>Algunos factores que explican estas brechas son evidencia de discriminación laboral. El hecho que una empresa tenga prácticas discriminatorias puede tener consecuencias legales.</p></li>
+<li><p>Ejemplo: Harris Trust and Savings Bank: An Analysis of employee compensation (1979) (Statistical Sleuth, Cap1)</p>
+<ul>
+<li>Los investigadores tomaron una muestra, recolectaron los salarios iniciales de empleados contratados por el banco entre 1969 y 1977. Se registro el ingreso y el género de las personas.</li>
+</ul></li>
+<li><p>Que variables son relevantes para el analisis? Que tipo son?</p></li>
+</ul>
+<!-- -->
+<ul>
+<li>Variables:
+<ul>
+<li>Respuesta: Salario base de los empleados</li>
+<li>Atributos: Genero de los empleados.</li>
+</ul></li>
+<li>Que tipo de variables son:
+<ol type="1">
+<li>Salario de los empleados:</li>
+<li>Genero:</li>
+</ol></li>
+</ul>
+</section>
+</section>
+<section id="estadisticos-descriptivos." class="level2 center middle inverse" data-number="4.3">
+<h2 class="center middle inverse anchored" data-number="4.3" data-anchor-id="estadisticos-descriptivos."><span class="header-section-number">4.3</span> Estadisticos descriptivos.</h2>
+<p>From:</p>
+<p>Statistical Sleuth, Open Intro to Stats.</p>
+<p>En esta seccion vamos a separar los estadisticos descriptivos en univariante y multivariante.</p>
+<section id="analisis-univariante" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="analisis-univariante"><span class="header-section-number">4.3.1</span> Analisis univariante:</h3>
+<ul>
+<li><p>Podemos pensar que el ingreso de las personas como una variable aleatoria <span class="math inline">\(Y\sim f()\)</span>, <span class="math inline">\(f\)</span></p>
+<ul>
+<li>No conocemos la función. Pero si obtenemos una muestra, podemos caracterizarla con estadísticas descriptivas.</li>
+</ul>
+<p>Vamos a concentrarnos en:</p></li>
+<li><p>Medidas de tendencia central</p></li>
+<li><p>Medidas de dispersión</p></li>
+<li><p>Formas de la distribución</p></li>
+<li><p>Tablas de frecuencia.</p>
+<p>En lo que sigue vamos a considera los datos de <span class="math inline">\(n\)</span> individuos: <span class="math inline">\(y_i\)</span></p></li>
+</ul>
+<p><strong>Centralidad</strong></p>
+<ul>
+<li><p>Media (o promedio): <span class="math inline">\(\bar{y}=\frac{1}{n}\sum_{i=1}^n y_i\)</span></p></li>
+<li><p>Mediana (Percentil 50): El valor que se encuentra a la mitad de un conjunto de números ordenados. Separa a la distribución en dos.</p>
+<ul>
+<li>Deja la misma cantidad de valores de un lado que del otro.</li>
+</ul></li>
+<li><p>Moda: El valor que aparece con más frecuencia.</p>
+<ul>
+<li>El punto donde la función de densidad toma el valor más alto.</li>
+<li>En la practica, pueden existir dos modas en una distribución.</li>
+</ul></li>
+</ul>
+<p><strong>Orden o posición</strong></p>
+<ul>
+<li><p>Mínimo: El mínimo en la muestra <span class="math inline">\(min(y_i)\)</span></p></li>
+<li><p>Máximo: El mínimo en la muestra <span class="math inline">\(max(y_i)\)</span></p></li>
+<li><p>Percentiles: Supongamos que ordenamos los valores de <span class="math inline">\(y_i\)</span> de menor a mayor, el Percentil indica cual es el valor que separa la muestra, acumulando un determinado “porcentaje” por debajo.</p>
+<ul>
+<li>Percentil 10: Es el valor que separa la muestra en un 10% y en los restantes 90% mayores.<br>
+</li>
+<li>Percentil <span class="math inline">\(P_z\)</span> : Es el valor que separa la muestra en un z% y en los restantes (1-z)% mayores.</li>
+</ul></li>
+</ul>
+<!-- -->
+<ul>
+<li><p>Los <strong>COSOtiles</strong>: En muchos estudios vemos diferentes nombres para percentiles particulares.</p>
+<ul>
+<li><p>Cuartiles: divide la muestra en cuatro partes:</p>
+<pre><code>- 0%-25%,
+- 25%-50%
+- 50%-75%
+- 75%-100%</code></pre></li>
+<li><p>Quintiles: divide la muestra en cinco partes</p></li>
+<li><p>Deciles: divide la muestra en diez partes</p></li>
+</ul></li>
+<li><p>Todos son casos particulares de percentiles.</p>
+<p><strong>Dispersión</strong></p></li>
+<li><p>Rango: La distancia entre el máximo y el mínimo en la muestra <span class="math inline">\(R_i=max(y_i)-min(y_i)\)</span></p></li>
+<li><p>Rango intercuartílico: La distancia entre el cuartil 3 y 1 (<span class="math inline">\(Q_{3}-Q_{1}\)</span>)</p>
+<ul>
+<li>También podemos pensarlo en percentiles: <span class="math inline">\(P_{75}-P_{25}\)</span></li>
+</ul></li>
+</ul>
+<!-- -->
+<ul>
+<li><p>Varianza muestral: Indica la variabilidad de la muestra: <span class="math display">\[S_y^2=\frac{1}{n-1}\sum_{i=1}^{n}(y_i-\bar{y})^2\]</span></p>
+<p>Preguntas para discutir:</p>
+<ul>
+<li>La varianza son distancias?</li>
+<li>Porque el cuadrado?</li>
+</ul></li>
+<li><p>Desvió estándar: Se define como la raíz cuadrada de la varianza muestral. <span class="math display">\[S_y=\sqrt{S_y^2}\]</span></p></li>
+</ul>
+<!-- -->
+<ul>
+<li>En la practica, vemos varias de estas estadisticos descriptivos. Un tema a tener en mente es siempre recordar en que unidad de medidas están los estadísticos anteriores.
+<ul>
+<li>En que unidad esta la varianza? El desvio estandar?</li>
+</ul></li>
+<li>Ejemplo: si seguimos en el problema de los ingresos de las personas, <span class="math inline">\(y_i\)</span> esta medido en pesos.</li>
+<li>Las medidas de tendencia central estarian medidas en pesos</li>
+<li>Las de dispersión? ¿Pesos cuadrados?</li>
+</ul>
+<!-- -->
+<ul>
+<li>Algunos investigadores prefieren expresar los desvíos estándar como porcentaje de la media para tener un indicador independiente de la escala de la variable.</li>
+</ul>
+<p><span class="math display">\[CV=\frac{S_y}{|\bar{y}|}\]</span></p>
+<p><strong>Formas de la distribucion: Simetria</strong></p>
+<ul>
+<li><p>Skewnes/asimetría: Este estadístico ofrece una medida de la asimetría de la distribución.</p>
+<ul>
+<li>Asimetria=0, la distribucion es simetrica.</li>
+<li>Asimetria&gt;0, la distribucion tiene cola a la derecha.</li>
+<li>Asimetria&lt;0, la distribucion tiene cola a la izquierda.</li>
+</ul></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Imagenes/Negative_and_positive_skew_diagrams.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Existe una relación entre las medidas de centralidad y la simetría para variables unimodales.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Imagenes/Negative_and_positive_skew_diagrams2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Autor: Diva Jain, Wikimedia Commons</p>
+<p><strong>Formas de la distribucion: Apuntamiento</strong></p>
+<ul>
+<li><p>Curtosis/Apuntamiento: Permite caracterizar la concentración de los valores entorno a la media de la distribución.</p></li>
+<li><p>Alternativamente podemos pensar en que tan largas son las colas de la función.</p>
+<ul>
+<li>Valores altos indican mayor concentración en torno a la media, colas más cortas.</li>
+<li>Valores bajos indican una menor concentración o colas más largas.</li>
+</ul></li>
+<li><p>La referencia de la curtosis, es la funcion de distribucio normal con curtosis igual a 3, por lo que muchos paquetes estadisticos dan curtosis*=curtosis-3</p></li>
+<li><p>Ejemplo: El gráfico presenta diferentes <strong>apuntamientos</strong> (curtosis). <code>y1</code> es la versión asociada a la <strong>normal estándar</strong></p></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="03-datos-estadisticos_files/figure-html/plot-curtosis-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Frecuencias</strong></p>
+<ul>
+<li><p>Supongamos contamos con <span class="math inline">\(y_i\)</span> es una variable que toma algunos pocos valores, <span class="math inline">\(y_i=\{0,1,2\}\)</span> y sacamos 10 valores.</p></li>
+<li><p><strong>Frecuencia (conteo):</strong> número de veces que ocurrió cada valor de ( y ).</p></li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">(y)</th>
+<th style="text-align: center;">Frecuencia</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Total</strong></td>
+<td style="text-align: center;"><strong>10</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>La <strong>frecuencia relativa</strong> indica la proporción de veces que se observó cada valor de (y).</li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">(y)</th>
+<th style="text-align: center;">Frecuencia relativa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Total</strong></td>
+<td style="text-align: center;"><strong>1</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Probabilidad empírica</strong></p>
+<ul>
+<li><p>En la siguiente sección vamos a estudiar conceptos de probabilidad.</p></li>
+<li><p>Las frecuencias relativas pueden interpretarse como estimaciones de probabilidad empírica si sacamos una muestra grande.</p></li>
+<li><p>El ejemplo de una moneda de 10 pesos:</p></li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(y\)</span></th>
+<th style="text-align: center;">Frecuencia relativa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Escudo</td>
+<td style="text-align: center;">?</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Puma</td>
+<td style="text-align: center;">?</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Total</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="análisis-multivariante" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="análisis-multivariante"><span class="header-section-number">4.3.2</span> Análisis multivariante:</h3>
+<p>Cuando se observa más de una variable para cada individuo, otras tecnicas pueden utilizarse para comprender la evolución conjunta</p>
+<ul>
+<li>tabulación cruzada (cuando toman pocos valores)</li>
+<li>Covarianza</li>
+<li>Coeficiente de correlacion</li>
+<li>Establecer modelos <span class="math inline">\(y=g(x)\)</span></li>
+</ul>
+<p><strong>Covarianza</strong></p>
+<p>En el caso de dos variables, la covarianza indica como co-varían dos variables conjuntamente respecto a su media.</p>
+<p><span class="math display">\[S_{x y}=\frac{1}{n-1} \sum_{i=1}^n\left(X_i-\bar{X}\right)\left(Y_i-\bar{Y}\right)\]</span></p>
+<p>Existe una interpretación sencilla:</p>
+<ul>
+<li><p>Si <span class="math inline">\(S_{x y}&gt;0\)</span>, se esperan altos valores de <span class="math inline">\(\mathrm{X}\)</span> asociados a altos valores de <span class="math inline">\(\mathrm{Y}\)</span>, y bajos valores de <span class="math inline">\(X\)</span> asociados a bajos valores de <span class="math inline">\(Y\)</span>.</p></li>
+<li><p>Si <span class="math inline">\(S_{x y}&lt;0\)</span> la situación es inversa, es decir, se esperan altos valores de <span class="math inline">\(X\)</span> asociados a bajos valores de <span class="math inline">\(Y\)</span>.</p></li>
+</ul>
+<p>Cuando la muestra contiene más de dos variables podemos interesarnos en la matriz de covarianza <span class="math inline">\(\Sigma\)</span></p>
+<ul>
+<li>Problemas: Unidad de medida, valores no acotados.</li>
+</ul>
+<p><strong>Correlacion</strong></p>
+<p>A partir de las covarianzas es posible calcular otro estadístico, que no está afectado por la unidad de medida y además permite identificar la fuerza de la asociación.</p>
+<ul>
+<li>Coeficiente de correlación (muestral): <span class="math display">\[r_{x y} = \frac{\sum_{i=1}^n\left(x_i-\bar{x}\right)\left(y_i-\bar{y}\right)}{(n-1) s_x s_y}=\frac{S_{xy}}{S_y S_x}\]</span></li>
+</ul>
+<p>El signo nos dice la relacion como la covarianza, y la magnitud indica la fuerza.</p>
+<ul>
+<li><ul>
+<li>1 indica una correlacion perfecta y positiva</li>
+<li>0 indica que no hay correlación.</li>
+<li>1 indica una correlación perfecta y negativa</li>
+</ul></li>
+</ul>
+<p>En los libros de estaditica clasica se suele presentar no solo el tipo de correlacion, sino la “fuerza”.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Coeficiente</th>
+<th style="text-align: center;">Fuerza correlación</th>
+<th style="text-align: center;">Tipo correlación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">(-1,-0.7)</td>
+<td style="text-align: center;">Muy fuerte</td>
+<td style="text-align: center;">Negativa</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">(-0.7,-0.5)</td>
+<td style="text-align: center;">Fuerte</td>
+<td style="text-align: center;">Negativa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">(-0.5,-0.3)</td>
+<td style="text-align: center;">Moderada</td>
+<td style="text-align: center;">Negativa</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">(-0.3,0)</td>
+<td style="text-align: center;">Debil</td>
+<td style="text-align: center;">Negativa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Zero</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">(0,0.3)</td>
+<td style="text-align: center;">Debil</td>
+<td style="text-align: center;">Positiva</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">(0.3,0.5)</td>
+<td style="text-align: center;">Moderada</td>
+<td style="text-align: center;">Positiva</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">(0.5,0.7)</td>
+<td style="text-align: center;">Fuerte</td>
+<td style="text-align: center;">Positiva</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">(0.7,1)</td>
+<td style="text-align: center;">Muy fuerte</td>
+<td style="text-align: center;">Positiva</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="mi-turno" class="level3" data-number="4.3.3">
+<h3 data-number="4.3.3" class="anchored" data-anchor-id="mi-turno"><span class="header-section-number">4.3.3</span> Mi turno:</h3>
+<ul>
+<li><p>Vamos a ver un ejemplo muy sencillo que no precisa de software estadístico.</p></li>
+<li><p>Supongamos que obtuve una muestra de X: 5, 7, 8, 9, 8, 6, 0</p>
+<ul>
+<li>Sobre la cual quiero calcular las medidas de tendencia central, orden y dispersión.</li>
+</ul></li>
+<li><p>Saque una segunda muestra de Y: 6, 9, 8, 10, 5, 2, 4</p></li>
+<li><p>Nota: Es solo a modo de <strong>repaso</strong>, luego vamos a usar software para calcular.</p>
+<ul>
+<li>Porque hacemos esto?</li>
+</ul></li>
+<li><p>Para calcular el promedio, simplemente sumamos y dividimos por el tamaño de la muestra.</p></li>
+</ul>
+<p><span class="math display">\[(5 + 7 + 8 + 9 + 8 + 6 + 0) / 7 = 6.14\]</span> - Para calcular la mediana ordeno la muestra</p>
+<ul>
+<li>Muestra Ordenada: 0, 5, 6, <strong>7</strong>, 8, 8, 9</li>
+</ul>
+<p>- La mediana de la muestra es 7</p>
+<ul>
+<li><p>Aprovechamos que esta ordenada para calcular:</p>
+<ul>
+<li>Min: 0</li>
+<li>Max: 9</li>
+<li>Rango: 9-0=9</li>
+</ul></li>
+<li><p>Para calcular la moda, simplemente buscamos el número que esta más frecuente.</p></li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;">Frecuencia</th>
+<th style="text-align: center;">Frecuencia relativa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1/7</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1/7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1/7</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1/7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2/7</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1/7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Total</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Para calcular el desvío estándar le restamos la media (<span class="math inline">\(\bar{x}=6.14\)</span>) y tomamos el cuadrado.</p></li>
+<li><p>Para un ejercicio practico podemos aprovechar una tabla:</p></li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">(x)</th>
+<th style="text-align: left;">Centrado(^2)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: left;">((0 - 6.14)^2)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">((5 - 6.14)^2)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">((6 - 6.14)^2)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">((7 - 6.14)^2)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">8</td>
+<td style="text-align: left;">((8 - 6.14)^2)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: left;">((8 - 6.14)^2)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td style="text-align: left;">((9 - 6.14)^2)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Suma</strong></td>
+<td style="text-align: left;"><strong>55.4343</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Para calcular la varianza muestral, consideramos <span class="math inline">\(n-1\)</span>=6.</li>
+</ul>
+<p><span class="math display">\[S^2_y=9.1429\]</span></p>
+<p>Y podemos calcular el desvio estandar:</p>
+<p><span class="math display">\[S_y=\sqrt{ 9.1429}=3.023723\]</span></p>
+<ul>
+<li>Para calcular la covarianza, tengo los promedios: <span class="math inline">\(\bar{x}=6.14\)</span>, <span class="math inline">\(\bar{y}=6.28\)</span></li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(y\)</span></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">(5 - 6.14)(6 - 6.28)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">(7 - 6.14)(9 - 6.28)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">(8 - 6.14)(8 - 6.28)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">(9 - 6.14)(10 - 6.28)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">(8 - 6.14)(5 - 6.28)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">(6 - 6.14)(2 - 6.28)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">(0 - 6.14)(4 - 6.28)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Covarianza y correlación</strong></p>
+<ul>
+<li><p>Dividimos la suma por 6, y obtenemos la covarianza. <span class="math inline">\(S_{xy}= 4.7857\)</span></p></li>
+<li><p>Para calcular la correlacion: <span class="math inline">\(\frac{S_{xy}}{S_{x}S_{y}}=\frac{4.7857}{2.870209\times 3.023723 }\)</span> <span class="math inline">\(=0.5514\)</span></p></li>
+</ul>
+</section>
+</section>
+<section id="analisis-grafico." class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="analisis-grafico."><span class="header-section-number">4.4</span> Analisis grafico.</h2>
+<ul>
+<li><p>Podemos pensar que el ingreso de las personas como una variable aleatoria <span class="math inline">\(Y\sim f()\)</span>.</p>
+<ul>
+<li>estadísticas descriptivas pueden caracterizar a <span class="math inline">\(f\)</span></li>
+<li>Algunas herramientas graficas pueden resumir la información.</li>
+</ul></li>
+</ul>
+<p><em>Boxplot</em></p>
+<ul>
+<li><p>Los boxplot o los diagramas de caja nos permiten un análisis rápido de la distribución a partir de los cuartiles.</p></li>
+<li><p>Nos dan información sobre el Rango intercuartílico, la moda, asimetría y casos atípicos.</p></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Imagenes/box1.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Imagenes/Caja1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Los boxplot son muy utiles si queremos comparar dos poblaciones.</li>
+</ul>
+<p><em>Histogramas:</em></p>
+<ul>
+<li>Los histogramas presentan una representación de la frecuencia (relativa) de los valores de <span class="math inline">\(y\)</span></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="03-datos-estadisticos_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="03-datos-estadisticos_files/figure-html/unnamed-chunk-8-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><em>Densidad</em></p>
+<ul>
+<li>Las estimaciones de densidad de kernel presentan una estimación no paramétrica de la función de densidad: <span class="math inline">\(\hat{f}\)</span></li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="03-datos-estadisticos_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Analisis multivariante</strong></p>
+<p>Diagrama de <em>dispersion</em> o scatter plot</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="03-datos-estadisticos_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="mi-turno-1" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="mi-turno-1"><span class="header-section-number">4.5</span> Mi turno</h2>
+<ul>
+<li>Vamos a ver funciones en R para calcular estadísticos descriptivos.
+<ul>
+<li>Vamos a usar comandos básicos.</li>
+<li>Los siguientes módulos del programa van a presentar métodos más avanzados para calcular estadísticos descriptivos.</li>
+</ul></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./02-datos-experimentos.html" class="pagination-link" aria-label="Proceso estadístico y Experimentos">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Proceso estadístico y Experimentos</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./04-probabilidad.html" class="pagination-link" aria-label="Probabilidad: Eventos y Probabilidades.">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilidad: Eventos y Probabilidades.</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
