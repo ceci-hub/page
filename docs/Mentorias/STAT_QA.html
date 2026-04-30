@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Cecilia Regueira">
 
-<title>Univariado 2 – Cecilia Regueira</title>
+<title>Mock Interview STAT – Cecilia Regueira</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,17 +56,17 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No se han encontrado resultados",
-    "search-matching-documents-text": "documentos encontrados",
-    "search-copy-link-title": "Copiar el enlace en la búsqueda",
-    "search-hide-matches-text": "Ocultar resultados adicionales",
-    "search-more-match-text": "resultado adicional en este documento",
-    "search-more-matches-text": "resultados adicionales en este documento",
-    "search-clear-button-title": "Borrar",
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Enviar",
-    "search-label": "Buscar"
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -83,8 +84,8 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Cecilia Regueira</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Buscar"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -167,11 +168,16 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">En esta página</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#contenidos-y-objetivos-de-aprendizaje" id="toc-contenidos-y-objetivos-de-aprendizaje" class="nav-link active" data-scroll-target="#contenidos-y-objetivos-de-aprendizaje">Contenidos y objetivos de aprendizaje</a></li>
-  <li><a href="#slides-de-la-clase" id="toc-slides-de-la-clase" class="nav-link" data-scroll-target="#slides-de-la-clase">Slides de la clase</a></li>
+  <li><a href="#top-10-statistics-interview-questions" id="toc-top-10-statistics-interview-questions" class="nav-link active" data-scroll-target="#top-10-statistics-interview-questions">Top 10 Statistics Interview Questions</a></li>
+  <li><a href="#bonus" id="toc-bonus" class="nav-link" data-scroll-target="#bonus">Bonus</a>
+  <ul class="collapse">
+  <li><a href="#question-1-statistics-foundations" id="toc-question-1-statistics-foundations" class="nav-link" data-scroll-target="#question-1-statistics-foundations">Question 1: Statistics Foundations</a></li>
+  <li><a href="#question-2-experiment-design-power-analysis" id="toc-question-2-experiment-design-power-analysis" class="nav-link" data-scroll-target="#question-2-experiment-design-power-analysis">Question 2: Experiment Design &amp; Power Analysis</a></li>
+  <li><a href="#question-3-correlation-vs.-causation" id="toc-question-3-correlation-vs.-causation" class="nav-link" data-scroll-target="#question-3-correlation-vs.-causation">Question 3: Correlation vs.&nbsp;Causation</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -180,14 +186,19 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Univariado 2</h1>
-<p class="subtitle lead">Federico Veneri &amp; Cecilia Regueira</p>
+<h1 class="title">Mock Interview STAT</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Cecilia Regueira </p>
+          </div>
+  </div>
     
   
     
@@ -198,23 +209,76 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="contenidos-y-objetivos-de-aprendizaje" class="level2">
-<h2 class="anchored" data-anchor-id="contenidos-y-objetivos-de-aprendizaje">Contenidos y objetivos de aprendizaje</h2>
-<p>Al finalizar esta clase, el estudiante será capaz de:</p>
-<ul>
-<li>Identificar los elementos clave que componen una visualización univariada efectiva</li>
-<li>Utilizar títulos, etiquetas y anotaciones para mejorar la comunicación del gráfico</li>
-<li>Ajustar escalas según el tipo de variable representada</li>
-<li>Reconocer problemas comunes de interpretación en gráficos univariados</li>
-<li>Construir visualizaciones autosuficientes que puedan interpretarse sin contexto adicional</li>
-<li>Aplicar estos criterios utilizando la gramática de gráficos en ggplot2 (R &amp; Python)</li>
-</ul>
+<section id="top-10-statistics-interview-questions" class="level2">
+<h2 class="anchored" data-anchor-id="top-10-statistics-interview-questions">Top 10 Statistics Interview Questions</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>💡 <strong>QA</strong></p>
+<p>This document presents the top 10 statistics questions that most frequently come up in job interviews. These questions are based on interviews I have personally participated in, either as a candidate or as an interviewer when assessing new hires. The goal is to highlight the statistical concepts that employers commonly expect candidates to understand.</p>
+</div>
+</div>
+<ol type="1">
+<li><p><strong>What is the difference between descriptive and inferential statistics?</strong><br>
+Give examples of when you would use each.</p></li>
+<li><p><strong>Can you explain the difference between correlation and causation?</strong><br>
+How would you test whether a relationship is causal?</p></li>
+<li><p><strong>What is a p-value, and how should it be interpreted?</strong><br>
+What are common misconceptions about p-values?</p></li>
+<li><p><strong>Explain the difference between Type I and Type II errors.</strong><br>
+In what situations might one be more costly than the other?</p></li>
+<li><p><strong>What assumptions are required for linear regression?</strong><br>
+How would you check whether these assumptions are violated?</p></li>
+<li><p><strong>What is the Central Limit Theorem and why is it important?</strong><br>
+How does it apply in real-world data analysis?</p></li>
+<li><p><strong>What is a confidence interval and how do you interpret it?</strong><br>
+Explain what it means in practice and what a 95% confidence interval represents.</p></li>
+<li><p><strong>What is overfitting, and how can it be prevented?</strong><br>
+How does the bias–variance tradeoff relate to this?</p></li>
+<li><p><strong>How would you handle missing data in a dataset?</strong><br>
+What are the pros and cons of different approaches?</p></li>
+<li><p><strong>How do you evaluate the performance of a statistical or predictive model?</strong><br>
+Which metrics would you choose and why?</p></li>
+<li><p><strong>What happens to a confidence interval when the sample size doubles?</strong><br>
+Explain how increasing the sample size affects the width of the confidence interval and why.</p></li>
+</ol>
+<hr>
 </section>
-<section id="slides-de-la-clase" class="level2">
-<h2 class="anchored" data-anchor-id="slides-de-la-clase">Slides de la clase</h2>
-<p>👉 <a href="06B-Univariado.html">Ver slides – Univariado 2</a></p>
+<section id="bonus" class="level2">
+<h2 class="anchored" data-anchor-id="bonus">Bonus</h2>
+<section id="question-1-statistics-foundations" class="level3">
+<h3 class="anchored" data-anchor-id="question-1-statistics-foundations">Question 1: Statistics Foundations</h3>
+<p>You are analyzing ride data for Uber.</p>
+<ul>
+<li>The probability that a user takes a ride in the <strong>morning rush hour</strong> is 10%.</li>
+<li>The probability that a user takes a ride in the <strong>evening rush hour</strong> is 20%.</li>
+<li>The probability that a user takes an <strong>evening rush hour ride given that they took a morning rush hour ride</strong> is 50%.</li>
+</ul>
+<p>If we observe that a user took an <strong>evening rush hour ride</strong>, what is the probability that they also took a <strong>morning rush hour ride</strong>?</p>
+</section>
+<section id="question-2-experiment-design-power-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="question-2-experiment-design-power-analysis">Question 2: Experiment Design &amp; Power Analysis</h3>
+<p>When designing an experiment, given a fixed sample size, significance level, and desired power, we compute a Minimum Detectable Effect (MDE).</p>
+<p>Suppose you run the experiment, collect the data, and observe an effect size that is smaller than the MDE, yet the result is statistically significant.</p>
+<p>How is this possible? Shouldn’t effects smaller than the MDE be non‑significant?</p>
+</section>
+<section id="question-3-correlation-vs.-causation" class="level3">
+<h3 class="anchored" data-anchor-id="question-3-correlation-vs.-causation">Question 3: Correlation vs.&nbsp;Causation</h3>
+<p>Amazon Prime members place an average of 10 orders per month, while non‑Prime users place 2 orders per month.</p>
+<p>Does Amazon Prime membership cause users to place more orders? Explain your reasoning.</p>
+<div style="text-align:center; margin-top:2em;">
+<p><a href="../Mentorias/work3.html" class="btn btn-outline-primary btn-lg"> 📘 View Answer Key </a></p>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -243,12 +307,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copiado");
+      button.setAttribute("title", "Copied!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copiado");
+        button.setAttribute("data-bs-title", "Copied!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",

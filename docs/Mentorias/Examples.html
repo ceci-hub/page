@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Cecilia Regueira">
 
-<title>Univariado 2 – Cecilia Regueira</title>
+<title>Best Practices for Reproducible Research Data Work – Cecilia Regueira</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,20 +56,49 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No se han encontrado resultados",
-    "search-matching-documents-text": "documentos encontrados",
-    "search-copy-link-title": "Copiar el enlace en la búsqueda",
-    "search-hide-matches-text": "Ocultar resultados adicionales",
-    "search-more-match-text": "resultado adicional en este documento",
-    "search-more-matches-text": "resultados adicionales en este documento",
-    "search-clear-button-title": "Borrar",
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Enviar",
-    "search-label": "Buscar"
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -83,8 +113,8 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Cecilia Regueira</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Buscar"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -167,11 +197,13 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">En esta página</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#contenidos-y-objetivos-de-aprendizaje" id="toc-contenidos-y-objetivos-de-aprendizaje" class="nav-link active" data-scroll-target="#contenidos-y-objetivos-de-aprendizaje">Contenidos y objetivos de aprendizaje</a></li>
-  <li><a href="#slides-de-la-clase" id="toc-slides-de-la-clase" class="nav-link" data-scroll-target="#slides-de-la-clase">Slides de la clase</a></li>
+  <li><a href="#reproducible-pipeline" id="toc-reproducible-pipeline" class="nav-link active" data-scroll-target="#reproducible-pipeline">Reproducible Pipeline</a></li>
+  <li><a href="#reproducible-workflow-in-r" id="toc-reproducible-workflow-in-r" class="nav-link" data-scroll-target="#reproducible-workflow-in-r">Reproducible Workflow in R</a></li>
+  <li><a href="#reproducible-workflow-in-python" id="toc-reproducible-workflow-in-python" class="nav-link" data-scroll-target="#reproducible-workflow-in-python">Reproducible Workflow in Python</a></li>
+  <li><a href="#reproducible-workflow-in-stata" id="toc-reproducible-workflow-in-stata" class="nav-link" data-scroll-target="#reproducible-workflow-in-stata">Reproducible Workflow in Stata</a></li>
   </ul>
 </nav>
     </div>
@@ -180,14 +212,19 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Univariado 2</h1>
-<p class="subtitle lead">Federico Veneri &amp; Cecilia Regueira</p>
+<h1 class="title">Best Practices for Reproducible Research Data Work</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Cecilia Regueira </p>
+          </div>
+  </div>
     
   
     
@@ -198,21 +235,262 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="contenidos-y-objetivos-de-aprendizaje" class="level2">
-<h2 class="anchored" data-anchor-id="contenidos-y-objetivos-de-aprendizaje">Contenidos y objetivos de aprendizaje</h2>
-<p>Al finalizar esta clase, el estudiante será capaz de:</p>
-<ul>
-<li>Identificar los elementos clave que componen una visualización univariada efectiva</li>
-<li>Utilizar títulos, etiquetas y anotaciones para mejorar la comunicación del gráfico</li>
-<li>Ajustar escalas según el tipo de variable representada</li>
-<li>Reconocer problemas comunes de interpretación en gráficos univariados</li>
-<li>Construir visualizaciones autosuficientes que puedan interpretarse sin contexto adicional</li>
-<li>Aplicar estos criterios utilizando la gramática de gráficos en ggplot2 (R &amp; Python)</li>
-</ul>
+<section id="reproducible-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="reproducible-pipeline">Reproducible Pipeline</h2>
+<p>Anyone should reproduce all results by running master and changing one path only.</p>
+<pre class="text"><code>project/
+├── data/
+│   ├── raw/
+│   └── clean/
+├── code/
+│   ├── 01_clean_data.*
+│   ├── 02_construct_vars.*
+│   └── 03_analysis.*
+├── outputs/
+│   ├── tables/
+│   └── figures/
+├── master.*
+├── README.md</code></pre>
 </section>
-<section id="slides-de-la-clase" class="level2">
-<h2 class="anchored" data-anchor-id="slides-de-la-clase">Slides de la clase</h2>
-<p>👉 <a href="06B-Univariado.html">Ver slides – Univariado 2</a></p>
+<section id="reproducible-workflow-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="reproducible-workflow-in-r">Reproducible Workflow in R</h2>
+<p>In R, reproducibility is commonly achieved through scripted pipelines and dynamic documents (e.g., Quarto or R Markdown). A typical workflow is coordinated through a master script:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>master.R
+</div>
+</div>
+<section id="purpose-reproduce-all-analysis-outputs-end-to-end" class="level1 callout-body-container callout-body">
+<h1>Purpose: Reproduce all analysis outputs end to end</h1>
+<p>source(“01_clean_data.R”) source(“02_construct_variables.R”) source(“03_analysis.R”)</p>
+</section>
+</div>
+<p>Each script performs a single, well-defined task. For example, a data‑cleaning script:</p>
+<p>01_clean_data.R</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>01_clean_data.R
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>library(dplyr)</p>
+<p>raw &lt;- read.csv(“data/raw/survey.csv”)</p>
+<p>clean &lt;- raw |&gt; filter(!is.na(outcome)) |&gt; mutate( treatment = as.integer(treatment == “yes”), age_centered = age - mean(age, na.rm = TRUE) )</p>
+<p>write.csv(clean, “data/clean/survey_clean.csv”, row.names = FALSE)</p>
+</div>
+</div>
+<p>02_construct_vars.R</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>df &lt;- read.csv(“data/clean/survey_clean.csv”)</p>
+<p>df &lt;- df |&gt; mutate( treat_bin = ifelse(treatment == “yes”, 1, 0), age_centered = age - mean(age, na.rm = TRUE) )</p>
+<p>write.csv(df, “data/clean/survey_model.csv”, row.names = FALSE)</p>
+</div>
+</div>
+<p>03_analysis.R</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>df &lt;- read.csv(“data/clean/survey_model.csv”)</p>
+<p>model &lt;- lm(outcome ~ treat_bin + age_centered, data = df)</p>
+<p>sink(“outputs/tables/regression.txt”) summary(model) sink()</p>
+</div>
+</div>
+<p>Final tables and figures are generated directly in a Quarto document, ensuring that any code or data change automatically updates the paper.</p>
+</section>
+<section id="reproducible-workflow-in-python" class="level2">
+<h2 class="anchored" data-anchor-id="reproducible-workflow-in-python">Reproducible Workflow in Python</h2>
+<p>In Python, reproducibility is often structured using modular scripts or notebooks, combined with environment management (e.g., requirements.txt or conda environments).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>main.py
+</div>
+</div>
+<section id="reproduce-all-results" class="level1 callout-body-container callout-body">
+<h1>Reproduce all results</h1>
+<p>from clean_data import clean_data from construct_vars import construct_vars from analysis import run_model</p>
+<p>df = clean_data(“data/raw/survey.csv”) df = construct_vars(df) run_model(df)</p>
+</section>
+</div>
+<p>The data‑cleaning module:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>clean_data.py
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>import pandas as pd</p>
+<p>def clean_survey(path): df = pd.read_csv(path) df = df.dropna(subset=[“outcome”]) df[“treatment”] = (df[“treatment”] == “yes”).astype(int) df[“age_centered”] = df[“age”] - df[“age”].mean() return df</p>
+</div>
+</div>
+<p>construct_vars.py</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>def construct_vars(df): df[“treat_bin”] = (df[“treatment”] == “yes”).astype(int) df[“age_centered”] = df[“age”] - df[“age”].mean() return df</p>
+</div>
+</div>
+<p>analysis.py</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>import statsmodels.formula.api as smf</p>
+<p>def run_model(df): model = smf.ols(“outcome ~ treat_bin + age_centered”, data=df).fit() with open(“outputs/tables/regression.txt”, “w”) as f: f.write(model.summary().as_text())</p>
+</div>
+</div>
+<p>By running python main.py, another researcher can regenerate all outputs with minimal configuration, supporting computational reproducibility and reuse.</p>
+</section>
+<section id="reproducible-workflow-in-stata" class="level2">
+<h2 class="anchored" data-anchor-id="reproducible-workflow-in-stata">Reproducible Workflow in Stata</h2>
+<p>In Stata, reproducibility relies heavily on master do‑files that control execution order, file paths, and settings.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>MASTER.do</li>
+<li>Purpose: Reproduce all data work and outputs</li>
+</ul>
+<p>version 17 clear all set more off</p>
+<p>global root “C:/project”</p>
+<p>do “<span class="math inline">\({root}/code/01_clean_data.do"
+do "\)</span>{root}/code/02_construct_variables.do” do “${root}/code/03_analysis.do”</p>
+</div>
+</div>
+<p>A cleaning script might include explicit documentation of inputs and outputs:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>01_clean_data.do</li>
+<li>INPUT: raw/survey.dta</li>
+<li>OUTPUT: clean/survey_clean.dta</li>
+</ul>
+<p>use “${root}/data/raw/survey.dta”, clear drop if missing(outcome)</p>
+<p>gen treatment = treatment_var == “yes” egen age_mean = mean(age) gen age_centered = age - age_mean rename treat treatment</p>
+<p>save “${root}/data/clean/survey_clean.dta”, replace</p>
+</div>
+</div>
+<p>02_construct_vars.do</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>use “${ROOT}/data/clean/survey_clean.dta”, clear</p>
+<p>gen treat_bin = treatment == “yes” egen age_mean = mean(age) gen age_centered = age - age_mean</p>
+<p>save “${ROOT}/data/clean/survey_model.dta”, replace</p>
+</div>
+</div>
+<p>03_analysis.do</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>use “${ROOT}/data/clean/survey_model.dta”, clear</p>
+<p>reg outcome treat_bin age_centered esttab using “${ROOT}/outputs/tables/regression.tex”, replace</p>
+</div>
+</div>
+<p>Because all steps are executed from the master file, the entire workflow can be rerun by modifying only the root directory path.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Principle</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Single entry point</td>
+<td><code>MASTER.do</code>, <code>master.R</code>, <code>main.py</code></td>
+</tr>
+<tr class="even">
+<td>Explicit data flow</td>
+<td>Raw → Clean → Model</td>
+</tr>
+<tr class="odd">
+<td>No manual edits</td>
+<td>All outputs generated automatically</td>
+</tr>
+<tr class="even">
+<td>Portable</td>
+<td>One configurable path or environment setting</td>
+</tr>
+<tr class="odd">
+<td>Reviewable</td>
+<td>Scripted, readable, version‑controlled code</td>
+</tr>
+</tbody>
+</table>
 
 
 </section>
@@ -243,12 +521,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copiado");
+      button.setAttribute("title", "Copied!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copiado");
+        button.setAttribute("data-bs-title", "Copied!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",

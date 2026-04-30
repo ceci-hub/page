@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Cecilia Regueira">
 
-<title>Univariado 2 – Cecilia Regueira</title>
+<title>Best Practices for Reproducible Research Data Work – Cecilia Regueira</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,17 +56,17 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No se han encontrado resultados",
-    "search-matching-documents-text": "documentos encontrados",
-    "search-copy-link-title": "Copiar el enlace en la búsqueda",
-    "search-hide-matches-text": "Ocultar resultados adicionales",
-    "search-more-match-text": "resultado adicional en este documento",
-    "search-more-matches-text": "resultados adicionales en este documento",
-    "search-clear-button-title": "Borrar",
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Enviar",
-    "search-label": "Buscar"
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -83,8 +84,8 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Cecilia Regueira</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Buscar"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -167,11 +168,17 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">En esta página</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#contenidos-y-objetivos-de-aprendizaje" id="toc-contenidos-y-objetivos-de-aprendizaje" class="nav-link active" data-scroll-target="#contenidos-y-objetivos-de-aprendizaje">Contenidos y objetivos de aprendizaje</a></li>
-  <li><a href="#slides-de-la-clase" id="toc-slides-de-la-clase" class="nav-link" data-scroll-target="#slides-de-la-clase">Slides de la clase</a></li>
+  <li><a href="#executive-summary" id="toc-executive-summary" class="nav-link active" data-scroll-target="#executive-summary">Executive Summary</a></li>
+  <li><a href="#best-practices-for-code-and-analysis-include" id="toc-best-practices-for-code-and-analysis-include" class="nav-link" data-scroll-target="#best-practices-for-code-and-analysis-include">Best practices for code and analysis include:</a>
+  <ul class="collapse">
+  <li><a href="#reproducibility-and-a-clean-code" id="toc-reproducibility-and-a-clean-code" class="nav-link" data-scroll-target="#reproducibility-and-a-clean-code">1. Reproducibility and a Clean Code</a></li>
+  <li><a href="#transparency" id="toc-transparency" class="nav-link" data-scroll-target="#transparency">2. Transparency</a></li>
+  <li><a href="#ethical-and-secure-data-handling" id="toc-ethical-and-secure-data-handling" class="nav-link" data-scroll-target="#ethical-and-secure-data-handling">3. Ethical and Secure Data Handling</a></li>
+  <li><a href="#data-work-as-a-collaborative-process" id="toc-data-work-as-a-collaborative-process" class="nav-link" data-scroll-target="#data-work-as-a-collaborative-process">4.Data Work as a Collaborative Process</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -180,14 +187,19 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Univariado 2</h1>
-<p class="subtitle lead">Federico Veneri &amp; Cecilia Regueira</p>
+<h1 class="title">Best Practices for Reproducible Research Data Work</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Cecilia Regueira </p>
+          </div>
+  </div>
     
   
     
@@ -198,23 +210,88 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="contenidos-y-objetivos-de-aprendizaje" class="level2">
-<h2 class="anchored" data-anchor-id="contenidos-y-objetivos-de-aprendizaje">Contenidos y objetivos de aprendizaje</h2>
-<p>Al finalizar esta clase, el estudiante será capaz de:</p>
-<ul>
-<li>Identificar los elementos clave que componen una visualización univariada efectiva</li>
-<li>Utilizar títulos, etiquetas y anotaciones para mejorar la comunicación del gráfico</li>
-<li>Ajustar escalas según el tipo de variable representada</li>
-<li>Reconocer problemas comunes de interpretación en gráficos univariados</li>
-<li>Construir visualizaciones autosuficientes que puedan interpretarse sin contexto adicional</li>
-<li>Aplicar estos criterios utilizando la gramática de gráficos en ggplot2 (R &amp; Python)</li>
-</ul>
+<section id="executive-summary" class="level2">
+<h2 class="anchored" data-anchor-id="executive-summary">Executive Summary</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>After more than ten years of hands‑on coding and applied research experience, this article presents a rigorous and comprehensive set of best practices for reproducible, transparent, and collaborative data work.</strong></p>
+<p>This summary synthesizes and integrates key principles from <em>Clean Code: A Handbook of Agile Software Craftsmanship</em> by Robert C. Martin—which emphasizes readable, maintainable, and professional code—and <em>Development Research in Practice: The DIME Analytics Data Handbook</em> by the World Bank, which formalizes end‑to‑end standards for reproducible, ethical, and collaborative research workflows.</p>
+</div>
+</div>
 </section>
-<section id="slides-de-la-clase" class="level2">
-<h2 class="anchored" data-anchor-id="slides-de-la-clase">Slides de la clase</h2>
-<p>👉 <a href="06B-Univariado.html">Ver slides – Univariado 2</a></p>
+<section id="best-practices-for-code-and-analysis-include" class="level2">
+<h2 class="anchored" data-anchor-id="best-practices-for-code-and-analysis-include">Best practices for code and analysis include:</h2>
+<section id="reproducibility-and-a-clean-code" class="level3">
+<h3 class="anchored" data-anchor-id="reproducibility-and-a-clean-code">1. Reproducibility and a Clean Code</h3>
+<p>Reproducibility is achieved by structuring projects so that all results can be regenerated from raw data using clearly defined master scripts. Computational reproducibility is treated as a core research output, enabling independent verification and reuse of methods across contexts and over time.</p>
+<p>Robert C. Martin emphasizes that <strong>code is a primary communication artifact</strong>, not merely an execution mechanism. Core contributions of <em>Clean Code</em> include:</p>
+<ul>
+<li><strong>Readability and Intentionality</strong> – Code should be easy to read and self‑explanatory<br>
+</li>
+<li><strong>Single Responsibility and Modularity</strong> – Each function or script should do one thing well<br>
+</li>
+<li><strong>Meaningful Comments and Documentation</strong> – Comments explain <em>why</em> decisions were made, not just <em>what</em> the code does<br>
+</li>
+<li><strong>Refactoring as a Continuous Practice</strong> – Code quality improves through regular, incremental cleanup</li>
+</ul>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Reproducibility ensures that research findings can be independently verified and consistently regenerated using the same data and code. In practice, this requires structuring analytical workflows so that all results—tables, figures, and statistics—are produced directly from raw or well‑documented intermediate data using executable code. Reproducibility is therefore not an afterthought, but a design principle applied throughout the project lifecycle.</p>
+<p>A core practice is the use of a <strong>master script</strong>, which defines software versions, directory paths, and execution order, and runs all data processing and analysis steps end to end. By changing only a single file path or configuration parameter, another researcher should be able to rerun the complete workflow on a different machine and reproduce identical results.</p>
+<p>Well‑written reproducible code is modular, readable, and well documented. Tasks are split into separate scripts (for example, <code>01_clean_data</code>, <code>02_construct_variables</code>, <code>03_analysis</code>), each with clear headers describing inputs, outputs, and purpose. Version control systems such as Git track changes over time, enabling transparent review of how results evolve.</p>
+<p>Reproducibility is further strengthened through dynamic documents, such as Quarto, R Markdown, or Jupyter notebooks, which integrate code, outputs, and narrative text in a single source file. Any change in data or code is immediately reflected in the final report.</p>
+<p>Importantly, <strong>computational reproducibility is treated as a research output in its own right</strong>. Reproducibility packages typically include executable code, minimal working data (or detailed metadata when access is restricted), documentation, and a README file with clear instructions.</p>
+</details>
+<p>Reproducible research requires clearly structured, documented, and executable code. While the principles of reproducibility are consistent across disciplines, their implementation varies by programming environment.</p>
+<div style="text-align:center; margin-top:2em;">
+<p><a href="../Mentorias/Examples.html" class="btn btn-outline-primary btn-lg"> 📘 View Code Examples </a></p>
+</div>
+</section>
+<section id="transparency" class="level3">
+<h3 class="anchored" data-anchor-id="transparency">2. Transparency</h3>
+<p>Transparency requires thorough documentation of data, code, and research decisions, with public release whenever legally and ethically feasible. Using trusted external repositories—such as GitHub, OSF, or institutional data catalogs—ensures long‑term access, accountability, and opportunities for reuse.</p>
+<p><strong>Where transparency requires openness, <em>Clean Code</em> ensures that what is open is also understandable.</strong></p>
+</section>
+<section id="ethical-and-secure-data-handling" class="level3">
+<h3 class="anchored" data-anchor-id="ethical-and-secure-data-handling">3. Ethical and Secure Data Handling</h3>
+<p>Ethical and secure data handling protects research participants by enforcing informed consent, separating and encrypting sensitive information, and complying with applicable legal and institutional standards. Careful data governance throughout the project lifecycle ensures privacy, minimizes risk, and maintains trust while still enabling scientific transparency.</p>
+<p>In higher education settings, researchers and analysts must comply with the <strong>Family Educational Rights and Privacy Act (FERPA)</strong>, which governs access to student education records. Compliance requires limiting access to personally identifiable information, applying appropriate de‑identification practices, and ensuring data are used solely for legitimate educational or research purposes.</p>
+</section>
+<section id="data-work-as-a-collaborative-process" class="level3">
+<h3 class="anchored" data-anchor-id="data-work-as-a-collaborative-process">4.Data Work as a Collaborative Process</h3>
+<p>Data work is inherently collaborative and depends on shared standards, clear communication, and coordinated workflows across research teams. Treating data work as a collective responsibility—rather than an individual or ad hoc activity—reduces errors, improves efficiency, and strengthens institutional memory.</p>
+<p>Effective collaborative data work relies on standardization and transparency. Common folder structures, naming conventions, coding styles, and version control systems allow team members to contribute with minimal friction. Documentation of decisions and data transformations ensures continuity across staff transitions and supports meaningful peer review.</p>
+<p>Equally important is the use of shared tools and workflows, such as version‑controlled repositories, task‑tracking systems, and dynamic documents that integrate code and outputs. Regular code review and clear role definition foster accountability while encouraging collective learning.</p>
+<p>Where collaborative data work requires shared standards, <strong>Agile software development provides the team practices that sustain those standards over time</strong>.</p>
+<details>
+<summary>
+<strong>✅ Click to read about Agile practices</strong>
+</summary>
+<p>Agile Software Development emphasizes team‑based workflows, rapid feedback, and adaptability:</p>
+<ul>
+<li><strong>Iterative development</strong> supports early validation of assumptions and outputs<br>
+</li>
+<li><strong>Shared ownership of code</strong> reduces risk from staff turnover<br>
+</li>
+<li><strong>Continuous integration and testing</strong> prevent silent errors<br>
+</li>
+<li><strong>Professional responsibility</strong> emphasizes correctness, clarity, and maintainability</li>
+</ul>
+<p>Together, these principles reinforce the view that reproducibility is a continuous process and that collaboration must be intentionally designed and maintained.</p>
+</details>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -243,12 +320,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copiado");
+      button.setAttribute("title", "Copied!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copiado");
+        button.setAttribute("data-bs-title", "Copied!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",

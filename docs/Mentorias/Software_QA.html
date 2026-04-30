@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Cecilia Regueira">
 
-<title>Univariado 2 – Cecilia Regueira</title>
+<title>Mock Interview tools – Cecilia Regueira</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,17 +56,17 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No se han encontrado resultados",
-    "search-matching-documents-text": "documentos encontrados",
-    "search-copy-link-title": "Copiar el enlace en la búsqueda",
-    "search-hide-matches-text": "Ocultar resultados adicionales",
-    "search-more-match-text": "resultado adicional en este documento",
-    "search-more-matches-text": "resultados adicionales en este documento",
-    "search-clear-button-title": "Borrar",
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Enviar",
-    "search-label": "Buscar"
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -83,8 +84,8 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Cecilia Regueira</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Buscar"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -167,11 +168,22 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">En esta página</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#contenidos-y-objetivos-de-aprendizaje" id="toc-contenidos-y-objetivos-de-aprendizaje" class="nav-link active" data-scroll-target="#contenidos-y-objetivos-de-aprendizaje">Contenidos y objetivos de aprendizaje</a></li>
-  <li><a href="#slides-de-la-clase" id="toc-slides-de-la-clase" class="nav-link" data-scroll-target="#slides-de-la-clase">Slides de la clase</a></li>
+  <li><a href="#top-10-interview-questions" id="toc-top-10-interview-questions" class="nav-link active" data-scroll-target="#top-10-interview-questions">Top 10 Interview Questions</a>
+  <ul class="collapse">
+  <li><a href="#how-do-you-ensure-your-analysis-is-reproducible" id="toc-how-do-you-ensure-your-analysis-is-reproducible" class="nav-link" data-scroll-target="#how-do-you-ensure-your-analysis-is-reproducible">1. How do you ensure your analysis is reproducible?</a></li>
+  <li><a href="#what-is-the-difference-between-a-list-vector-and-data-frame" id="toc-what-is-the-difference-between-a-list-vector-and-data-frame" class="nav-link" data-scroll-target="#what-is-the-difference-between-a-list-vector-and-data-frame">2. What is the difference between a list, vector, and data frame?</a></li>
+  <li><a href="#explain-how-you-would-clean-and-validate-messy-data" id="toc-explain-how-you-would-clean-and-validate-messy-data" class="nav-link" data-scroll-target="#explain-how-you-would-clean-and-validate-messy-data">3. Explain how you would clean and validate messy data</a></li>
+  <li><a href="#what-is-a-window-function-in-sql-and-when-would-you-use-it" id="toc-what-is-a-window-function-in-sql-and-when-would-you-use-it" class="nav-link" data-scroll-target="#what-is-a-window-function-in-sql-and-when-would-you-use-it">4. What is a window function in SQL, and when would you use it?</a></li>
+  <li><a href="#how-would-you-optimize-a-slow-sql-query" id="toc-how-would-you-optimize-a-slow-sql-query" class="nav-link" data-scroll-target="#how-would-you-optimize-a-slow-sql-query">5. How would you optimize a slow SQL query?</a></li>
+  <li><a href="#what-is-the-difference-between-tidy-data-and-wide-data" id="toc-what-is-the-difference-between-tidy-data-and-wide-data" class="nav-link" data-scroll-target="#what-is-the-difference-between-tidy-data-and-wide-data">6. What is the difference between tidy data and wide data?</a></li>
+  <li><a href="#how-do-you-handle-categorical-variables-in-models" id="toc-how-do-you-handle-categorical-variables-in-models" class="nav-link" data-scroll-target="#how-do-you-handle-categorical-variables-in-models">7. How do you handle categorical variables in models?</a></li>
+  <li><a href="#explain-the-difference-between-a-left-join-inner-join-and-full-join" id="toc-explain-the-difference-between-a-left-join-inner-join-and-full-join" class="nav-link" data-scroll-target="#explain-the-difference-between-a-left-join-inner-join-and-full-join">8. Explain the difference between a LEFT JOIN, INNER JOIN, and FULL JOIN</a></li>
+  <li><a href="#how-do-you-structure-a-data-science-project-repository" id="toc-how-do-you-structure-a-data-science-project-repository" class="nav-link" data-scroll-target="#how-do-you-structure-a-data-science-project-repository">9. How do you structure a data science project repository?</a></li>
+  <li><a href="#describe-a-reproducible-data-pipeline-you-have-built.-how-did-you-structure-it-and-how-would-another-person-rerun-it" id="toc-describe-a-reproducible-data-pipeline-you-have-built.-how-did-you-structure-it-and-how-would-another-person-rerun-it" class="nav-link" data-scroll-target="#describe-a-reproducible-data-pipeline-you-have-built.-how-did-you-structure-it-and-how-would-another-person-rerun-it">10. Describe a reproducible data pipeline you have built. How did you structure it, and how would another person rerun it?</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -180,14 +192,19 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Univariado 2</h1>
-<p class="subtitle lead">Federico Veneri &amp; Cecilia Regueira</p>
+<h1 class="title">Mock Interview tools</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Cecilia Regueira </p>
+          </div>
+  </div>
     
   
     
@@ -198,23 +215,186 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="contenidos-y-objetivos-de-aprendizaje" class="level2">
-<h2 class="anchored" data-anchor-id="contenidos-y-objetivos-de-aprendizaje">Contenidos y objetivos de aprendizaje</h2>
-<p>Al finalizar esta clase, el estudiante será capaz de:</p>
+<section id="top-10-interview-questions" class="level2">
+<h2 class="anchored" data-anchor-id="top-10-interview-questions">Top 10 Interview Questions</h2>
+<section id="how-do-you-ensure-your-analysis-is-reproducible" class="level3">
+<h3 class="anchored" data-anchor-id="how-do-you-ensure-your-analysis-is-reproducible">1. How do you ensure your analysis is reproducible?</h3>
+<details>
+<summary>
+<strong>💡</strong>
+</summary>
 <ul>
-<li>Identificar los elementos clave que componen una visualización univariada efectiva</li>
-<li>Utilizar títulos, etiquetas y anotaciones para mejorar la comunicación del gráfico</li>
-<li>Ajustar escalas según el tipo de variable representada</li>
-<li>Reconocer problemas comunes de interpretación en gráficos univariados</li>
-<li>Construir visualizaciones autosuficientes que puedan interpretarse sin contexto adicional</li>
-<li>Aplicar estos criterios utilizando la gramática de gráficos en ggplot2 (R &amp; Python)</li>
+<li><p>Scripted workflows (no manual steps)</p></li>
+<li><p>Master scripts / pipelines Version</p></li>
+<li><p>Fixed seeds</p></li>
+<li><p>documented environments Dynamic reports (Quarto, R Markdown)</p></li>
 </ul>
-</section>
-<section id="slides-de-la-clase" class="level2">
-<h2 class="anchored" data-anchor-id="slides-de-la-clase">Slides de la clase</h2>
-<p>👉 <a href="06B-Univariado.html">Ver slides – Univariado 2</a></p>
+<details>
+</details></details></section>
+<section id="what-is-the-difference-between-a-list-vector-and-data-frame" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-the-difference-between-a-list-vector-and-data-frame">2. What is the difference between a list, vector, and data frame?</h3>
+<details>
+<summary>
+<strong>💡</strong>
+</summary>
+<ul>
+<li>R: vector, list, data.frame, tibble</li>
+<li>Python: list, dict,</li>
+</ul>
+<p>DataFrame When to use each and why performance matters</p>
+<details>
+R
+<details>
+<summary>
+<strong>💡R</strong>
+</summary>
+<p>Vector A vector is the most basic data structure in R. It is one‑dimensional and homogeneous, meaning all elements must be of the same type (numeric, character, logical, etc.). When to use:</p>
+<p>Simple numeric or logical operations Mathematical calculations Statistical functions (means, sums, transformations)</p>
+<p>Why performance matters: Vectors are highly optimized in R. Vectorized operations avoid explicit loops and are much faster and more memory‑efficient than iterative approaches.</p>
+<p>List A list is a heterogeneous container that can hold elements of different types and sizes, including vectors, data frames, models, and even other lists. When to use:</p>
+<p>Storing complex objects (e.g., model outputs, nested results) Returning multiple objects from a function Handling hierarchical or nested data</p>
+<p>Why performance matters: Lists are flexible but less efficient for computation. They are best used for organization, not for numeric-heavy operations.</p>
+<p>Data Frame A data frame is a tabular structure where:</p>
+<p>Columns are vectors Each column is homogeneous Different columns can have different types</p>
+<p>When to use:</p>
+<p>Traditional data analysis Regression modeling Aggregation and joins</p>
+<p>Why performance matters: Data frames are intuitive but can be slower with very large data due to copying behavior and less strict column handling.</p>
+<p>Tibble A tibble is a modern variant of a data frame (from the tidyverse) with stricter and more predictable behavior. When to use:</p>
+<p>Tidyverse workflows (dplyr, ggplot2) Interactive analysis Large or complex datasets</p>
+<p>Why performance matters: Tibbles avoid partial matching and automatic type changes, reducing bugs. Performance is similar to data frames, but developer productivity and correctness are significantly improved.</p>
+<details>
+Python
+<details>
+<summary>
+<strong>💡Py</strong>
+</summary>
+<p>List A Python list is an ordered, mutable collection that can hold mixed data types. When to use:</p>
+<p>Small collections Iterative processing General-purpose storage</p>
+<p>Why performance matters: Lists are flexible but slow for large numerical computations. Iterating over lists in Python is expensive compared to vectorized alternatives.</p>
+<p>Dictionary (dict) A dictionary stores key–value pairs with fast lookup. When to use:</p>
+<p>Mapping relationships Storing metadata Fast lookups by key</p>
+<p>Why performance matters: Dictionaries offer O(1) average lookup time, making them ideal for indexing and caching—but not for numeric computation.</p>
+<p>DataFrame (pandas) A DataFrame is a 2‑dimensional, labeled tabular structure, similar to an R data frame or SQL table. When to use:</p>
+<p>Data cleaning and transformation Feature engineering Exploratory analysis Modeling pipelines</p>
+Why performance matters: pandas DataFrames use vectorized operations built on NumPy, which are far more efficient than Python loops. However, very large datasets may still require chunking or distributed tools (e.g., Dask, Spark).
+<details>
+</details></details></details></details></details></details></section>
+<section id="explain-how-you-would-clean-and-validate-messy-data" class="level3">
+<h3 class="anchored" data-anchor-id="explain-how-you-would-clean-and-validate-messy-data">3. Explain how you would clean and validate messy data</h3>
+<details>
+<summary>
+<strong>💡</strong>
+</summary>
+<p>wrangling skills</p>
+<p>Look for answers involving:</p>
+<ul>
+<li><p>Missing</p></li>
+<li><p>values Type coercion</p></li>
+<li><p>Duplicate detection</p></li>
+<li><p>Consistency checks</p></li>
+<li><p>Logging assumptions</p>
+<details></details></li>
+</ul>
+</details></section>
+<section id="what-is-a-window-function-in-sql-and-when-would-you-use-it" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-a-window-function-in-sql-and-when-would-you-use-it">4. What is a window function in SQL, and when would you use it?</h3>
+<details>
+<summary>
+<strong>💡</strong>
+</summary>
+<ul>
+<li><p>OVER(PARTITION BY … ORDER BY …)</p></li>
+<li><p>Difference between GROUP BY vs window functions</p></li>
+<li><p>Use cases: rankings, moving averages, lag/lead</p></li>
+</ul>
+<details>
+</details></details></section>
+<section id="how-would-you-optimize-a-slow-sql-query" class="level3">
+<h3 class="anchored" data-anchor-id="how-would-you-optimize-a-slow-sql-query">5. How would you optimize a slow SQL query?</h3>
+<details>
+<summary>
+<strong>💡</strong>
+</summary>
+<ul>
+<li><p>Indexes</p></li>
+<li><p>Reducing joins</p></li>
+<li><p>Filtering early Avoiding <strong>SELECT</strong></p>
+<details></details></li>
+</ul>
+</details></section>
+<section id="what-is-the-difference-between-tidy-data-and-wide-data" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-the-difference-between-tidy-data-and-wide-data">6. What is the difference between tidy data and wide data?</h3>
+<details>
+<summary>
+<strong>💡</strong>
+</summary>
+<ul>
+<li><p>One variable per column</p></li>
+<li><p>One observation per row</p></li>
+<li><p>Why tidy data simplifies analysis and modeling</p></li>
+<li><p>Tools: pivot_longer, melt, reshape</p></li>
+</ul>
+<details>
+</details></details></section>
+<section id="how-do-you-handle-categorical-variables-in-models" class="level3">
+<h3 class="anchored" data-anchor-id="how-do-you-handle-categorical-variables-in-models">7. How do you handle categorical variables in models?</h3>
+<details>
+<summary>
+<strong>💡</strong>
+</summary>
+<ul>
+<li><p>Dummy variables / one‑hot encoding</p></li>
+<li><p>Reference categories</p></li>
+<li><p>High‑cardinalityvariables</p></li>
+<li><p>Impact on interpretation</p>
+<details></details></li>
+</ul>
+</details></section>
+<section id="explain-the-difference-between-a-left-join-inner-join-and-full-join" class="level3">
+<h3 class="anchored" data-anchor-id="explain-the-difference-between-a-left-join-inner-join-and-full-join">8. Explain the difference between a LEFT JOIN, INNER JOIN, and FULL JOIN</h3>
+<details>
+<summary>
+<strong>💡</strong>
+</summary>
+<ul>
+<li><p>Which rows are preserved</p></li>
+<li><p>When joins cause row duplication</p></li>
+<li><p>How joins can silently change results</p>
+<details></details></li>
+</ul>
+</details></section>
+<section id="how-do-you-structure-a-data-science-project-repository" class="level3">
+<h3 class="anchored" data-anchor-id="how-do-you-structure-a-data-science-project-repository">9. How do you structure a data science project repository?</h3>
+<details>
+<summary>
+<strong>💡</strong>
+</summary>
+<ul>
+<li><p>Clear folder structure (data/, code/, outputs/)</p></li>
+<li><p>Separation of raw and processed data</p></li>
+<li><p>README documentation</p></li>
+<li><p>Environment and dependency tracking</p></li>
+</ul>
+<details>
+</details></details></section>
+<section id="describe-a-reproducible-data-pipeline-you-have-built.-how-did-you-structure-it-and-how-would-another-person-rerun-it" class="level3">
+<h3 class="anchored" data-anchor-id="describe-a-reproducible-data-pipeline-you-have-built.-how-did-you-structure-it-and-how-would-another-person-rerun-it">10. Describe a reproducible data pipeline you have built. How did you structure it, and how would another person rerun it?</h3>
+<details>
+<summary>
+<strong>💡</strong>
+</summary>
+<p>What a strong answer should include:</p>
+<ul>
+<li><p>A clear entry point (master script, main file, or workflow)</p></li>
+<li><p>Separation of steps (cleaning, transformation, analysis)</p></li>
+<li><p>How paths, environments, or configurations are handled</p></li>
+<li><p>How outputs (tables, models, reports) are generated automatically</p></li>
+<li><p>How someone else could rerun the pipeline with minimal effort</p></li>
+</ul>
+<details>
 
 
+</details></details></section>
 </section>
 
 </main> <!-- /main -->
@@ -243,12 +423,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copiado");
+      button.setAttribute("title", "Copied!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copiado");
+        button.setAttribute("data-bs-title", "Copied!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
